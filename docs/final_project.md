@@ -5,6 +5,11 @@
 ## 1. Executive Summary
 The **AI Discovery Engine** is an automated product intelligence system designed to continuously ingest, clean, and synthesize thousands of real public customer reviews across the web to pinpoint why users abandon items in their shopping wishlists on Myntra.
 
+### 🌐 Live Production Deployment
+- **Interactive Web App (Vercel)**: [https://ai-discovery-engine-rose.vercel.app/](https://ai-discovery-engine-rose.vercel.app/)
+- **RAG Chatbot API (Render)**: [https://discovery-engine-api-mk0d.onrender.com](https://discovery-engine-api-mk0d.onrender.com)
+- **Source Code (GitHub)**: [https://github.com/SoumayLightRay/AI-Discovery-Engine](https://github.com/SoumayLightRay/AI-Discovery-Engine)
+
 Instead of relying on demographic guesswork or generic AI hallucinations, the engine establishes an evidence-grounded feedback loop:
 - **Phase 1:** Ingests raw feedback across 4 distinct digital channels (Google Play, Apple App Store, YouTube, Reddit).
 - **Phase 2:** Uses high-throughput LLMs (Groq / Gemini) to batch-tag friction themes, extract verified verbatim evidence, and perform root cause analysis (5 Whys).

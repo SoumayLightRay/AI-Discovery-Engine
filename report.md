@@ -369,27 +369,96 @@ Using **Frequency × Severity × Solvability** (each scored 1–5), constrained 
 
 ---
 
-## 13. Primary Research Protocol
+## 13. Primary Research: Survey Findings (N ≈ 29)
 
-### Interview Framework (5–6 Respondents)
+### 13.1 Survey Overview
 
-| # | Case Type | Why This Case |
+| Metric | Value |
+|---|---|
+| Submissions | 31 (2 duplicates → effective N ≈ 29) |
+| Source | Google Form, Sep 4–5 2026 |
+| Platforms used | Myntra, AJIO, Nykaa Fashion, Amazon, Flipkart, brand sites |
+| Wishlist engagement | Most opened wishlist within the last week |
+
+### 13.2 AI Hypothesis Cross-Validation
+
+| AI Engine Finding | Survey Verdict | Detail |
 |---|---|---|
-| 1 | High-intent stalled user | Core target — what specific blocker stops purchase? |
-| 2 | Price-led delayer | Is this solvable without incentives? |
-| 3 | Fit/uncertainty hesitator | What information would resolve the confidence gap? |
-| 4 | Availability-frustrated user | PM problem or logistics problem? |
-| 5 | Heavy external researcher | What does Myntra lack that YouTube/Reddit provides? |
-| 6 | Successful converter | What tipped them from wishlist → purchase? |
+| Quality/Material = #1 (14.1%) | ✅ **Confirmed + Refined** | Confirmed as top friction, but split into "quality-truth" (will it match photos?) and "value-justification" (is it worth ANY price?) |
+| Returns = most toxic (93.5% neg) | ⚠️ **Partially validated** | Toxic when encountered, but not top-of-mind unprompted blocker |
+| Price = high volume (10.5%) | ⚠️ **Refined → 3 sub-problems** | (a) Waiting for sale (unsolvable), (b) Cash-flow timing (external), (c) Value unproven (solvable!) |
+| Comparison = low (1.6%) | 🔄 **AI underweighted** | #1 most-ticked multi-select reason — AI missed it because reviews don't discuss competitor behaviour |
+| Reviews/Info = invisible (0%) | ✅ **Confirmed** | "No reviews with pictures" cited explicitly |
+| Fit/Size = watch (4.5%) | ✅ **Confirmed — more prevalent** | Among top 2 most-ticked reasons; users actively leave app to resolve via YouTube/offline |
+| Forgetting = low (1.6%) | ✅ **Confirmed** | Small but real; reminders work as conversion triggers |
 
-### Core Interview Questions
+### 13.3 What Users Said (Grouped by Raw Signal)
 
-1. "Show me your Myntra wishlist. Pick 3 items — why did you save each, do you still want it, what's stopping you?"
-2. "Walk me through the last time you moved something from wishlist to cart. What changed?"
-3. "Have you ever decided NOT to buy something specifically because of the return policy?"
-4. "When you research a Myntra product on YouTube or Reddit, what are you looking for that isn't on the product page?"
-5. "How do you decide between Myntra vs. AJIO vs. Amazon Fashion for the same product?"
-6. "If Myntra showed you verified photos from real buyers and a return-eligibility badge, would that change your purchase decision?"
+**"I still want to buy it" (~33%):**
+- Stock-out blocked: *"My size is out of stock"* (4+ mentions, often event-driven)
+- Price waiting: *"Waiting for prices to go down"*, *"Out of budget"*
+- Cash-flow timing: *"Waiting to receive money from dad"*, *"my salary was lower"*
+
+**"I'm considering it, but not sure" (~35%):**
+- Fit/style doubt: *"not sure how it fits"*, *"Don't know if it will suit me"*
+- Information doubt: *"The product doesn't have many reviews"*, *"no reviews with pictures"*
+- Value doubt: *"Will it be worth it!"*, *"unsure if it's worth the price"*
+- Comparing: *"Still looking for other options"*, *"Maybe I'll find a better alternate"*
+
+**"Don't really want it anymore" (~10%):**
+- Pure forgetting: *"I forgot"*, *"Got distracted"*
+- Interest decay: *"Not as appealing as before"*
+
+### 13.4 The Research Exodus (Off-Platform Behaviour)
+
+Users conduct 4–6 research actions PER ITEM before deciding, entirely outside Myntra:
+
+| Channel | What They Seek |
+|---|---|
+| YouTube | Video hauls, real-world look, material check |
+| Instagram | Styling, outfit pairing, social validation |
+| Other e-commerce apps | Price comparison, alternatives |
+| Brand website | Better product details, size guides |
+| External reviews | Honest quality/fit feedback |
+| Offline store | Physical try-on before online purchase |
+
+### 13.5 Competitor Leakage
+
+Multiple respondents explicitly bought the same or similar product from a different platform:
+- *"Found better design and branded stuff for same price"*
+- *"Bought it from different site"*
+- *"Got notification from Flipkart that prices gone down. Bought it cheaper from somewhere else."*
+
+### 13.6 Behavioural Segments (from Survey)
+
+| Segment | % of Sample | Blocker | Actionable? |
+|---|---|---|---|
+| **Value-unproven evaluators** | ~35% | Confidence gap | ✅ **Primary target** |
+| **Fit/style-doubtful researchers** | ~25% | Information gap | ✅ Secondary target |
+| **Stock-out-blocked** | ~15% | Inventory | ⚠️ Logistics |
+| **Cash-timing-blocked** | ~10% | External life | ❌ |
+| **Price-waiters** | ~10% | Monetary | ❌ Constrained |
+| **Passive decayers** | ~5% | Attention | ⚠️ Nudge only |
+
+**Target: Value-unproven evaluators + Fit/style researchers (combined ~60%).** They have high intent, strong pain, and the blocker is solvable without monetary incentives.
+
+### 13.7 Updated Root Cause Chain (Post-Survey)
+
+```
+SYMPTOM: Wishlisted items sit unconverted for weeks.
+    ↓
+BEHAVIOUR: User wants the item but delays purchase.
+    ↓
+IMMEDIATE REASON: "I'm not sure if it's worth it" / "not sure how it fits"
+    ↓
+WORKAROUND: User leaves app → researches on YouTube, Instagram, competitor apps (4–6 actions)
+    ↓
+CONSEQUENCE: During off-platform research, user finds alternative → buys from competitor
+    ↓
+ROOT CAUSE: Myntra's product page lacks real-world evidence (verified buyer photos,
+  honest fit consensus, quality proof) → user can't decide without leaving the platform.
+```
+
 
 ---
 

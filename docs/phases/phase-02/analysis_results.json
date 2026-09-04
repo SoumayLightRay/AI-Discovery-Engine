@@ -1,0 +1,3006 @@
+{
+  "metadata": {
+    "analysis_model": "openai/gpt-oss-120b",
+    "total_dataset_size": 1367,
+    "sample_analyzed_size": 313,
+    "friction_identified_count": 70,
+    "friction_rate_percentage": 22.36,
+    "sources_in_sample": {
+      "YouTube": 79,
+      "Reddit": 79,
+      "App Store": 77,
+      "Google Play": 78
+    },
+    "theme_distribution": {
+      "Other emergent themes": 111,
+      "Reviews/information": 19,
+      "Quality/material": 44,
+      "Price": 33,
+      "Availability": 17,
+      "Fit/size": 14,
+      "Returns": 31,
+      "Styling/occasion": 11,
+      "Intent/bookmarking": 13,
+      "Alternatives": 4,
+      "Social validation": 6,
+      "Comparison": 5,
+      "Forgetting/distraction": 5
+    },
+    "sentiment_distribution": {
+      "neutral": 115,
+      "negative": 77,
+      "positive": 121
+    }
+  },
+  "synthesis": {
+    "executive_summary": "The primary friction causing wishlist drop\u2011offs is a deep\u2011seated lack of confidence in the purchase process, manifested through missing transactional clarity, price uncertainty, and return anxiety, which pushes users to defer or abandon purchases.",
+    "dominant_friction_theme": "Other emergent themes",
+    "root_cause_analysis": [
+      {
+        "level": "Why 1",
+        "cause": "Users hesitate to move items from wishlist to cart because they feel uncertain about the final purchase outcome."
+      },
+      {
+        "level": "Why 2",
+        "cause": "That uncertainty originates from insufficient transparent information about pricing stability, invoicing, and return options."
+      },
+      {
+        "level": "Why 3",
+        "cause": "When critical details are opaque, users experience anxiety about financial risk and post\u2011purchase regret."
+      },
+      {
+        "level": "Why 4",
+        "cause": "Anxiety triggers procrastination; users keep items in the wishlist as a temporary safety net."
+      },
+      {
+        "level": "Why 5",
+        "cause": "The safety\u2011net habit leads to prolonged indecision, during which alternative products or platforms become more attractive, resulting in drop\u2011off."
+      }
+    ],
+    "opportunities": [
+      {
+        "theme": "Other emergent themes",
+        "rigorous_problem_statement": "Among first\u2011time shoppers who add items to their wishlist but never purchase, users who lack a clear, verifiable transaction record delay purchasing because they doubt the legitimacy and completeness of the order. They currently keep items in the wishlist as a placeholder, which leaves them uncertain and eventually leads to abandonment.",
+        "grounded_quote": "Very disappointing experience with Myntra... no proper bill or invoice inside"
+      },
+      {
+        "theme": "Price",
+        "rigorous_problem_statement": "Among price\u2011sensitive users who bookmark items, users who anticipate future discounts delay purchasing because they expect price reductions that never materialize. They currently monitor prices manually or wait indefinitely, which leaves them frustrated and prone to discard the wishlist items.",
+        "grounded_quote": "none of the good items got any discounts whatsoever"
+      },
+      {
+        "theme": "Returns",
+        "rigorous_problem_statement": "Among users who have previously faced return obstacles, users who add products to their wishlist delay purchasing because they fear they will be unable to return or exchange mismatched items. They currently avoid adding to cart and keep items in the wishlist, which leaves them stuck in indecision and increases the chance of eventual drop\u2011off.",
+        "grounded_quote": "Myntra doesn't have a option to return mismatched products they rejected the exch"
+      }
+    ],
+    "primary_research_interview_guide": [
+      "Can you walk me through the last time you added an item to your wishlist but didn\u2019t move it to the cart? What thoughts or concerns held you back?",
+      "How do you perceive the information provided about pricing changes, invoices, and return policies when you consider buying a wishlisted item?",
+      "What would make you feel confident enough to convert a wishlisted product into a purchase without relying on external monitoring or work\u2011arounds?"
+    ]
+  },
+  "sample_grounded_quotes": {
+    "Price": [
+      {
+        "quote": "none of the good items got any discounts whatsoever",
+        "source": "Reddit"
+      },
+      {
+        "quote": "some products at low price are just grabs but some products disappoint me",
+        "source": "Google Play"
+      },
+      {
+        "quote": "none of the items in my wishlist and cart got their price reduced",
+        "source": "Reddit"
+      }
+    ],
+    "Other emergent themes": [
+      {
+        "quote": "I wished I would have rather let this product go and buy anything else from Myntra",
+        "source": "App Store"
+      },
+      {
+        "quote": "No purchase for Myntra app",
+        "source": "App Store"
+      },
+      {
+        "quote": "Very disappointing experience with Myntra... no proper bill or invoice inside",
+        "source": "Google Play"
+      }
+    ],
+    "Availability": [
+      {
+        "quote": "parcel delivery nahin ho raha hai delivery date per vah date aage badha de rahe hain",
+        "source": "Google Play"
+      },
+      {
+        "quote": "ordered cancelled automatically",
+        "source": "Google Play"
+      },
+      {
+        "quote": "order was not delivered,so i cancel",
+        "source": "App Store"
+      }
+    ],
+    "Returns": [
+      {
+        "quote": "Myntra doesn't have a option to return mismatched products they rejected the exch",
+        "source": "Reddit"
+      },
+      {
+        "quote": "Received a completely different product from what I ordered",
+        "source": "Google Play"
+      },
+      {
+        "quote": "no return policy on bras and panties",
+        "source": "Reddit"
+      }
+    ],
+    "Quality/material": [
+      {
+        "quote": "sometimes disappointed",
+        "source": "Google Play"
+      },
+      {
+        "quote": "product quality is too good",
+        "source": "Google Play"
+      },
+      {
+        "quote": "Checking fabric composition has really helped me reduce my purchases",
+        "source": "Reddit"
+      }
+    ],
+    "Fit/size": [
+      {
+        "quote": "Many brands have inaccurate sizing and the heavily edited model images often make the colours look much brighter and cleaner than they actually are.",
+        "source": "Reddit"
+      },
+      {
+        "quote": "Myntra size chart is incorrect",
+        "source": "Reddit"
+      },
+      {
+        "quote": "Size chart is so incorrect. They sent 2 size small than my actual measurements.",
+        "source": "Reddit"
+      }
+    ],
+    "Reviews/information": [
+      {
+        "quote": "love this app and his rating rewards",
+        "source": "Google Play"
+      }
+    ],
+    "Styling/occasion": [
+      {
+        "quote": "My go-to tops this summer",
+        "source": "Reddit"
+      }
+    ],
+    "Alternatives": [
+      {
+        "quote": "recommend ONE perfume under 1,000",
+        "source": "Reddit"
+      }
+    ]
+  },
+  "tagged_reviews": [
+    {
+      "source": "YouTube",
+      "date": "10 hours ago (edited)",
+      "text": "2017: People came to listen song. 2026: People come to check views.",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-01T04:18:28.000Z",
+      "text": "/u/Forward_Voice2440 on If you had to recommend ONE perfume under 1,000 for a blind buy, which one would you pick ? how about dusk till dawn?",
+      "primary_theme": "Reviews/information",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-23T16:05:02.000Z",
+      "text": "/u/depressionNcheese on Casio Enticer A2549 (MTP-B190RGL-9BVDF) looks like you want to choke your hand",
+      "primary_theme": "Quality/material",
+      "sentiment": "negative",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-15T20:09:05.000Z",
+      "text": "/u/Character-Quiet6730 on Myntra Sales are just for namesake and none of the good items got any discounts whatsoever Yeah and the discounted ones come under the pathetic &quot; not deliverable ro the selected pincode &quot; category",
+      "primary_theme": "Price",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "none of the good items got any discounts whatsoever"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.043301",
+      "text": "Best Shopping app of India. Its been a year since Im buying things online from Myntra in between I was switched to A*** and I had such a pathetic experience interest 4 to 5 purchasing and every time I was remembering I wished I would have rather let this product go and buy anything else from Myntra, the quality the packaging the respect through the packaging and product they provide to the customer is remarkable",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "I wished I would have rather let this product go and buy anything else from Myntra"
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-03T16:36:33",
+      "text": "best shoping experience thank you Myntra",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-03T10:33:20",
+      "text": "Myntra per koi bhi parcel delivery nahin ho raha hai delivery date per vah date aage badha de rahe hain Inka customer care call utha Kar baat nahin karta theek se agar aap log parcel deliver nahin kar sakte to aap log order accept kyon karte ho delivery date aage badhakar date bhi nahin batate Ki kab deliver hoga parcel",
+      "primary_theme": "Availability",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "parcel delivery nahin ho raha hai delivery date per vah date aage badha de rahe hain"
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-30T01:59:33",
+      "text": "good appa one of the best aap",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-23T13:56:52.000Z",
+      "text": "/u/Amazing_Wolf_1987 on Casio Enticer A2549 (MTP-B190RGL-9BVDF) Too loose on ur wrist bro , tighten it a little",
+      "primary_theme": "Fit/size",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-29T21:01:27",
+      "text": "Myntra is really good app to look for different options for fashion in one place at one click.",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "12 years ago",
+      "text": "Anyone else hear the fart after ray flexes",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T04:21:36.000Z",
+      "text": "We actually have consumers rights and it works This was 150rs order that I got on offer for a 400rs tshirt from Myntra for a male t shirt but what i got was a crop top so i wanted a exchange for the product ordered Myntra doesn&#39;t have a option to return mismatched products they rejected the exchange and when I some have got it to work the pick up agent rejected it saying it&#39;s not the same product Then I made complaint on NCH a agent called and told me he will make manul exchange the same delivery agent rejected it again i updated all this on the NCH portal this time they sent a mail acknowledging it was a wrong product but the exchange was rejected for 3RD TIME at this point it was already 30 days but I wasn&#39;t gonna let it go i updated the mail the sent on NCH again 3rd agent called and he said he&#39;ll approve a return after 40 days from the initial order the problem was solved only because i filed NCH complaint I was skeptical at first for this amount but NCH really works even if the order is 100rs value So don&#39;t hesitate to file a complaint and I understand why myntra has no option for mismatch return because people could abuse it &#32; submitted by &#32; /u/asmodeus38317 [link] &#32; [comments]",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "Myntra doesn't have a option to return mismatched products they rejected the exch"
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-02T19:33:16",
+      "text": "1 Star Received a completely different product from what I ordered. After complaining, I was repeatedly told the delivery partner would come in 23 days. Customer care assured me the return would be completed by 31st August. But today I was suddenly told that the correct product was dispatched from the warehouse and the wrong product was received by me. Very disappointing experience and poor customer support. Myntra needs to improve its return and complaint resolution process.",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "Received a completely different product from what I ordered"
+    },
+    {
+      "source": "YouTube",
+      "date": "12 hours ago",
+      "text": "Alexa this is so sad, play Despacito.",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "4 hours ago",
+      "text": "I like music I'm remember this song I'm from Nepal your country is everything good I'm good person believe me god bless you",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "11 years ago",
+      "text": "the dog is a burnese mountain they are so peacful because they are spacily raised",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-01T18:24:59",
+      "text": "Good app with easy return policy of exchange",
+      "primary_theme": "Returns",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-29T21:17:30",
+      "text": "good app and product good also",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-03T12:43:07",
+      "text": "some products at low price are just grabs but some products disappoint me",
+      "primary_theme": "Price",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "some products at low price are just grabs but some products disappoint me"
+    },
+    {
+      "source": "YouTube",
+      "date": "1 minute ago",
+      "text": "anyone here on september 4th? radomly got ts video recommended in 2026 lmao",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-03T08:53:58",
+      "text": "Myntra is not just an online shopping platform; it is the ultimate, unrivaled powerhouse of modern fashion. In a digital world crowded with e-commerce options, Myntra stands in a league of its own, transforming personal styling from a routine chore into an exhilarating, daily luxury. The moment you launch the app, you step into a hyper-curated, front-row runway of global trends, homegrown labels, and iconic luxury houses. It has completely redefined what it means to look good, effortlessl.",
+      "primary_theme": "Styling/occasion",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T10:36:25.000Z",
+      "text": "/u/tomatowentpoTAto on A site that has no return policy on bras and panties. Thankyou",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "no return policy on bras and panties"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.043301",
+      "text": "Original profuct..Fast deliveryI love Myntra. *****",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "1 day ago",
+      "text": "This comment is like glass of water in ocean",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T14:08:36.000Z",
+      "text": "/u/EngineeringNew6124 on My go-to tops this summer Ikr",
+      "primary_theme": "Styling/occasion",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.609483",
+      "text": "Straightner. Product is worth for price",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.043301",
+      "text": "Kalini sharara kurta. Really loved d product n look Very comfortable",
+      "primary_theme": "Styling/occasion",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-02T13:28:30",
+      "text": "sometimes disappointed but all over good",
+      "primary_theme": "Quality/material",
+      "sentiment": "neutral",
+      "friction_present": true,
+      "verbatim_quote": "sometimes disappointed"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.230563",
+      "text": "Good dress. The fit is really good and material is also nice",
+      "primary_theme": "Fit/size",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-15T13:04:06.000Z",
+      "text": "Myntra Sales are just for namesake and none of the good items got any discounts whatsoever Has anyone noticed that sales in myntra are just posters and nothing else. None of the items in my wishlist and cart got their price reduced, there were some coupons applicable few days ago which have also disappeared now. On top of that shamelessly taking unnecessary fees on everything. I have stopped purchasing from this shitty app just that some brands are exclusively available on it sadly. &#32; submitted by &#32; /u/Electrical-Crab-6376 [link] &#32; [comments]",
+      "primary_theme": "Price",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "none of the items in my wishlist and cart got their price reduced"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.225129",
+      "text": "Felt cute. Its good for who doesnt like lipstick at all",
+      "primary_theme": "Styling/occasion",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "7 years ago",
+      "text": "Goddamn he is funny. I lost it when he said this might be his cell mate.",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.229388",
+      "text": "Fraud. Do not buy products from Myntra. They dont deliver the products properly, and they dont even provide refunds. This is a completely fraudulent service. Be careful before placing an order",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "they dont even provide refunds"
+    },
+    {
+      "source": "YouTube",
+      "date": "12 years ago",
+      "text": "The kangaroo is wearing a costume",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.043301",
+      "text": "Amazing. This app is amazing for them who are completely dependent on Online shopping",
+      "primary_theme": "Intent/bookmarking",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-31T15:50:42",
+      "text": "worstest app item which i ordered cancelled automatically",
+      "primary_theme": "Availability",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "ordered cancelled automatically"
+    },
+    {
+      "source": "YouTube",
+      "date": "10 years ago",
+      "text": "1:45, my reaction when i see or hear something about the Kardashian family...",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-21T06:53:20.000Z",
+      "text": "/u/FraPes_99 on Myntra Shopping & Wishlist Habits Quick Survey form Hey I&#39;ve done yours could you please do mine Thanks in advance",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-31T14:03:47.000Z",
+      "text": "/u/limitedinfinity_01 on If you had to recommend ONE perfume under 1,000 for a blind buy, which one would you pick ? Is brit accent good?",
+      "primary_theme": "Alternatives",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "11 years ago",
+      "text": "The meth head in the last video looks like Tommy Gun from GunvsGun",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "t shirt. order was not delivered,so i cancel and order again,lets see now then i rating",
+      "primary_theme": "Availability",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "order was not delivered,so i cancel"
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-30T16:06:25",
+      "text": "Platform experience is great, all item in properly organised and filter show accurate results. But they charge for experience. its more than Ganne ka juice glass.",
+      "primary_theme": "Price",
+      "sentiment": "negative",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "Dress. Dress was very beautiful and fitting also nice",
+      "primary_theme": "Fit/size",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-31T19:59:28",
+      "text": "myntra app is best for cloths and products, I preferred myntra for all .",
+      "primary_theme": "Social validation",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.043301",
+      "text": "Awesome deals!. I have been using Myntra since 7-8 years and it has never disappointed me in terms of deals and discounts",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "12 years ago",
+      "text": "can I be on a blog",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "11 hours ago",
+      "text": "Esta cancin how quien hoy 3 de septiembre del 2026",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "Good products. Surprised with the price of the quality",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-02T05:19:56",
+      "text": "Seriously heavy discounts and best product thanks Myntra",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-29T15:44:00",
+      "text": "hi myntra shop why are you deactivated in my account",
+      "primary_theme": "Availability",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "why are you deactivated in my account"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-31T15:43:21.000Z",
+      "text": "/u/Vegetable_Peace7432 on If you had to recommend ONE perfume under 1,000 for a blind buy, which one would you pick ? I just tried the black one it&#39;s best it has high oil content thats why its last long. I have to spray carefully from long distance close distance cause stain. Its unisex perfume it has floral and woody notes. Feels very good and positive after using.",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "12 years ago",
+      "text": "who heard the fart at 0:07?",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-29T15:45:14",
+      "text": "The worst app I have ever seen the delivery service is the worst. The delivery was delayed like 5 times They always changed the date and when the delivery came I ordered shoes the box is totally crushed and the shoes are used and after the they asked review in app and I said about delivery services and primary package damaged they rejected my review and I give photos also but they not agree and the shoes also used and the customer care service also worst after this talk you using enjoy",
+      "primary_theme": "Availability",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "delivery was delayed like 5 times"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.229388",
+      "text": "Ekdam bakwas app hai. Ekdam bakwas app hai No purchase for Myntra app",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "No purchase for Myntra app"
+    },
+    {
+      "source": "YouTube",
+      "date": "6 years ago",
+      "text": "best videos to rewatch while drunk. not gonna lie, I may be wasted",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-02T05:14:57.000Z",
+      "text": "/u/Emotional_Rip_2787 on H&M regular fit T-shirt link",
+      "primary_theme": "Comparison",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.225129",
+      "text": "Shopping app. Very nice and convenient",
+      "primary_theme": "Social validation",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.225129",
+      "text": "Myntra products are awesome. i love their quality",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-30T12:54:47",
+      "text": "very bad ... I ordered many items .. among them .. one was kurti but it was a bit larger for my mother so i applied for exchange.. the delivery agent denied to take the order due to the brand name tag is not their .. neither the myntra customer care helping and no chat with an agent option also",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "applied for exchange.. the delivery agent denied to take the order"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.229388",
+      "text": "Worth for the price. Its classy and of good quality",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-30T13:09:17",
+      "text": "It shows that express delivery, but it is always delayed, and they mention that the customer was not available when the delivery was attempted. The customer care service is also not helpful. It asks me to enter my registered mobile number followed by a 3-digit PIN, but it always says that it is incorrect.",
+      "primary_theme": "Availability",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "It shows that express delivery, but it is always delayed, and they mention that the customer was not available when the delivery was attempted. The customer care service is also not helpful."
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "Best app ever fashion. Rated 5 out of 5",
+      "primary_theme": "Social validation",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-26T12:23:54.000Z",
+      "text": "/u/AutoModerator on How I finally stopped returning half my Myntra orders For style advice, outfit help, item finding, store reviews (websites, apps, Instagram shops), and more. - &#x1f4ac; Join IFA Discord Here I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-01T17:20:59",
+      "text": "best platform to buy at good rate. all world class product.",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-30T21:50:57",
+      "text": "good product as well as service",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T11:47:08.000Z",
+      "text": "/u/frizzy_diversity on Where do women buy good oversized T-shirts? Wait I havent bought womens cut tees in ages but the mens section uniqlo oversized airism tees in one size up are what i basically live in now, they drape way better than a lot of the intentionally oversized womens stuff ive tried",
+      "primary_theme": "Comparison",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.230563",
+      "text": "Return or exchange Policy is horrible. I ordered pair of heels but instead I got old used pair of shoes which took them more than a month for return. I also ordered a bag but wanted to return it because of quality issues still no response to this date, the app shows it will be picked up in few days but its bern a month now. Never order from here",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "Return or exchange Policy is horrible."
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-02T15:15:35",
+      "text": "I ordered jeans ,and it was totally different from what it was in the picture, then I tried to return it , the delivery guy came and cancelled the pickup and said that he will come tomorrow to pick up and he didn't come , and in the app it is showing \"pickup failed and they try to reattempt the pickup\", it's been 4 days and no update on the app about this pickup , myntra please take this product i don't want it",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "I ordered jeans ,and it was totally different from what it was in the picture, then I tried to return it , the delivery guy came and cancelled the pickup and said that he will come tomorrow to pick up and he didn't come , and in the app it is showing \"pickup failed and they try to reattempt the pick\"."
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-23T13:39:42.000Z",
+      "text": "/u/prauksi on Casio Enticer A2549 (MTP-B190RGL-9BVDF) Loosen the strap a little bro let your hand breathe",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "Awesome. Fabric is too good and comfortable Highly recommended",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-29T14:08:57",
+      "text": "Fraud App....My money does not refund plz don't use this app",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "My money does not refund plz don't use this app"
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-31T00:07:50",
+      "text": "good quality products at reasonable prices",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.609483",
+      "text": "Good. The product is very good and delivery boy was very understandable person",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "23 hours ago",
+      "text": "9 billion for what?? Beast and ishowspeedcrying in corner said AI",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.609483",
+      "text": "Trust worthy. Quality products with reasonable price",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-02T13:00:23",
+      "text": "what s shopping aap very good product",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-31T10:59:34",
+      "text": "good experience and good quality and also speed delivery",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T05:26:25.000Z",
+      "text": "/u/Emotional_Rip_2787 on H&M pure cotton regular fit round neck T-shirt link",
+      "primary_theme": "Alternatives",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-21T10:42:39.000Z",
+      "text": "/u/Electrical-Sea2733 on Myntra Shopping & Wishlist Habits Quick Survey form Completed",
+      "primary_theme": "Intent/bookmarking",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-26T16:28:37.000Z",
+      "text": "/u/RepairDapper5815 on How I finally stopped returning half my Myntra orders Many brands have inaccurate sizing and the heavily edited model images often make the colours look much brighter and cleaner than they actually are. In many cases, the colour of the outfit delivered is completely different from what is shown online, while the actual fabric and finish can also look much duller. A few of my friends and I have noticed that Myntra orders arent as reliable as they used to be a few years ago. The frequency of returns seems to have increased, possibly because of inaccurate product information, sizing and colour representation on the app. Myntra really needs to address these issues and improve the accuracy of its product data and images first.",
+      "primary_theme": "Fit/size",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "Many brands have inaccurate sizing and the heavily edited model images often make the colours look much brighter and cleaner than they actually are."
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-31T14:19:58.000Z",
+      "text": "/u/Unique-Builder-1862 on If you had to recommend ONE perfume under 1,000 for a blind buy, which one would you pick ? Which is Best smelling among this?",
+      "primary_theme": "Price",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-03T15:08:36",
+      "text": "really great shoping app i like it",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "12 hours ago",
+      "text": "Bro hay 8b de personas en el mundo y tiene 9b de vistas",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-01T09:30:02.000Z",
+      "text": "/u/Affectionate_Long_33 on If you had to recommend ONE perfume under 1,000 for a blind buy, which one would you pick ? Theek hi hai",
+      "primary_theme": "Price",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-30T14:45:02",
+      "text": "best app for buy any product",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-01T23:40:30",
+      "text": "good experience and trust worthy platform to purchase. good quality easy to purchase and return no issues at all.",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-26T13:38:36.000Z",
+      "text": "/u/aryaKes on How I finally stopped returning half my Myntra orders How was the quality? I felt that they are Myntra&#39;s shadow brand (due to their pictures) with Shein quality and hence never ordered from them.",
+      "primary_theme": "Quality/material",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "Shein quality"
+    },
+    {
+      "source": "YouTube",
+      "date": "11 years ago",
+      "text": "Arkansas is like, cousin fuckin central dude",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-21T10:37:46.000Z",
+      "text": "/u/Electrical-Sea2733 on Myntra Shopping & Wishlist Habits Quick Survey form no sry i need people who have used myntra",
+      "primary_theme": "Intent/bookmarking",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-31T14:16:58",
+      "text": "never order anything from this app, I have order a shade, woh shade aaya nhi fir exchange me dala toh dusra shade aaya koi customer care contact karne tyar nhi hai ai se call horaha hai worst experience",
+      "primary_theme": "Availability",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "woh shade aaya nhi"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-16T02:38:35.000Z",
+      "text": "/u/Character-Quiet6730 on Myntra Sales are just for namesake and none of the good items got any discounts whatsoever They deliver to none ! That&#39;s their way of not letting customers to buy the discounted items . The can&#39;t deliver wala thingy goes away after sometime or when the sale ends and price increases . It&#39;s downright irritating",
+      "primary_theme": "Price",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "none of the good items got any discounts"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "Oola App. Oru karyom ila. Oru free polum therila naashangal",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-02T12:36:59",
+      "text": "myntra is a thief. my sister bought a suit worth 2k. and returned it because it was small in size, it was picked up, but the site refused to returned the money citing it was never picked up. i am never buying from this site again.",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "site refused to returned the money"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.225129",
+      "text": "Minimalist retinol serum. I love retinol serum from minimalist first I order from somewhere else I got the fake one but when I order from Myntra I got the real one thankyou Myntra and team",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-02T19:18:11",
+      "text": "easy to explore and and friendly usable app",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "8 years ago",
+      "text": "Its been 4 years. This was the last real Ray episode of Equals 3.",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.043301",
+      "text": "Pink tank top. Cute colour. Snug fit. Good material",
+      "primary_theme": "Fit/size",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-28T21:39:15",
+      "text": "bahut achha app hai, achha discount milta hai or offer",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.043301",
+      "text": "Easy to use better from all platforms. 100 % real",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-30T12:33:44",
+      "text": "very worst app not delivering my parcel on time and also not informing anything related to my parcel........",
+      "primary_theme": "Availability",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "not delivering my parcel on time"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.609483",
+      "text": "Saree. The best go for it",
+      "primary_theme": "Styling/occasion",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-02T05:13:43.000Z",
+      "text": "150 off One plus nord buds Bluetooth earbuds &#32; submitted by &#32; /u/Emotional_Rip_2787 [link] &#32; [comments]",
+      "primary_theme": "Price",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-03T18:57:48",
+      "text": "Very disappointing experience with Myntra. This was my first order, and I ordered Simple Kind to Skin Refreshing Face Wash 150ml. The parcel was delivered through Flipkart, which was confusing, and there was no proper bill or invoice inside. I contacted Myntra multiple times, but received no proper response or resolution. I also have concerns about the authenticity of the product received. This experience has completely destroyed my trust in Myntra.",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "Very disappointing experience with Myntra... no proper bill or invoice inside"
+    },
+    {
+      "source": "YouTube",
+      "date": "18 hours ago (edited)",
+      "text": "Why did Despacito fail the race? Because it was going despacito the whole time!",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T14:02:09.000Z",
+      "text": "[SELL] Louis Philippe Men's 3 piece suit - Size : 38 - Rs. 5,999 - Louis Philippe Men&#39;s three (3) piece suit - Navy blue colour - Checks Pattern - Size : 38 - Brand new, unused, all factory tags intact, pant is full length, not even cut - Selling because it does not fit me, and return window of myntra got over. - Price : Rs. 5999 (MRP : Rs. 15,800) - Location : Kolkata, West Bengal (Can ship pan India) &#32; submitted by &#32; /u/Free-Air-8507 [link] &#32; [comments]",
+      "primary_theme": "Fit/size",
+      "sentiment": "negative",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "11 years ago",
+      "text": "That game warden one was hardcore... Jesus.",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T13:58:42.000Z",
+      "text": "/u/AutoModerator on [SELL] Louis Philippe Men's 3 piece suit - Size : 38 - Rs. 5,999 JOIN r/IndianClassified.. Seller can add their Instagram Page Link or their Website Link in their post description or in the comment..Kindly paste the full link , Donot use shortening links.. Also, Try to add the relevant FLAIR while posting.. Other than the &quot;Selling&quot; flair , there are specific flairs like &quot;Thrift/Second Hand&quot; , &quot;Electronics Used&quot; , &quot;Electronics New&quot; etc.. I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "4 hours ago (edited)",
+      "text": "Who's is here after 2027 ??",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "18 hours ago",
+      "text": "Despacito quiero respirar tu cuello despacito Deja que te diga cosas al odo Para que te acuerdes si no ests conmigo",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "My GTM SHOPPING APP. Very nice",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.043301",
+      "text": "Varshini. Best shopping experience with myntra",
+      "primary_theme": "Social validation",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.230563",
+      "text": "Nice product by Davidoff. I love this deo by Davidoff. Best as always",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "5 minutes ago",
+      "text": "This appeard in my feed (Its 2026)",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-29T02:43:26",
+      "text": "absolutely pathetic interface and a lousy support/help desk!",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "absolutely pathetic interface and a lousy support/help desk!"
+    },
+    {
+      "source": "YouTube",
+      "date": "23 hours ago",
+      "text": "Anyone in 2026? Who come for see again i also come to see again can you give each likes for me? Please I beg there is heart for you guys",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.609483",
+      "text": "Perfect in every way. I love Myntras collection and wide range of fashionable outfits for every occassion",
+      "primary_theme": "Styling/occasion",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.043301",
+      "text": "Super Product. Super Product. Value for money",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "8 hours ago",
+      "text": "9.1 billion views but still the best BTW I didn't even understand most of this song",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "8 years ago",
+      "text": "D O Y O U E V E N F U C K B R O",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T14:05:22.000Z",
+      "text": "/u/EngineeringNew6124 on My go-to tops this summer So blessed",
+      "primary_theme": "Styling/occasion",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "8 years ago",
+      "text": "God bless you all have a great day!",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "23 hours ago",
+      "text": "1st time 900m After 9B Listen",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-02T21:22:29",
+      "text": "Good platform for purchasing clothes shoe beauty products etc",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "1 day ago",
+      "text": "Those happy days.... When the world was much more happier Pre-pandemic era....",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "7 hours ago",
+      "text": "September 4, 2026 welcomes you, Earthlings!",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "Good dress. So i brought this dress for my cousin and he loves so much this color and quality of dress is also so good. Love to buy this one",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.609483",
+      "text": "Beautiful dress. Beautiful dress and amazing fit",
+      "primary_theme": "Fit/size",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.230563",
+      "text": "Go to app for fashion. Love it",
+      "primary_theme": "Intent/bookmarking",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "12 years ago",
+      "text": "That dog made me think of the dying dog of my cousin... I'm sad now D:",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "negative",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "11 years ago",
+      "text": "In Australia that is what the ancient people of the land call a \"turkey sausage\"",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "11 years ago",
+      "text": "The real Jesse Pinkman, omfg hahahahaha i love Jesse, and that was so f*cking funny",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "7 years ago",
+      "text": "Dude the last vid was insanity",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-31T00:12:47",
+      "text": "love this app easy to use and very good offer's",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-30T01:27:05",
+      "text": "best app for shopping gives a lot of coupon",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-28T20:51:57",
+      "text": "The worst app ever. They charge a lot, but the materials are not delivered on time. Even after raising a complaint, the issue is not resolved.",
+      "primary_theme": "Price",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "They charge a lot, but the materials are not delivered on time."
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-31T13:08:28.000Z",
+      "text": "/u/ConfidentAide3338 on If you had to recommend ONE perfume under 1,000 for a blind buy, which one would you pick ? I have a question that patel neck apparel you have the black one how is it and have you tried others too cause ik only 1 the OG skin colour one. And idk about others so would appreciate it if you could tell me about your apparel spray and other one sif you had tried them on .",
+      "primary_theme": "Alternatives",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "Swiss beauty. Best foundation less weighted evenly spread",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-03T10:27:18",
+      "text": "good material quality I hope I hope you every time good quality sale every product",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.230563",
+      "text": "Classic Casio, Amazing Quality. Absolutely love this watch! The dial looks elegant and premium, and the overall design is stylish without being too flashy. The finishing is impressive, and it feels comfortable on the wrist. It look even better in person and goes perfectly with both casual and formal outfits. Great quality for this price. Definitely worth buying! Highly recommended",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "Awesome app. This app is so awesome And high quality items will get reasonable prices",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-31T10:50:58.000Z",
+      "text": "If you had to recommend ONE perfume under 1,000 for a blind buy, which one would you pick ? This isn&#39;t my perfume collection, it&#39;s my brothers. He has been buying perfumes for around 23 years, but honestly, most of the time he used to buy them without doing much research. Recently, I started getting interested in perfumes myself. After doing some research, I started learning about fragrance notes, concentration, longevity, different fragrance profiles, etc. Now I&#39;ve kind of fallen in love with perfumes, and my Myntra wishlist is already getting out of control. So before I blindly buy another one, I wanted to ask people here who have more experience with fragrances. As of now, I know that I really like fresh, citrusy and oceanic/aquatic fragrances. My taste isn&#39;t very developed when it comes to other fragrance profiles yet, so I don&#39;t want to say that I completely dislike something just because I haven&#39;t explored it enough. do like woody and earthy fragrances, but I&#39;m not really into fruity or spicy fragrances. My budget is under 1,000, and I&#39;m looking for at least 50ml. The main thing I&#39;m looking for is good longevity. Ideally, something that can give me around 46 hours or more of decent performance. And i want to receive compliment from people.I don&#39;t mind if the fragrance costs a little more within my 1,000 budget if the performance is worth it. I know there are people here who buy very expensive perfumes and have huge collections, but I&#39;m also hoping to hear from people who have a smaller budget but have tried a lot of fragrances and know what actually performs well at this price. So, if you had to tell me to blind buy just ONE perfume under 1,000, which one would you recommend? &#32; submitted by &#32; /u/Vegetable_Peace7432 [link] &#32; [comments]",
+      "primary_theme": "Intent/bookmarking",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-21T04:31:22.000Z",
+      "text": "Myntra Shopping & Wishlist Habits Quick Survey form Hey! I&#39;m working on a research project on online fashion shopping (Myntra + Wishlist habits) and would really appreciate your help! It&#39;s a quick survey takes only 5-8 mins. No right/wrong answers, just your honest experience Would mean a lot if you could fill it out and maybe share with 1-2 friends too! Thanks so much &#32; submitted by &#32; /u/Electrical-Sea2733 [link] &#32; [comments]",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "Good platform to shop freely. Nice products",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-29T15:33:41",
+      "text": "Delivery does not come on time, the delivery in-charge has a very poor system, do not order from this app, it is a waste of time",
+      "primary_theme": "Availability",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "Delivery does not come on time, the delivery in-charge has a very poor system"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.225129",
+      "text": "Worst App. I ordered the same product from Myntra 34 times, but every time I received the wrong product instead of what I actually ordered. Even after returning and reordering, the same issue kept happening. Very disappointing first experience with Myntra. I would personally prefer Amazon, as their service and customer support are much better",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "I ordered the same product ... every time I received the wrong product"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T08:53:32.000Z",
+      "text": "/u/Obvious-manmani on A site that has no return policy on bras and panties. Same here, especially when you are in executive dysfunctional state, buying offline or doing laundry both are hassle.. I have ordered jockey UW from Amazon now and the package came open.. same happened when my husband ordered his.. although everytime it looked new only",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "no return policy on bras and panties"
+    },
+    {
+      "source": "YouTube",
+      "date": "3 minutes ago",
+      "text": "Hiii? Is anyone seeing this on September 4th? This just popped up out of nowhere on my \"For You\" pageso random, hahaha.",
+      "primary_theme": "Forgetting/distraction",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-03T10:08:57",
+      "text": "Best experience of using this app",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "4 hours ago",
+      "text": "Who's here in 11 September 2026 in Despacito",
+      "primary_theme": "Forgetting/distraction",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-30T10:51:59",
+      "text": "Quality of product is always good",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "7 years ago",
+      "text": "Why do I live in Arkansas",
+      "primary_theme": "Forgetting/distraction",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.043301",
+      "text": "Excellent Quality. Really happy with the product. The quality is excellent, the fit is comfortable, and it looks exactly like the pictures. Great value for money. Highly recommended!",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "2 hours ago",
+      "text": "Is someone here on 4 September 2026 ??",
+      "primary_theme": "Forgetting/distraction",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-31T12:58:42",
+      "text": "this is the best app to get best product in affordable price.its very useful & customer friendly. I also like the fast delivery services.",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-31T14:46:54",
+      "text": "Easy to use and best quality in clothes",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.609483",
+      "text": "Good product Comfort level also very nice. Good service with genuine products",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.609483",
+      "text": "worst. ordered a body mist. came empty and damaged. the box was soaked in it. contacted customer services multiple times and all they could say was the product left our facility completely intact and whatever happens in transport is not our responsibility. the description of the product clearly said 14 days exchange with no hassle and i kept contacting but they kept giving me the same stupid excuse. Disgusting service and disgusting people. didnt even refund my money. so many bad reviews and yet the app faces no action. scamming customers is apparently legal then also let me mention. they dont allow bad reviews on their products. tried to post a review there so other people dont get scammed and my tra just straight up refused to even accept my review. scamming people and making money out of it is legit disgusting",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "came empty and damaged"
+    },
+    {
+      "source": "YouTube",
+      "date": "10 years ago",
+      "text": "Year bring him back right now!!!!!!!!!!!!!!!!!!! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "primary_theme": "Forgetting/distraction",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.229388",
+      "text": "Myntra is currently sending the wrong product with almost every order.. Nowadays, Myntra is not sending the products that I actually order. They keep sending different products, and the quality is also very poor. Whatever I order on Myntra, I receive a completely different product. This has become a very disappointing experience",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "Myntra is currently sending the wrong product with almost every order"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.230563",
+      "text": "Application work smoothly. Excellent options variations of choices",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "18 hours ago",
+      "text": "4.4mil comments if you can find me, congratulations",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-16T12:19:06.000Z",
+      "text": "/u/nivid1988 on Myntra Sales are just for namesake and none of the good items got any discounts whatsoever Yes the only thing I recently bought from there was k18 mask 50ml. Esp with platform fee of 23/- even if I sometimes see a nail paint or lip colour i just don&#39;t buy it. When Myntra didn&#39;t have platform fee, i used to randomly buy stuffs around 100/- just coz it looked cute/interesting",
+      "primary_theme": "Price",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "none of the good items got any discounts whatsoever"
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-01T15:01:17",
+      "text": "love this app and his rating rewards",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": "love this app and his rating rewards"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "The quick turn around on orders is amazing. Good stuff",
+      "primary_theme": "Availability",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": "quick turn around on orders is amazing"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-15T18:29:53.000Z",
+      "text": "/u/Hot-Employee-2173 on Myntra Sales are just for namesake and none of the good items got any discounts whatsoever i agree but recently i got a really good deal on ponds facewash got the bigger packs X2 at 300 smth",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": "got a really good deal on ponds facewash"
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-01T15:11:24",
+      "text": "Myntra is a best shopping app . product quality is too good .fast sevice ,easy return facilities. m very happy with myntra.",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": "product quality is too good"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-21T04:30:07.000Z",
+      "text": "How much does myntra sucks and does it suck in these areas too? 5 minutes survey Hey! I&#39;m working on a research project on online fashion shopping (Myntra + Wishlist habits) and would really appreciate your help! It&#39;s a quick survey takes only 5-8 mins. No right/wrong answers, just your honest experience Would mean a lot if you could fill it out and maybe share with 1-2 friends too! Thanks so much &#32; submitted by &#32; /u/Electrical-Sea2733 [link] &#32; [comments]",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "negative",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.043301",
+      "text": "Rings was good in affordable price. I received 24 rings and all are very beautiful",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": "affordable price"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.043301",
+      "text": "Myntra lover. I love the myntra professional bocz its genuine, trendy",
+      "primary_theme": "Social validation",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": "Myntra lover"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T14:00:31.000Z",
+      "text": "My go-to tops this summer Sleeveless tops are always a saviour in this scorching hot summer, sharing a few of my current summer favourites. They are from Newme, Bonkers, Myntra, and an offline market, respectively. &#32; submitted by &#32; /u/Fun-Staff-5513 [link] &#32; [comments]",
+      "primary_theme": "Styling/occasion",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": "My go-to tops this summer"
+    },
+    {
+      "source": "YouTube",
+      "date": "11 years ago",
+      "text": "Oh look, when =3 was good :(",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-26T18:49:57.000Z",
+      "text": "/u/Awkward-Zucchini72 on How I finally stopped returning half my Myntra orders Checking fabric composition has really helped me reduce my purchases in general and Im so happy. If you focus on it you are really able to see how these brands are basically selling us cheap plastic at such high price points! Not to mention how much money Ive saved this way.",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": "Checking fabric composition has really helped me reduce my purchases"
+    },
+    {
+      "source": "YouTube",
+      "date": "10 years ago",
+      "text": "+Austin Logic what a cutie, huh",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "12 years ago",
+      "text": "Ive never seen a kangaroo that buff jeez",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T14:00:39.000Z",
+      "text": "[SELLING] Louis Philippe Men's 3 piece suit - Size : 38 - Rs. 5,999 - Louis Philippe Men&#39;s three (3) piece suit - Navy blue colour - Checks Pattern - Size : 38 - Brand new, unused, all factory tags intact, pant is full length, not even cut - Selling because it does not fit me, and return window of myntra got over. - Price : Rs. 5999 (MRP : Rs. 15,800) - Location : Kolkata, West Bengal (Can ship pan India) &#32; submitted by &#32; /u/Free-Air-8507 [link] &#32; [comments]",
+      "primary_theme": "Fit/size",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "does not fit me"
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-02T23:21:27",
+      "text": "very poor service. I received the order and the item is missing. They are not providing a solution for the query since last week.",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "item is missing"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.225129",
+      "text": "Received very nice shoes. Loved it myntr",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": "very nice shoes"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-31T14:55:45.000Z",
+      "text": "/u/Vegetable_Peace7432 on If you had to recommend ONE perfume under 1,000 for a blind buy, which one would you pick ? Neck black by patel its best. Mood accha ho jata hain. Hat pe lagake din bhar smell krta rehta hu Main",
+      "primary_theme": "Alternatives",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": "recommend ONE perfume under 1,000"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.230563",
+      "text": "After order options. After order I wanted to change my address immediately but u didnt allow so I had to cancel my order, it must be possible as I selected wrong address previous by mistake",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "didnt allow so I had to cancel my order"
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-30T08:43:04",
+      "text": "cheap price good quality and delivery and response very fast",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": "cheap price"
+    },
+    {
+      "source": "YouTube",
+      "date": "9 years ago",
+      "text": "+Benjamin Plays Stuff March 10, 2017",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "11 years ago",
+      "text": "kangaroos tend to flex when females are around",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-31T08:03:38",
+      "text": "very much amount deducted when return",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "amount deducted when return"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-21T10:34:02.000Z",
+      "text": "/u/UnderstandingOk1505 on Myntra Shopping & Wishlist Habits Quick Survey form I haven&#39;t used myntra before. Am I eligible?",
+      "primary_theme": "Intent/bookmarking",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "10 hours ago",
+      "text": "0:26 When me preguntan cual es mi animatronico favorito de fnaf",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-03T16:07:51",
+      "text": "good app original product we get in myntra",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-02T05:14:42.000Z",
+      "text": "H&M regular fit T-shirt &#32; submitted by &#32; /u/Emotional_Rip_2787 [link] &#32; [comments]",
+      "primary_theme": "Fit/size",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-15T16:40:35.000Z",
+      "text": "/u/kavveeeiii on Myntra Sales are just for namesake and none of the good items got any discounts whatsoever True .. they are wasting our time and energy over their so called sales",
+      "primary_theme": "Price",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "none of the good items got any discounts whatsoever"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-02T05:15:41.000Z",
+      "text": "H&M loose fit sweatshirt &#32; submitted by &#32; /u/Emotional_Rip_2787 [link] &#32; [comments]",
+      "primary_theme": "Fit/size",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-16T10:19:45.000Z",
+      "text": "/u/Objective-Ad759 on Myntra Sales are just for namesake and none of the good items got any discounts whatsoever True they&#39;ve stopped giving discounts, it&#39;s been a long time since I purchased anything from myntra",
+      "primary_theme": "Price",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "they've stopped giving discounts"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.225129",
+      "text": "Amazing experience. Thanku mytra for always making m happy with fully satisfied products",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-16T02:12:24.000Z",
+      "text": "/u/Lowkey_Anxious on Myntra Sales are just for namesake and none of the good items got any discounts whatsoever Omg! Your pincode, too? To which pincode are they delivering then? To the moon, i guess",
+      "primary_theme": "Availability",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "To which pincode are they delivering then?"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-26T12:38:22.000Z",
+      "text": "/u/Commercial-Part9978 on How I finally stopped returning half my Myntra orders girl the measurement notes app thing is the real secret weapon. started doing that a couple years ago and it&#39;s wild how much of a difference it makes when you actually check the size chart instead of just guessing &quot;eh i&#39;m usually a medium&quot; also hard agree on the fabric composition tip, nothing worse than something looking like soft cotton in the photo and then it shows up feeling like a plastic bag",
+      "primary_theme": "Fit/size",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.609483",
+      "text": "Myntra. Ive had a great experience shopping on Myntra. The app is user-friendly, offers a wide range of brands and styles, and frequently has good discounts. Delivery is usually on time, and the return process is smooth and hassle-free. The product quality matches the descriptions in most cases. Overall, its a reliable platform for fashion and lifestyle shopping",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T07:07:20.000Z",
+      "text": "/u/SensitiveMac on A site that has no return policy on bras and panties. Its doesnt work that way. Undergarments should not be returned. Its a hygiene issue. Yes it is annoying, so maybe buy offline.",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "no return policy on bras and panties"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T04:27:31.000Z",
+      "text": "/u/Sufficient-Cry7046 on We actually have consumers rights and it works Other than Amazon, pretty much every shopping platform lacks a dedicated delivery partner or customer care system, which is exactly why we can&#39;t hold them accountable Sometimes we get a positive response, sometimes we don&#39;t so it&#39;s completely unreliable!",
+      "primary_theme": "Availability",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "lacks a dedicated delivery partner or customer care system"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T08:16:47.000Z",
+      "text": "/u/Ambitious_Motor_5689 on We actually have consumers rights and it works Maybe it was fate?",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.225129",
+      "text": "Myntra shopping. I really liked doing shopping at Myntra one place for all shopping items",
+      "primary_theme": "Intent/bookmarking",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T07:18:17.000Z",
+      "text": "/u/tomatowentpoTAto on A site that has no return policy on bras and panties. But offline is such a hassle. I have adhd so i really forget/procrastinate to buy essentials until last moment when I have to, amazon can be really convenient in this case.",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "no return policy on bras and panties"
+    },
+    {
+      "source": "YouTube",
+      "date": "12 hours ago",
+      "text": "The whole world knows this video lol",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.229388",
+      "text": "Best shopping app. I only do shopping from myntra.this app never disappoints..it is highly trusted for me",
+      "primary_theme": "Intent/bookmarking",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-29T19:58:12",
+      "text": "I got the nice products here",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "10 years ago",
+      "text": "He has pretty much a lot of weed",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-29T11:06:21",
+      "text": "always good experience of shoping on Myntra",
+      "primary_theme": "Intent/bookmarking",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "11 years ago",
+      "text": "I have had a pet squirell because it was abandoned as a baby and as they are classed as vermin the RSPCA wouldnt take it in. Our squiz 'cyril' also liked to bury nuts just everywhere! One day even in my stepdads armpits..",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "11 years ago",
+      "text": "Im i The only one that dose a ray William maraton?",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "12 years ago",
+      "text": "Waiting for someone to come and say \"I do meth and I'm offended\".",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T05:26:07.000Z",
+      "text": "H&M pure cotton regular fit round neck T-shirt &#32; submitted by &#32; /u/Emotional_Rip_2787 [link] &#32; [comments]",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-23T13:47:38.000Z",
+      "text": "/u/BaseInevitable7781 on Casio Enticer A2549 (MTP-B190RGL-9BVDF)",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T10:54:05.000Z",
+      "text": "/u/tomatowentpoTAto on A site that has no return policy on bras and panties. Man why are y&#39;all being such aunties and making assumptions about my life. This is so annoying, i thought this place would understand my problem, whatever. What the heck did I say that is getting y&#39;all so weirded out?",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "no return policy on bras and panties"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.229388",
+      "text": "Excellent !. Very soft n feels great against d skin. Loved it",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T10:59:21.000Z",
+      "text": "/u/Anxious_Potato79 on A site that has no return policy on bras and panties. I think that is what OP is also saying. She doesn&#39;t want the products somebody&#39;s else tried before.",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "no return policy on bras and panties"
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-30T19:34:36",
+      "text": "Bought many products through out the years,great customer service in all aspects.",
+      "primary_theme": "Intent/bookmarking",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-01T18:41:40",
+      "text": "Good price and Nice quality in myntra",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "Drop bold. Quality bahut achi hai really shoes bhi bahut ache hai",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.229388",
+      "text": "Good. Best thing is cash on delivery",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "21 hours ago",
+      "text": "Baby shark by pinkfox has more billions of subs",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T08:45:40.000Z",
+      "text": "/u/Pumpkinlattemeow on A site that has no return policy on bras and panties. Make an alarm or Google event out of it on the day ,you are supposed to go out. Buy it in bulk (i.e, 3 boxes of pack of 3 underwear) . You will be sorted for a while that way.",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "no return policy on bras and panties"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-27T14:19:37.000Z",
+      "text": "/u/AutoModerator on Free Myntra Myncash Shopping Rakhi Offer Join or tg channel for loots everyday I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "21 hours ago",
+      "text": "there will be no problem for you",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-03T13:49:20.000Z",
+      "text": "Myntra suspended my account after 10 returns were picked up ~7,000 refund stuck. What should I do? &#32; submitted by &#32; /u/No-Fun7828 [link] &#32; [comments]",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "refund stuck"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T14:00:40.000Z",
+      "text": "/u/AutoModerator on [SELLING] Louis Philippe Men's 3 piece suit - Size : 38 - Rs. 5,999 (Thank you for posting, please ensure you are following all the rules of this sub, read the pinned post if in doubt, report any unwanted comments/harassments for mod actions. This message is stickied, if selling multiple items, reply to this comment to update about availability of products. We allow a maximum of 2 posts every 24 hours to avoid flooding the sub. Not reading the sub rules is not an excuse to avoid mod actions, it takes a few minutes to read the sub rules and makes everyone&#39;s experience super smooth. Business users are requested to post on our sub r/Indiabizcorner for more exposure) Helpful Links: * How to leave feedback * See if this user&#39;s feedback history and if they&#39;re listed as a scammer * If you believe you have been scammed, please fill out this form. I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-03T16:05:04",
+      "text": "I am myntra user since 2014,but now myntra miserably fails to provide customer support sometimes it feels like we are getting scammed, but sometimes the problem solved quickly. this is my 5 th review as recently I am experiencing a problematic issue that myntra Dont have good control over its logistics department, i returned a trolley bag for which they gave me pickup waiting period of 7 days but it's been 3 months my pickup is not done yet, despite of several emails and even complaint to NCH.",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "fails to provide customer support"
+    },
+    {
+      "source": "YouTube",
+      "date": "9 years ago",
+      "text": "i hide my nuts in the laundry basket 2",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.229388",
+      "text": "One stop solution. Amazing app where u find so many different varieties of clothes and super convenient be it size exchange or returning the item. They do not ask any questions and do the needful immediately",
+      "primary_theme": "Returns",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "31 minutes ago",
+      "text": "How did you do this Fonsi????????",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-02T12:13:20",
+      "text": "quality is tooo good of myntra products",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-02T13:08:39",
+      "text": "nice shopping app gives good offers",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.043301",
+      "text": "Myntra is best. Gd delivery services .. genuine products ..i jst love myntra",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T10:38:41.000Z",
+      "text": "/u/tomatowentpoTAto on A site that has no return policy on bras and panties. I literally order most things online fyi because it&#39;s out of site and mind for me and I need to survive so I do what helps me get by. This works for now. And that&#39;s what I asked for, a site with no return policy that has jockey products and that have discounts on them.",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "no return policy"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-23T08:07:14.000Z",
+      "text": "Casio Enticer A2549 (MTP-B190RGL-9BVDF) My first of many Casio!! Got myself this beauty! Was in my wishlist for a while, finally made it to my desk. The moment I opened the box my gf just claimed it as hers but I&#39;ll keep stealing it from her once in a while Next Casio EFK-200D-4A(Maroon)!! 1st pic - Her wrist 2nd pic - Mine [Myntra link]( &#32; submitted by &#32; /u/BaseInevitable7781 [link] &#32; [comments]",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-03T10:46:42",
+      "text": "this is a scammer app course before ordering they show me less time but after order they show show me a huge time",
+      "primary_theme": "Availability",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "show me less time but after order they show me a huge time"
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-28T15:35:14",
+      "text": "very good app nice product are dilevered",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-27T14:19:36.000Z",
+      "text": "Free Myntra Myncash Shopping Rakhi Offer Free Myntra Shopping Rakhi Offer Many Accounts Got Free 200 Myntra Cash Check in Your WhatsApp Enjoy Your Free Shopping Comment if you have received free myncash. &#32; submitted by &#32; /u/b__chyducare [link] &#32; [comments]",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "59 minutes ago",
+      "text": "cant belive its the most liked youtube video",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "12 years ago",
+      "text": "Welcome to Australia!! That kangaroo is normal here :P",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "11 years ago",
+      "text": "lol do you even fuck bro hahaha",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "negative",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.225129",
+      "text": "Review. Myntra is a good app that delivers high quality products",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "11 years ago",
+      "text": "Same I hate it so much. Aussies for life bro",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "negative",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T11:28:42.000Z",
+      "text": "Where do women buy good oversized T-shirts? Indian women, where are you buying your oversized T-shirts from? Im looking for comfortable, good-quality oversized tees that I can wear casually, to the gym sometimes, or with pants when Im going out. I know the usual Myntra, AJIO, H&amp;M, etc., but I feel like the same stuff is everywhere. Ive lost count of how many times Ive gone out and seen someone wearing the exact same thing Im wearing Im not looking for anything luxury or super expensive, but also not the cheapest options. Just good quality, mid-range brands/websites with slightly more unique designs. Would love some recommendations beyond the usual shopping apps! &#32; submitted by &#32; /u/sweetwhisp [link] &#32; [comments]",
+      "primary_theme": "Styling/occasion",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-02T06:27:25",
+      "text": "dont download meesho app because they are fraud and making you fool by giving you defective item and dont take it back",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "dont download meesho app because they are fraud and making you fool by giving you defective item and dont take it back"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "Good for shopping app. Good for shopping app",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T07:56:20.000Z",
+      "text": "/u/Child_of_destiny99 on A site that has no return policy on bras and panties. I have adhd too, I get that buying things offline can be a hassle especially if you don&#39;t drive/have a vehicle BUT undergarments cannot be compromised with. There are lots of things which you can&#39;t get offline and have to go to the store for. Shoes if you have flatfeet, clothes if you&#39;re not sure what size fits you, heck makeup until you know your shades. I do not believe underwear should come with a return policy AT ALL.",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "no return policy on bras and panties"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.609483",
+      "text": "Great perfumes. I have been using em5 perfumes and they are awesome",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-30T18:13:46",
+      "text": "I m really happy with my myntra experience",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "11 years ago",
+      "text": "Dude, Arkansas Game and Fish are CRAZY! Seriously... I grew up there...",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-01T12:00:27.000Z",
+      "text": "One Plus nord buds Bluetooth earbuds &#32; submitted by &#32; /u/Emotional_Rip_2787 [link] &#32; [comments]",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "6 minutes ago",
+      "text": "Hello everyone, did you also stop by this video this September?",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "22 hours ago",
+      "text": "It's 1 st song ever cross 1000 cr views",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T11:28:42.000Z",
+      "text": "/u/AutoModerator on Where do women buy good oversized T-shirts? For style advice, outfit help, item finding, store reviews (websites, apps, Instagram shops), and more. - &#x1f4ac; Join IFA Discord Here I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-02T06:36:26.000Z",
+      "text": "2,700 price gap on Myntra is Flashstar Commerce legit, or should I stick with Adidas India? &#32; submitted by &#32; /u/ImpressivePickle5273 [link] &#32; [comments]",
+      "primary_theme": "Comparison",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.043301",
+      "text": "Excellent product thanks myntra. Very good online shopping experience with myntra",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "10 years ago",
+      "text": "U know then fucks I have to give well buried em in the back yard. Lol",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T13:45:32.000Z",
+      "text": "/u/AutoModerator on [SELL] Louis Philippe Men's 3 piece suit - Size : 38 - Rs. 5,999 Please transact carefully on r/IndiaBuySell. Verify products before payment Avoid suspicious or rushed deals Check user history and timestamps Meet in public places for local deals I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.043301",
+      "text": "Reliable. Good and reliable online shopping app",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "Myntra. Excellent one stop solution for all or needs",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-02T09:03:59",
+      "text": "best app for shopping.. loving it",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T14:07:00.000Z",
+      "text": "/u/Fun-Staff-5513 on My go-to tops this summer Thanks sm",
+      "primary_theme": "Styling/occasion",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.043301",
+      "text": "Kurta shopping. Amazing, right options to select items easily",
+      "primary_theme": "Availability",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-26T14:28:22.000Z",
+      "text": "/u/Fearless_Reality5950 on How I finally stopped returning half my Myntra orders Quality was goood. But problem was sizing otherwise I would have never returned it. So buy if only sure about their size chart. Myntra size chart is incorrect",
+      "primary_theme": "Fit/size",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "Myntra size chart is incorrect"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-26T16:07:57.000Z",
+      "text": "/u/mirangelblogger on How I finally stopped returning half my Myntra orders I also pick only clothes with return policy. Next is checking customer photos wearing the dress because I need to see how it looks on actual bodies rather than mannequins or models.",
+      "primary_theme": "Reviews/information",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-03T01:23:28",
+      "text": "yes it does seem pricy . but just hunt everything you'll get the best things you like even under 200 . that my experience ngl",
+      "primary_theme": "Price",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "9 years ago",
+      "text": "I always hide my nuts in the laundry basket",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "Worst app i have ever seen. I ordered a jean on myntra but i recevied a wrong product .then i have raised a return request the seller accepted the return request but myntra is not confirming the return from last 1 month My order was return approved on 26th july but today is 2nd sep",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "Myntra is not confirming the return from last 1 month"
+    },
+    {
+      "source": "YouTube",
+      "date": "13 hours ago",
+      "text": "Who will be here in 2026?Quines estarn aqu en 2026? 2026Qui est l en 2026",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.230563",
+      "text": "Trusted shopping App. Best online shopping experience",
+      "primary_theme": "Social validation",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-30T09:44:02",
+      "text": "They cancel order by themselves on the day of delivery",
+      "primary_theme": "Availability",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "They cancel order by themselves on the day of delivery"
+    },
+    {
+      "source": "YouTube",
+      "date": "4 minutes ago",
+      "text": "YouTube only recommended this to me now in 2026 lol",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.225129",
+      "text": "Quality products. Good quality and assured delivery",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-01T08:15:41",
+      "text": "superb app myntra i have used long time myntra",
+      "primary_theme": "Intent/bookmarking",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-02T11:15:48",
+      "text": "one of the best online shopping apps! The app is fast, easy to use, and offers a huge collection of fashion, footwear, beauty, and lifestyle products from top brands. The quality of products is excellent, delivery is usually quick, and returns/exchanges are smooth and hassle-free. I also love the regular discounts, coupons, and sales that help save money. Overall, a reliable shopping app with a great user.... tnx lot",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.742932",
+      "text": "Fabulous. Im always satisfied for ur product",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T14:04:47.000Z",
+      "text": "/u/Fun-Staff-5513 on My go-to tops this summer All natural",
+      "primary_theme": "Styling/occasion",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "7 years ago",
+      "text": "\"Do you even fuck bro? \"",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "10 years ago",
+      "text": "That cop vid was gameplay from battlefield hard line",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "11 years ago",
+      "text": "isn't it physically impossible for a kangaroo to walk on its hind legs..",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-01T09:43:12",
+      "text": "Best varieties and best price with best service.",
+      "primary_theme": "Price",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "11 years ago",
+      "text": "NO YOU DONT,.... YOU DO NOT APPROVE THIS MESSAGE, AND YOU NEVER WILL. btw i need to hide my nuts",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "negative",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.225129",
+      "text": "The sweater. The softness and comfort is very relaxing",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-02T12:31:54",
+      "text": "clothes are not much quality which i have ordered but return response is much very good",
+      "primary_theme": "Quality/material",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "clothes are not much quality which i have ordered"
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-03T15:13:43",
+      "text": "they should give the delivery guy number early to easy time delivery",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "they should give the delivery guy number early to easy time delivery"
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-03T16:20:21",
+      "text": "is nicely app in odring to multiple shoes, sneakers.cloths etc.. rating in my side to 4.5/5.",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-01T19:17:02",
+      "text": "it's very fancy way of shopping",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T04:21:37.000Z",
+      "text": "/u/AutoModerator on We actually have consumers rights and it works Dont forget to join our TamilYapping Discord: Missing political memes and satire? Join r/ArasiyalCirclejerk If this post violates rules or doesn&#39;t fit here, contact mods: I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-26T12:46:26.000Z",
+      "text": "/u/Fearless_Reality5950 on How I finally stopped returning half my Myntra orders Recently tried bebe brand on Myntra. Size chart is so incorrect. They sent 2 size small than my actual measurements.",
+      "primary_theme": "Fit/size",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "Size chart is so incorrect. They sent 2 size small than my actual measurements."
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-29T08:38:11",
+      "text": "This app is really amazing and easy to use. The interface is simple, smooth, and user-friendly. Everything works properly without any major issues. I really like the features and overall experience. The app is useful, fast, and reliable. Definitely worth trying and highly recommended!",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-15T14:17:15.000Z",
+      "text": "/u/Sea-Nerve-5756 on Myntra Sales are just for namesake and none of the good items got any discounts whatsoever Haven&#39;t bought from Myntra since last eors December Ajio is much better..",
+      "primary_theme": "Price",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "none of the good items got any discounts whatsoever"
+    },
+    {
+      "source": "YouTube",
+      "date": "12 years ago",
+      "text": "I Had my first love, But you will be my last.... <3333",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "11 years ago",
+      "text": "So Ray is a crazy cat bitch.",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "19 hours ago",
+      "text": "Anyone in 2026 Everyone in 2026",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.225129",
+      "text": "Bad delivery experience. Not happy with order cancellation",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "Bad delivery experience. Not happy with order cancellation"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T05:18:20.000Z",
+      "text": "/u/native_to_ on We actually have consumers rights and it works But still Amazon is very bad I dont think so they have open box delivery like flipkart Heard some incidents where sellers scammed the customers and Amazon was not giving proper response",
+      "primary_theme": "Comparison",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-04T05:58:28.000Z",
+      "text": "/u/charteredguy on We actually have consumers rights and it works It&#39;s always better to check for seller bg irrespective of the platform",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:22.225129",
+      "text": "Nice n wide collection. Nice and wide collection loved to shopping in Myntra",
+      "primary_theme": "Reviews/information",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-01T17:10:47",
+      "text": "Feedback Regarding Platform Fee Dear Myntra Team, I have been a regular Myntra customer and really appreciate the variety, discounts and shopping experience on your platform. However, the additional platform fee on every order feels unnecessary, especially when customers are already paying for the products and, in some cases, delivery charges. I request Myntra to completely remove the platform fee, or at least reduce it to a nominal amount such as 510 per order. thank you",
+      "primary_theme": "Price",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "additional platform fee on every order feels unnecessary"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:24.609483",
+      "text": "Customer chat. The file upload option in customer chat doesnt seems to be working. Tried it for an hour today",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "file upload option in customer chat doesnt seems to be working"
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-02T16:00:57",
+      "text": "it's a great platform for shopping better than flipkart for sure",
+      "primary_theme": "Comparison",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "10 hours ago",
+      "text": "the first one is baby shark",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "12 years ago",
+      "text": "Fish police fish police does what ever fish police deos",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-26T17:37:04.000Z",
+      "text": "/u/Fearless_Reality5950 on How I finally stopped returning half my Myntra orders Yes I ordered for around 2500 but it&#39;s trending top now a days so I wanted it. But disappointed by size",
+      "primary_theme": "Fit/size",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "disappointed by size"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-09-02T05:15:55.000Z",
+      "text": "/u/Emotional_Rip_2787 on H&M loose fit sweatshirt link",
+      "primary_theme": "Intent/bookmarking",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-17T03:41:33.000Z",
+      "text": "/u/Rejuvenate_2021 on Myntra Sales are just for namesake and none of the good items got any discounts whatsoever I was seeing this many times. One day its allowing, I add to cart and then next day its undeliverable. Then I did a test with several cities, and it show delivery to one not that rest. Weird shit.",
+      "primary_theme": "Price",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "none of the good items got any discounts whatsoever"
+    },
+    {
+      "source": "Reddit",
+      "date": "2026-08-21T04:32:33.000Z",
+      "text": "Myntra Shopping & Wishlist Habits Quick Survey form &#32; submitted by &#32; /u/Electrical-Sea2733 [link] &#32; [comments]",
+      "primary_theme": "Intent/bookmarking",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.230563",
+      "text": "Myntra. Each and every product id paisa vasool 100 percent genuine app",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-31T08:29:36",
+      "text": "great and good product are sold here",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.230563",
+      "text": "Nice product. Colour same as shown, nice comfy fabric, like the product",
+      "primary_theme": "Quality/material",
+      "sentiment": "positive",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "7 minutes ago",
+      "text": "Alguien que hable espaol que tambien se lo haya recomendado el 4 de septiembre?",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "YouTube",
+      "date": "9 years ago",
+      "text": "Who is here watching this in 2017?",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-09-01T11:58:57",
+      "text": "update your app features, it is not showing the delivery agent contact details to contact him. It totally wastes my time awaiting him.",
+      "primary_theme": "Availability",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "not showing the delivery agent contact details"
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.229388",
+      "text": "Worst customer service. Its has the worst customer service of all other apps. No one should not use this app. I ordered 2 track pants and I tried to return one and exchange another, its been 2 weeks and they are neither exchanging not picking up my order and when I contact customer service, they are busy and not even contacting back to know whats the issue. I would have given negative rating but that feature is not available. Once again Im saying, never ever use Myntra app. Its a waste of time and money",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "tried to return one and exchange another, its been 2 weeks"
+    },
+    {
+      "source": "Google Play",
+      "date": "2026-08-30T17:21:33",
+      "text": "SCAMSTERS and Fraudster ..collided with EKART Logistics Team and Marking Prepaid Orders as Delivered without delivering to customers..If we ask proof they are telling Internal report we can't share..",
+      "primary_theme": "Availability",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "Marking Prepaid Orders as Delivered without delivering to customers"
+    },
+    {
+      "source": "YouTube",
+      "date": "9 years ago",
+      "text": "\"Bury a nut inside a dogs fur\"",
+      "primary_theme": "Other emergent themes",
+      "sentiment": "neutral",
+      "friction_present": false,
+      "verbatim_quote": ""
+    },
+    {
+      "source": "App Store",
+      "date": "2026-09-04T14:04:25.230563",
+      "text": "myntra is doing fraud. writing this with so much frustration i have order a dress well known brand Mango same day i received same day i initiated return because dress is completely different but same brand n also comes with seal tagg intact i connect with cc they suggest that initiate the return but after initiating return the cc said it could not be done because we cross check we have sent the correct dress but what about this dress that i have received such a bad experience i want solution myntra is huge platform giving such a disgusting service to their customer if i dont get any solution i will file a complaint against it",
+      "primary_theme": "Returns",
+      "sentiment": "negative",
+      "friction_present": true,
+      "verbatim_quote": "initiated return because dress is completely different"
+    }
+  ]
+}

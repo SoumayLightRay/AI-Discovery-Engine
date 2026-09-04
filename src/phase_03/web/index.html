@@ -676,6 +676,243 @@
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+
+        /* ─── Share Modal ─── */
+        .share-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+        .share-overlay.active { display: flex; }
+        .share-modal {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-accent);
+            border-radius: 16px;
+            padding: 28px;
+            width: 420px;
+            max-width: 90vw;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s ease;
+        }
+        .share-modal h3 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+        .share-modal .share-sub {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .share-option {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .share-option:hover {
+            border-color: var(--accent-purple);
+            background: var(--bg-card-hover);
+            transform: translateX(4px);
+        }
+        .share-option .share-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .share-icon.gmail { background: rgba(234,67,53,0.15); }
+        .share-icon.copy { background: rgba(139,92,246,0.15); }
+        .share-icon.whatsapp { background: rgba(37,211,102,0.15); }
+        .share-icon.gdoc { background: rgba(66,133,244,0.15); }
+        .share-option .share-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .share-option .share-desc {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+        .share-close {
+            margin-top: 12px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+        }
+        .share-close:hover { border-color: var(--accent-purple); color: var(--text-primary); }
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--accent-green);
+            color: #0F1117;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2000;
+            transition: transform 0.4s ease;
+            pointer-events: none;
+        }
+        .toast.show { transform: translateX(-50%) translateY(0); }
+
+        /* ─── Mobile Chat Toggle FAB ─── */
+        .chat-fab {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--gradient-purple);
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 500;
+            box-shadow: 0 4px 20px rgba(139,92,246,0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .chat-fab:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(139,92,246,0.5); }
+
+        /* ─── Responsive: Tablet (≤1024px) ─── */
+        @media (max-width: 1024px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .chat-panel {
+                display: none;
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                border-radius: 0;
+                height: 100vh;
+                z-index: 600;
+                background: var(--bg-secondary);
+            }
+            .chat-panel.mobile-open {
+                display: flex;
+            }
+            .chat-fab {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .topbar-stats { gap: 12px; }
+            .bar-row {
+                grid-template-columns: 20px 140px 1fr 50px 80px;
+            }
+        }
+
+        /* ─── Responsive: Mobile (≤768px) ─── */
+        @media (max-width: 768px) {
+            .topbar {
+                flex-direction: column;
+                gap: 8px;
+                padding: 10px 16px;
+            }
+            .topbar-stats {
+                width: 100%;
+                justify-content: space-between;
+                overflow-x: auto;
+            }
+            .tab-nav {
+                padding: 0 12px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .tab {
+                padding: 10px 14px;
+                font-size: 0.7rem;
+                white-space: nowrap;
+            }
+            .page-header {
+                padding: 16px 16px 12px;
+            }
+            .page-title {
+                font-size: 1.2rem;
+            }
+            .main-grid {
+                padding: 0 16px 16px;
+            }
+            .metrics-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .metric-card {
+                padding: 14px;
+            }
+            .metric-value {
+                font-size: 1.6rem;
+            }
+            .bar-row {
+                grid-template-columns: 20px 1fr 60px;
+                gap: 6px;
+            }
+            .bar-track, .bar-severity {
+                display: none;
+            }
+            .opp-cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .bottom-bar {
+                flex-direction: column;
+                gap: 12px;
+                margin: 0 16px 16px;
+                padding: 14px 16px;
+                text-align: center;
+            }
+            .bottom-bar-actions {
+                width: 100%;
+                justify-content: center;
+            }
+            .status-footer {
+                flex-direction: column;
+                gap: 4px;
+                text-align: center;
+                padding: 10px 16px;
+            }
+            .share-modal {
+                margin: 16px;
+            }
+        }
+
+        /* ─── Responsive: Small Phone (≤480px) ─── */
+        @media (max-width: 480px) {
+            .version-badge { display: none; }
+            .topbar-stat .label { display: none; }
+            .page-subtitle { display: none; }
+            .chart-filters { display: none; }
+            .bar-row {
+                grid-template-columns: 20px 1fr 50px;
+            }
+            .bar-label { font-size: 0.7rem; }
+            .opp-card { padding: 14px; }
+            .opp-card-problem { font-size: 0.75rem; }
+            .btn { padding: 8px 12px; font-size: 0.7rem; }
+        }
     </style>
 </head>
 <body>
@@ -821,8 +1058,8 @@
         Telemetry confirms that resolving Quality Doubt (7.7%) and Return Anxiety (3.6%) unlock an estimated <span class="highlight">+$420K monthly GMV</span> in recovered conversions.
     </div>
     <div class="bottom-bar-actions">
-        <button class="btn btn-outline">View All 1,367 Raw Reviews</button>
-        <button class="btn btn-primary">Export Report</button>
+        <button class="btn btn-outline" onclick="window.open('https://github.com/SoumayLightRay/AI-Discovery-Engine','_blank')">View All 1,367 Raw Reviews</button>
+        <button class="btn btn-primary" onclick="openShareModal()">📤 Share Report</button>
     </div>
 </div>
 
@@ -1034,9 +1271,122 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
+// ─── Share & Gmail Logic ───
+function openShareModal() {
+    document.getElementById('share-overlay').classList.add('active');
+}
+function closeShareModal() {
+    document.getElementById('share-overlay').classList.remove('active');
+}
+function shareViaGmail() {
+    const subject = encodeURIComponent('AI Discovery Engine — Friction Analysis Report');
+    const body = encodeURIComponent(
+        'Hi,\n\nHere is the AI Discovery Engine report analyzing 1,367 customer reviews across Google Play, App Store, YouTube, and Reddit for Myntra wishlist conversion friction:\n\n'
+        + '🔗 Live Interactive Dashboard: https://ai-discovery-engine-rose.vercel.app/\n\n'
+        + 'Key Findings:\n'
+        + '• Quality/Material uncertainty: 14.1% of friction signals\n'
+        + '• Price & perceived value: 10.5%\n'
+        + '• Returns & exchange anxiety: 9.9%\n'
+        + '• Missing honest reviews: 6.1%\n\n'
+        + 'The RAG-powered chatbot on the dashboard lets you query any of the 1,367 reviews in real-time.\n\n'
+        + 'GitHub Repository: https://github.com/SoumayLightRay/AI-Discovery-Engine\n\n'
+        + 'Best regards'
+    );
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&su=${subject}&body=${body}`, '_blank');
+    closeShareModal();
+}
+function copyDashboardLink() {
+    navigator.clipboard.writeText('https://ai-discovery-engine-rose.vercel.app/');
+    closeShareModal();
+    showToast('Dashboard link copied!');
+}
+function shareViaWhatsApp() {
+    const text = encodeURIComponent(
+        '🔮 AI Discovery Engine — Friction Analysis Report\n\n'
+        + 'Analyzed 1,367 reviews across 4 platforms. Top friction themes:\n'
+        + '• Quality/Material: 14.1%\n• Price: 10.5%\n• Returns: 9.9%\n\n'
+        + '🔗 Live Dashboard: https://ai-discovery-engine-rose.vercel.app/\n'
+        + '💻 GitHub: https://github.com/SoumayLightRay/AI-Discovery-Engine'
+    );
+    window.open(`https://wa.me/?text=${text}`, '_blank');
+    closeShareModal();
+}
+function openGoogleDoc() {
+    window.open('https://docs.google.com/document/create', '_blank');
+    closeShareModal();
+    showToast('Paste the report into the new Google Doc!');
+}
+function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ─── Mobile Chat Toggle ───
+function toggleMobileChat() {
+    const panel = document.querySelector('.chat-panel');
+    const fab = document.querySelector('.chat-fab');
+    if (panel.classList.contains('mobile-open')) {
+        panel.classList.remove('mobile-open');
+        fab.innerHTML = '💬';
+    } else {
+        panel.classList.add('mobile-open');
+        fab.innerHTML = '✕';
+    }
+}
+
 // Initialize
 loadData();
 </script>
+
+<!-- Share Modal -->
+<div class="share-overlay" id="share-overlay" onclick="if(event.target===this)closeShareModal()">
+    <div class="share-modal">
+        <h3>📤 Share Discovery Report</h3>
+        <div class="share-sub">Send the live dashboard and findings to your team</div>
+
+        <div class="share-option" onclick="shareViaGmail()">
+            <div class="share-icon gmail">📧</div>
+            <div>
+                <div class="share-label">Send via Gmail</div>
+                <div class="share-desc">Opens Gmail with pre-filled report summary and dashboard link</div>
+            </div>
+        </div>
+
+        <div class="share-option" onclick="copyDashboardLink()">
+            <div class="share-icon copy">🔗</div>
+            <div>
+                <div class="share-label">Copy Dashboard Link</div>
+                <div class="share-desc">https://ai-discovery-engine-rose.vercel.app/</div>
+            </div>
+        </div>
+
+        <div class="share-option" onclick="shareViaWhatsApp()">
+            <div class="share-icon whatsapp">💬</div>
+            <div>
+                <div class="share-label">Share via WhatsApp</div>
+                <div class="share-desc">Send quick summary with link to any contact</div>
+            </div>
+        </div>
+
+        <div class="share-option" onclick="openGoogleDoc()">
+            <div class="share-icon gdoc">📄</div>
+            <div>
+                <div class="share-label">Create Google Doc</div>
+                <div class="share-desc">Open a new Google Doc to paste the full report</div>
+            </div>
+        </div>
+
+        <button class="share-close" onclick="closeShareModal()">Close</button>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div class="toast" id="toast"></div>
+
+<!-- Mobile Chat FAB -->
+<button class="chat-fab" onclick="toggleMobileChat()">💬</button>
 
 </body>
 </html>

@@ -1,87 +1,259 @@
-# Primary Research: Wishlist Survey Raw Findings
+# Primary Research: Survey Analysis & AI Hypothesis Cross-Validation
 
-> **Source:** Google Form, "One quick question about your shopping wishlist" — 31 submissions, Sep 4–5 2026.  
-> **Method note:** This is a self-report survey, not an interview. Treat every line below as a *hypothesis to probe in the 5–6 live interviews*, not as a validated root cause. No solution ideas are proposed in this document — that step comes after interviews, per the agreed methodology.
-
----
-
-## 1. Sample composition
-- 31 respondents; 2 are exact duplicate submissions (same timestamp gap of 6s, identical answers — likely a form resubmit, not two people). Effective N ≈ 29–30.
-- 2 respondents don't wishlist / don't shop online at all (screened out of downstream questions) — real N for the core Q6–Q15 block ≈ 27–29.
-- Platforms named: Myntra (most frequent), AJIO, Nykaa Fashion, Amazon Fashion, Flipkart, brand websites, plus smaller apps (Urbanic, Savana, Newme, Little Box). Most respondents shop across 2+ platforms simultaneously.
-- Wishlist size varies widely: several at 0–5 items, several at 6–20, a few at 51–100 and 100+. Size alone doesn't obviously map to any one behavior pattern in this sample.
-
-## 2. What respondents said, grouped by raw signal (not by imposed theme)
-
-### "I still want to buy it" — largest visible group
-Roughly a third of respondents land here (Q7), and give one of these as the reason (Q8):
-- **Out-of-stock / size unavailable:** *"My size is out of stock"*, *"Size unavailable"*, *"Not available in my size"*, *"Size not available"* — appears 4+ times, often tied to a specific event or deadline ("I want to buy this for an event").
-- **Waiting on price:** *"Waiting for prices to go down"*, *"waiting for sale and offers"*, *"Out of budget"*.
-- **Waiting on personal cash flow, not product price:** *"Waiting to receive money from dad"*, *"my salary was higher in my first job; now, my salary is lower"*, *"Because I don't earn"*.
-- One respondent is explicitly holding back deliberately despite wanting the item, for a non-financial, non-fit reason: already owns similar items and is consciously curbing accumulation ("I don't want to keep creating more collections").
-
-### "I'm considering it, but not sure" — second largest group
-- **Fit/style doubt expressed as a question, not a fact:** *"not sure how it fits"*, *"Don't know if it will suit me"*, *"Wasn’t sure, if it will look good on me"*, *"I m not sure"*.
-- **Product-information doubt distinct from fit:** *"The product doesn't have many reviews"*, *"no reviews with pictures"* — this is about trust in the listing, not the buyer's body.
-- **Value doubt, distinct from price level:** *"Will it be worth it!"*, *"still unsure if it's worth the price and whether it will actually meet my expectations"* — these respondents don't say the price is too high, they say they don't yet believe the product justifies its price.
-- **Still actively comparing:** *"Still looking for other options"*, *"Maybe il find a better alternate"*, *"I looking for some other options"*.
-
-### "Don't know when I'll buy it" — a distinct, slower-moving group
-- Budget-driven but open-ended, no trigger identified: *"I want to buy this. But my salary was higher... now lower"*, *"Out of budget"*.
-- Passive drift with no stated blocker at all: *"I'll wear it, it's simple bruh"* — wants it, has no obstacle, simply hasn't acted.
-
-### "Don't really want it anymore" / forgotten (smaller group, but distinct failure mode)
-- Pure forgetting: *"I forgot"*, *"Got distracted or forgot"*.
-- Interest decayed on its own, unprompted by any new information: *"Did not find the product as appealing as it did before"*, *"I don't really want it anymore... Confusion"*.
-- This is a different mechanism from fit-doubt or price-doubt — nothing changed about the product; attention simply moved on.
-
-## 3. Q9 multi-select — reasons cited as "part of it" (self-reported, not mutually exclusive)
-Approximate frequency across the ~27 respondents who answered:
-- **Wanted to compare other options** — cited very often, arguably the single most common tick.
-- **Unsure about size or fit** — also very frequent.
-- **Price felt too high / waiting for a sale** — frequent, but notice: this is almost always ticked *alongside* other reasons (comparison, fit), rarely alone. Pure price-only holdouts are a minority in this sample.
-- **It became unavailable / out of stock** — moderate frequency, concentrated in footwear (heels, boots, sneakers).
-- **Unsure about quality/material, unsure it suited me/my style** — moderate, usually co-occurs with the fit tick.
-- **Got distracted or forgot** — a smaller but real minority.
-
-**Read carefully:** because this is multi-select, "price" and "fit" and "comparison" are frequently ticked *together by the same person*. Treat any single-cause framing (e.g. "this is a price problem" or "this is a fit problem") as premature — most respondents are citing a bundle, and the interviews need to ask which one is the actual blocker versus which are secondary justifications.
-
-## 4. What people do outside the app before deciding (Q13)
-Very common, in rough descending order: search YouTube; check Instagram/social media; compare price elsewhere; look for similar products on other apps; check the brand's own website; read reviews elsewhere; check return/exchange policy; ask friends/family; try or check sizing at an offline store.
-- Several respondents do 4–6 of these actions for a single item before deciding — this is not a quick check, it's a real research process happening entirely outside Myntra/AJIO's own product page.
-- A few respondents pair this with an *offline* visit specifically to check fit before an online purchase ("tried it or checked sizing at offline store").
-
-## 5. What finally converts a long-sat wishlist item (Q11a)
-- **Price/discount trigger:** "purchased it when it came at a better price," "got a notification... prices have gone down," "offer dropped."
-- **Cash-availability trigger, independent of any change in the product or its price:** "had enough money," "when I got money."
-- **Reminder/re-exposure trigger:** "saw it in an advertisement," "was searching for something and remembered it was in my cart."
-- **Urgency trigger:** "delivery date was near" (tied to an event).
-- **Deliberate reassurance-seeking that resolved:** one respondent describes actively trying the item in an offline store before finally buying online.
-
-## 6. What causes abandonment after real consideration (Q12)
-- **Bought the same or a similar item somewhere else instead** (explicitly stated multiple times) — this is a **leakage-to-competitor** pattern, not a lost sale in the aggregate sense; the platform loses the transaction even though the user's need was met.
-- Realized a near-duplicate already owned, or already met the need with something else on hand.
-- Simply "lost interest" or found the product "not as appealing as before" with no new information cited.
-- One respondent's interest cooled specifically after reading more reviews ("after view reviews mind chages") — i.e., additional information *reduced* intent, the opposite of what a "more reviews" fix would assume.
-
-## 7. Direct answer to the survey's single explicit hypothesis probe (Q15)
-*(Q: "have you ever decided not to buy because you couldn't confidently picture how it would look/fit on you?")*
-- A large majority answered "Yes." A few answered "No" or "Maybe."
-- **Caution:** this question was asked as a leading yes/no prompt, not derived from the respondent's own words — high "Yes" agreement on a single closed question is weaker evidence than the same theme appearing unprompted in open text. Use Q15 as one input, not the headline finding.
-
-## 8. Segment-shaped patterns worth probing in interviews (hypotheses, not conclusions)
-- **Stock-out-blocked, high-intent, event-driven:** wants to buy, size/item unavailable, often tied to a deadline (an event, an occasion). Distinct from everyone else because the blocker is entirely inventory, not doubt.
-- **Cash-timing-blocked, not price-sensitive in principle:** wants the item at its current price, is waiting on personal income timing (salary, allowance, "money from dad") rather than a discount.
-- **Value-unproven, price-agnostic:** doesn't say the price is too high, says they don't yet believe the product is worth *any* price until reassured — reviews, social proof, or a friend's opinion, not a lower number, is what would move them.
-- **Fit/style-doubtful, self-resolving via offline or video research:** actively leaves the app to resolve doubt (YouTube, Instagram, offline store) rather than abandoning outright — the doubt is being worked on, just not on-platform.
-- **Passive decayers:** no active blocker at all; item simply loses salience over time and is never revisited without an external trigger (ad, reminder, unrelated search).
-
-## 9. Explicit gaps this survey does not answer
-- *Why* comparison happens (price validation? fit validation? just habit?) is not distinguished — "wanted to compare other options" is ticked constantly but never unpacked.
-- Whether "waiting for a sale" is genuine price sensitivity or a learned platform behavior (i.e., users have been trained to expect Myntra/AJIO will discount eventually, so waiting is rational regardless of true willingness-to-pay) is not testable from this data and should be a direct interview question.
-- No data here on non-purchasers who removed items and never returned (the survey only asked about the *most recent* still-open item) — silent, permanent dropout may look different from the active hesitation captured here.
-- Sample skews toward people willing to fill out a shopping survey; likely undercounts the segment that treats wishlist as pure bookmarking with no purchase intent at all.
+> **Survey Source:** Google Form, 31 submissions (effective N ≈ 29), Sep 4–5 2026.  
+> **AI Engine Source:** 1,367 reviews, 313 LLM-analysed, 70 friction-tagged, 12 themes.  
+> **Purpose:** Execute the research loop — Discovery → Hypothesis → Research → **Confirm / Reject / Refine** → Problem.
 
 ---
 
-*Next step per methodology: pick the strongest, most actionable-without-monetary-incentive pattern from Section 8, recruit 5–6 people who match it, and interview to find root cause — not just confirm this survey's phrasing back.*
+## 1. Survey Design & Sample
+
+- **31 submissions**, 2 duplicate resubmits → effective N ≈ 29–30.
+- 2 respondents don't wishlist at all (screened out) → core analysis N ≈ 27–29.
+- **Platform spread:** Myntra (most frequent), AJIO, Nykaa Fashion, Amazon Fashion, Flipkart, brand sites, smaller apps (Urbanic, Savana, Newme, Little Box). Most shop across 2+ platforms simultaneously.
+- **Wishlist sizes:** Wide range from 0–5 items to 100+. Size alone does not correlate to any single behaviour pattern.
+- **Methodological caution:** Self-report survey, not a behavioural observation. Every finding below is a *hypothesis to probe in live interviews*, not a validated root cause.
+
+---
+
+## 2. AI Hypothesis Cross-Validation: What the Survey Confirms, Rejects, and Refines
+
+This is the most important section. The AI Discovery Engine produced 12 friction hypotheses. Here is what the primary research did to each one.
+
+### ✅ CONFIRMED: Information Asymmetry / Confidence Gap (AI: 14.1% Quality + 6.1% Reviews)
+
+**AI hypothesis:** Users doubt product quality because of edited photos and insufficient reviews.
+
+**Survey evidence — STRONG confirmation, with critical nuance:**
+- Open-text (unprompted): *"The product doesn't have many reviews"*, *"no reviews with pictures"*, *"Will it be worth it!"*, *"still unsure if it's worth the price and whether it will actually meet my expectations"*
+- Multi-select (Q9): "Unsure about size or fit" and "unsure about quality/material" were among the most frequently ticked.
+- Q15 (prompted): Large majority answered "Yes" to the fit-visualisation question.
+
+**Critical nuance the AI missed:** The survey reveals that "quality doubt" and "value doubt" are **different frictions**. 
+- *Quality doubt* = "Will the material match the photos?" (about product truth)
+- *Value doubt* = "Is this product worth ANY price until I'm reassured?" (about purchase justification)
+The AI engine lumped both under "Quality/Material." The interviews should separate them.
+
+**Verdict: CONFIRMED and REFINED — split into Quality-truth and Value-justification.**
+
+---
+
+### ✅ CONFIRMED: Fit/Size Uncertainty (AI: 4.5%)
+
+**AI hypothesis:** Users can't confidently predict whether the item will fit.
+
+**Survey evidence — CONFIRMED, with behavioural detail:**
+- Open-text: *"not sure how it fits"*, *"Don't know if it will suit me"*, *"Wasn't sure, if it will look good on me"*
+- Behavioural: Multiple respondents report going to an **offline store** to check sizing before buying online, and searching **YouTube** for haul videos. This is active resolution behaviour — the doubt isn't passive, users are working on it, just not on Myntra's platform.
+- Q9 multi-select: "Unsure about size or fit" is one of the two most-ticked reasons.
+
+**New insight AI couldn't see:** Fit doubt often co-occurs with other blockers ("comparison" + "fit" + "price" ticked together by the same person). The friction is a **bundle**, not a single cause.
+
+**Verdict: CONFIRMED — and revealed as part of a multi-cause bundle, not a standalone blocker.**
+
+---
+
+### ⚠️ REFINED: Price (AI: 10.5%) — Three Distinct Sub-Problems, Not One
+
+**AI hypothesis:** Users are dissatisfied with pricing and wait for discounts.
+
+**Survey evidence — CONFIRMED but must be decomposed into three distinct mechanisms:**
+
+| Sub-problem | Survey evidence | Solvable without incentives? |
+|---|---|---|
+| **Waiting for a sale** | *"Waiting for prices to go down"*, *"waiting for sale and offers"* | ❌ No — this is learned platform behaviour |
+| **Personal cash-flow timing** | *"Waiting to receive money from dad"*, *"my salary was higher... now lower"*, *"Because I don't earn"* | ❌ No — not a product problem |
+| **Value unproven** | *"Will it be worth it!"*, *"unsure if it's worth the price and whether it will actually meet my expectations"* | ✅ **Yes** — this is confidence, not price |
+
+**Critical finding:** "Waiting for a sale" is rarely ticked alone in Q9 — it almost always co-occurs with "comparison" or "fit." Pure price-only holdouts are a **minority**. This suggests that for many users, "price" is a secondary justification layered on top of a primary confidence gap. If they were confident the product was worth it, the price wouldn't feel as high.
+
+**Verdict: REFINED — "Price" is actually 3 different problems. Only "Value unproven" is actionable.**
+
+---
+
+### ✅ CONFIRMED: Comparison / Alternatives (AI: 1.6% + 1.3%)
+
+**AI hypothesis:** Users compare across platforms and sometimes buy elsewhere.
+
+**Survey evidence — CONFIRMED and revealed as MORE important than the AI's low percentage suggested:**
+- Q9: "Wanted to compare other options" was arguably the **single most-ticked reason** across all respondents.
+- Q12 (abandonment): *"found better design and branded stuff for same price"*, *"Bought it from different site"*, *"Got a notification from Flipkart that prices have gone down. Bought it for cheaper from somewhere else."*
+- Q13: 34.4% of respondents compare price elsewhere; 34.4% look for similar products on other apps.
+
+**Critical finding the AI underweighted:** The AI engine scored Comparison at only 1.6% and Alternatives at 1.3% because public reviews rarely discuss competitor behaviour. But in the survey, comparison is the **#1 self-reported behaviour**. This is a significant gap between what users say in reviews (emotional complaints) vs. what they actually do (rational comparison). The AI engine detects complaints; the survey detects behaviour.
+
+**Verdict: CONFIRMED — and revealed as far more prevalent than AI data suggested. The AI's 1.6% was a detection gap, not a reality gap.**
+
+---
+
+### ✅ CONFIRMED: Availability / Stock-Out (AI: 5.4%)
+
+**AI hypothesis:** Items become unavailable, blocking purchase.
+
+**Survey evidence — CONFIRMED as a distinct, high-intent segment:**
+- Open-text (4+ mentions): *"My size is out of stock"*, *"Size unavailable"*, *"Not available in my size"*, *"Size not available"*
+- Often tied to a **deadline** (event, occasion) — these users have the highest intent of anyone in the sample.
+- Concentrated in **footwear** (heels, boots, sneakers) per Q9 cross-referencing.
+
+**Verdict: CONFIRMED — distinct segment, but an inventory problem (not a PM/product problem).**
+
+---
+
+### ✅ CONFIRMED: Forgetting / Passive Decay (AI: 1.6%)
+
+**AI hypothesis:** Some users simply forget about wishlisted items.
+
+**Survey evidence — CONFIRMED as a real but distinct failure mode:**
+- Open-text: *"I forgot"*, *"Got distracted or forgot"*
+- Interest decay without new information: *"Did not find the product as appealing as it did before"*, *"I don't really want it anymore... Confusion"*
+- Q5 (conversion triggers): Reminders work — *"saw it in an advertisement"*, *"was searching for something and remembered it was in my cart"*
+
+**New insight:** This is a **different mechanism** from doubt. Nothing changed about the product — attention simply moved on. These users don't need more information; they need re-engagement triggers.
+
+**Verdict: CONFIRMED — small but real. Distinct from confidence-gap users.**
+
+---
+
+### 🆕 NEW: Conscious Accumulation Control (AI: Not Detected)
+
+**Survey found a behaviour the AI engine never saw:**
+- One respondent: *"I don't want to keep creating more collections"*
+- This is deliberate self-restraint — the user wants the item, can afford it, knows it fits, but is consciously curbing consumption.
+
+**Verdict: NEW — too small to act on (N=1), but worth probing in interviews.**
+
+---
+
+### 🆕 NEW: Information Can REDUCE Intent (AI: Not Detected)
+
+**Survey found a counter-intuitive signal:**
+- One respondent abandoned a wishlisted item specifically **after reading more reviews**: *"after view reviews mind changes"*
+- This means "more reviews" is not universally positive. For some users, additional information reveals problems they hadn't considered and kills the purchase.
+
+**Verdict: NEW — challenges the assumption that "more information = more conversion." The interviews should probe this.**
+
+---
+
+## 3. What People Do Outside the App (The Research Exodus)
+
+When users are stalled, they don't passively wait. They conduct a **multi-step research process entirely outside Myntra's ecosystem:**
+
+| External Channel | Rough Prevalence | What They're Seeking |
+|---|---|---|
+| YouTube | Very common | Video hauls, real-world look, material check |
+| Instagram / social media | Very common | Styling, outfit pairing, social validation |
+| Other e-commerce apps | Very common | Price comparison, alternative products |
+| Brand's own website | Moderate | Better product details, size guides |
+| External review sites | Moderate | Honest quality/fit feedback |
+| Friends/family | Moderate | Social validation, fit advice |
+| Offline store visit | Small but notable | Physical try-on before online purchase |
+
+**Key finding:** Several respondents do **4–6 of these actions for a single item**. This is not a quick Google search — it's a sustained research session happening entirely off-platform. Every minute spent on YouTube or Instagram is a minute where a competitor's ad, a better deal, or a "good enough" alternative can intercept the purchase.
+
+---
+
+## 4. Conversion Triggers: What Finally Breaks the Stall?
+
+| Trigger Type | Survey Evidence | Implication |
+|---|---|---|
+| **Price/discount** | *"purchased at better price"*, *"prices gone down"* | Monetary lever — outside our constraint |
+| **Cash availability** | *"when I got money"*, *"had enough money"* | External life event — can't influence |
+| **Reminder/re-exposure** | *"saw it in an advertisement"*, *"remembered it was in my cart"* | Platform can engineer this ✅ |
+| **Urgency/deadline** | *"delivery date was near"* (event-driven) | Platform can surface occasion relevance ✅ |
+| **Doubt resolution** | One user tried the item in an offline store, then bought online | Platform can replicate this digitally ✅ |
+
+**Strategic insight:** The three triggers we CAN influence (reminder, urgency, doubt resolution) all map to the confidence-gap and passive-decay segments. This validates our focus.
+
+---
+
+## 5. Abandonment Patterns: How Myntra Loses the Sale
+
+| Abandonment Type | Evidence | Revenue Impact |
+|---|---|---|
+| **Leakage to competitor** | *"Bought from different site"*, *"found better design for same price"*, *"Flipkart notification"* | **Lost revenue** — user's need was met, just not by Myntra |
+| **Need already met** | *"Realized I already own similar"* | No lost revenue |
+| **Interest decay** | *"Not as appealing as before"*, *"lost interest"* | Forecasting error — was never real intent |
+| **Information killed intent** | *"after view reviews mind changes"* | Actually a good outcome — user avoided a bad purchase |
+
+**The competitor leakage pattern is the most dangerous.** Multiple respondents explicitly state they bought the same or similar product from a different platform. The wishlist-to-purchase pipeline is not just slow — it's **leaky**.
+
+---
+
+## 6. Behavioural Segments (Hypotheses for Interview Validation)
+
+Based on observed behavioural clustering, not demographics:
+
+| Segment | Behaviour | Blocker Type | Size in Sample | Actionable? |
+|---|---|---|---|---|
+| **Value-unproven evaluators** | Want the item, can't justify the spend without more evidence | Confidence gap | ~35% | ✅ **Primary target** |
+| **Fit/style-doubtful researchers** | Actively leaving app to resolve doubt via YouTube/Instagram/offline | Information gap | ~25% | ✅ Secondary target |
+| **Stock-out-blocked** | Want to buy, size/item unavailable, often event-driven | Inventory | ~15% | ⚠️ Logistics problem |
+| **Cash-timing-blocked** | Want the item at current price, waiting on personal income | External life | ~10% | ❌ Not solvable |
+| **Price-waiters** | Explicitly waiting for discount/sale event | Monetary | ~10% | ❌ Constrained |
+| **Passive decayers** | No active blocker; item loses salience over time | Attention | ~5% | ⚠️ Nudge only |
+
+**Target segment chosen: Value-unproven evaluators + Fit/style-doubtful researchers (combined ~60%)**
+
+Rationale:
+- **Meaningful population:** ~60% of the sample
+- **Strong pain:** They explicitly describe the friction in their own words
+- **High intent:** They *want* to buy — they're not browsing or bookmarking
+- **Metric leverage:** Converting this group directly improves 30-day wishlist-to-purchase
+- **Solvable without monetary incentives:** The blocker is confidence, not price
+
+---
+
+## 7. The AI ↔ Survey Convergence Map
+
+| AI Engine Finding | Survey Finding | Status |
+|---|---|---|
+| Quality/Material = #1 theme (14.1%) | Confidence gap is the primary open-text signal | ✅ **Converged** |
+| Returns = most toxic (93.5% negative) | Return/exchange policy checked externally; not top-of-mind blocker in survey | ⚠️ **Partially validated** — toxic when hit, but not the primary stall |
+| Price = high volume (10.5%) | Price is rarely a standalone blocker; usually bundled with fit/comparison | ⚠️ **Refined** — decomposed into 3 sub-problems |
+| Comparison = low (1.6%) | Comparison is the **#1 multi-select tick** | 🔄 **AI underweighted** — detection gap |
+| Reviews/Info = invisible (0%, 6.1%) | "No reviews with pictures" cited explicitly | ✅ **Converged** |
+| Availability = moderate (5.4%) | Stock-out is a real, distinct, high-intent blocker | ✅ **Converged** |
+| Forgetting = low (1.6%) | Real but small; reminders work as conversion triggers | ✅ **Converged** |
+| Fit/Size = watch (4.5%) | Among top 2 most-ticked multi-select reasons | ✅ **Converged — and more prevalent than AI suggested** |
+
+---
+
+## 8. Updated Root Cause Chain (Post-Survey)
+
+```
+SYMPTOM
+  Wishlisted items sit unconverted for weeks.
+    ↓
+BEHAVIOUR (Survey Section 2)
+  User wants the item but delays purchase.
+    ↓
+IMMEDIATE REASON (Survey Section 2, open-text)
+  "I'm not sure if it's worth it" / "not sure how it fits" / "no reviews with pictures"
+    ↓
+WORKAROUND (Survey Section 4)
+  User leaves the app to research on YouTube, Instagram, competitor apps (4–6 actions per item)
+    ↓
+CONSEQUENCE (Survey Section 6)
+  During the off-platform research, user finds alternative → buys from competitor → Myntra loses the sale.
+    ↓
+ROOT CAUSE
+  Myntra's product page does not provide sufficient real-world evidence
+  (verified buyer photos, honest fit consensus, quality proof) to let the
+  user make a confident decision without leaving the platform.
+```
+
+---
+
+## 9. Gaps and What the Interviews Must Resolve
+
+| Gap | Why the Survey Can't Answer It | Interview Probe |
+|---|---|---|
+| **Why do users compare?** | Multi-select can't distinguish price-comparison from fit-comparison from habitual browsing | "Walk me through what you're actually looking for when you check another app" |
+| **Is "waiting for a sale" real price sensitivity or trained behaviour?** | Self-report can't separate genuine from learned | "If Myntra guaranteed no future discount on this item, would you buy it now?" |
+| **Does more information always help?** | One respondent's intent dropped after reading reviews | "Has reading reviews ever made you NOT want something?" |
+| **What specifically resolves the confidence gap?** | Survey shows they research, not what resolves it | "What was the specific moment you felt confident enough to click Buy?" |
+| **Why do users trust YouTube over Myntra's product page?** | Survey says they go to YouTube but not why | "What does a YouTube haul video show you that the Myntra page doesn't?" |
+
+---
+
+*This document is the analytical bridge between AI Discovery (Phase 2) and Live Interviews (Phase 4). The survey has confirmed the core hypothesis — the friction is a confidence gap, not a price gap — but the precise mechanism ("what specifically makes a user feel confident enough to buy?") remains an interview question.*

@@ -22,7 +22,41 @@
 
 ---
 
-## 2. Source Distribution (Balanced Sampling)
+## 2. Answers to the 10 Core Research Questions
+
+1. **Why do users add fashion products to their wishlist?**
+   Our taxonomy identifies three distinct behaviors: Genuine intent to purchase later, aspirational bookmarking/cataloging (4.2% of sample), and holding items while waiting for a price drop or sale event.
+
+2. **What prevents wishlisted products from eventually being purchased?**
+   A "Platform Trust Deficit" during the evaluation stage. Users specifically hit roadblocks regarding material quality doubts (14.1%), fear of strict return policies (9.9%), and delivery unreliability.
+
+3. **What uncertainties remain after users have identified a product they like?**
+   The highest remaining uncertainties are material/quality versus the highly edited product photos, and whether the item will actually fit (especially prevalent on Reddit where users complain about inaccurate size charts).
+
+4. **What causes users to postpone a purchase?**
+   Our 5-Whys root cause analysis points directly to anxiety over financial risk (post-purchase regret if the item is bad and non-returnable) and unmet discount expectations (waiting for a price drop that never comes).
+
+5. **How do users compare multiple shortlisted products?**
+   Users compare across alternative platforms (1.3% of friction mentions) and heavily weigh the return policy leniency of each item/platform before deciding which one deserves their money.
+
+6. **What information do users seek outside Myntra/AJIO before purchasing?**
+   They turn to YouTube for styling, hauls, and aspirational validation, and they turn to Reddit communities (like r/IndianFashionAddicts) for brutal honesty about sizing accuracy and fabric quality.
+
+7. **What role do fit, size, styling, price, reviews, occasion and social validation play?**
+   We quantified this perfectly: Returns are 93% negative (toxic friction), Quality is 14.1% by volume but only 6% negative (uncertainty), and Reviews/Info is 0% negative (meaning its absence is an "invisible" friction that silently kills conversion).
+
+8. **When do users use the wishlist as genuine purchase intent versus simply as a bookmarking mechanism?**
+   Bookmarking ("Invisible Friction") has 0% negativity because users just use it as a catalog. Genuine intent transforms into negative friction the moment they try to evaluate the item for purchase but hit a trust or information roadblock.
+
+9. **How do these behaviors differ across user segments?**
+   Our channel cross-tabulation proved clear segment splits: Reddit users care intensely about price/fit (deal-hunters), Google Play users care mostly about delivery (tier-2/3 logistics issues), and YouTube users focus on trends and styling.
+
+10. **What unmet needs emerge consistently across user conversations?**
+    Transparent return policies on intimates (a single complaint phrase appeared 7 times) and verified buyer photos/evidence to prove material quality before committing to the purchase.
+
+---
+
+## 3. Source Distribution (Balanced Sampling)
 
 | Channel | Reviews | % of Sample | Primary Signal Type |
 |---|---|---|---|

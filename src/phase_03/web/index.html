@@ -945,6 +945,12 @@ function renderFallback() {
     renderOpportunities();
 }
 
+// ─── API Configuration ───
+// Auto-detect: use localhost in dev, Render backend in production
+const API_BASE = window.location.hostname === 'localhost' 
+    ? '' 
+    : (window.RENDER_API_URL || 'https://discovery-engine-api.onrender.com');
+
 // ─── Chat Logic (Real RAG API) ───
 let chatLoading = false;
 
@@ -974,7 +980,7 @@ async function sendMessage() {
     msgs.scrollTop = msgs.scrollHeight;
 
     try {
-        const resp = await fetch('/api/chat', {
+        const resp = await fetch(API_BASE + '/api/chat', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ query: text })

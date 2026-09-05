@@ -369,94 +369,142 @@ Using **Frequency × Severity × Solvability** (each scored 1–5), constrained 
 
 ---
 
-## 13. Primary Research: Survey Findings (N ≈ 29)
+## 13. Primary Research: Survey + Interview Findings
 
 ### 13.1 Survey Overview
 
 | Metric | Value |
 |---|---|
-| Submissions | 31 (2 duplicates → effective N ≈ 29) |
+| Submissions | 39 (38 online fashion shoppers, 36 wishlist users) |
 | Source | Google Form, Sep 4–5 2026 |
-| Platforms used | Myntra, AJIO, Nykaa Fashion, Amazon, Flipkart, brand sites |
-| Wishlist engagement | Most opened wishlist within the last week |
+| Platforms used | Myntra, AJIO, Nykaa Fashion, Amazon, Flipkart, Urbanic, brand sites |
+| Wishlist sizes | Wide range from 0–5 to 100+ items |
 
-### 13.2 AI Hypothesis Cross-Validation
+**Data-quality caveat:** Several respondents answered with non-fashion items (iPad, Dyson, lip balm). Dataset used for **directional behavioural discovery**, not as Myntra-specific claims.
+
+### 13.2 AI Hypothesis Cross-Validation (Updated N = 36)
 
 | AI Engine Finding | Survey Verdict | Detail |
 |---|---|---|
-| Quality/Material = #1 (14.1%) | ✅ **Confirmed + Refined** | Confirmed as top friction, but split into "quality-truth" (will it match photos?) and "value-justification" (is it worth ANY price?) |
-| Returns = most toxic (93.5% neg) | ⚠️ **Partially validated** | Toxic when encountered, but not top-of-mind unprompted blocker |
-| Price = high volume (10.5%) | ⚠️ **Refined → 3 sub-problems** | (a) Waiting for sale (unsolvable), (b) Cash-flow timing (external), (c) Value unproven (solvable!) |
-| Comparison = low (1.6%) | 🔄 **AI underweighted** | #1 most-ticked multi-select reason — AI missed it because reviews don't discuss competitor behaviour |
-| Reviews/Info = invisible (0%) | ✅ **Confirmed** | "No reviews with pictures" cited explicitly |
-| Fit/Size = watch (4.5%) | ✅ **Confirmed — more prevalent** | Among top 2 most-ticked reasons; users actively leave app to resolve via YouTube/offline |
-| Forgetting = low (1.6%) | ✅ **Confirmed** | Small but real; reminders work as conversion triggers |
+| Quality/Material = #1 (14.1%) | ✅ **Confirmed** | Confidence gap is a meaningful non-monetary signal (28% explicit) |
+| Returns = most toxic (93.5% neg) | ⚠️ **Weak signal** | Toxic when hit, but not top-of-mind; 8/36 check return policy externally |
+| Price = high volume (10.5%) | ✅ **Converged — stronger** | 44% have price/deal-related signal; strongest explicit barrier |
+| Comparison = low (1.6%) | 🔄 **AI underweighted** | 36% mention comparing — major detection gap. AI detects complaints; survey detects behaviour |
+| Reviews/Info = invisible (0%, 6.1%) | ✅ **Confirmed** | 15/36 read reviews elsewhere; "no reviews with pictures" cited |
+| Fit/Size = watch (4.5%) | ✅ **Converged — more prevalent** | 6/36 explicit; 25/36 report historical fit/visual uncertainty |
+| Forgetting = low (1.6%) | ⚠️ **Refined** | Real but some non-conversion is healthy behaviour |
 
-### 13.3 What Users Said (Grouped by Raw Signal)
+### 13.3 Five Competing Friction Mechanisms (Survey)
 
-**"I still want to buy it" (~33%):**
-- Stock-out blocked: *"My size is out of stock"* (4+ mentions, often event-driven)
-- Price waiting: *"Waiting for prices to go down"*, *"Out of budget"*
-- Cash-flow timing: *"Waiting to receive money from dad"*, *"my salary was lower"*
+| Mechanism | Frequency | Implication |
+|---|---|---|
+| **Price / deals** | 44% | Strongest explicit barrier — but a **solution constraint** (no monetary incentives) |
+| **Comparison / alternatives** | 36% | Wishlist = shortlist, not commitment |
+| **Decision confidence** (fit/quality/style) | 28% explicit; 69% historical | **Strongest non-monetary signal** |
+| **External research** | 89% leave the app | Users resolving decisions off-platform |
+| **Availability** | 11% | Low frequency but very high intent |
 
-**"I'm considering it, but not sure" (~35%):**
-- Fit/style doubt: *"not sure how it fits"*, *"Don't know if it will suit me"*
-- Information doubt: *"The product doesn't have many reviews"*, *"no reviews with pictures"*
-- Value doubt: *"Will it be worth it!"*, *"unsure if it's worth the price"*
-- Comparing: *"Still looking for other options"*, *"Maybe I'll find a better alternate"*
+### 13.4 Wishlist Intent Distribution (N = 36)
 
-**"Don't really want it anymore" (~10%):**
-- Pure forgetting: *"I forgot"*, *"Got distracted"*
-- Interest decay: *"Not as appealing as before"*
+| Intent Level | Count | % |
+|---|---|---|
+| Still want it, expect to buy | 11 | 31% |
+| Still want it, don't know when | 9 | 25% |
+| Still considering / uncertain | 12 | 33% |
+| No longer want it | 3 | 8% |
+| Don't remember | 1 | 3% |
 
-### 13.4 The Research Exodus (Off-Platform Behaviour)
+**56% are clearly still interested. 33% are actively evaluating.** Most non-conversion is unresolved intent, not forgetting.
 
-Users conduct 4–6 research actions PER ITEM before deciding, entirely outside Myntra:
+### 13.5 The Research Exodus (Off-Platform Behaviour)
 
-| Channel | What They Seek |
+| External Behaviour | Responses |
 |---|---|
-| YouTube | Video hauls, real-world look, material check |
-| Instagram | Styling, outfit pairing, social validation |
-| Other e-commerce apps | Price comparison, alternatives |
-| Brand website | Better product details, size guides |
-| External reviews | Honest quality/fit feedback |
-| Offline store | Physical try-on before online purchase |
+| Read reviews elsewhere | 15/36 |
+| Instagram / social media | 13/36 |
+| Compared price elsewhere | 13/36 |
+| Looked for similar products elsewhere | 13/36 |
+| YouTube | 11/36 |
+| Brand website | 11/36 |
+| Friends / family | 8/36 |
+| Return / exchange policy | 8/36 |
 
-### 13.5 Competitor Leakage
+### 13.6 Competitor Leakage
 
-Multiple respondents explicitly bought the same or similar product from a different platform:
-- *"Found better design and branded stuff for same price"*
-- *"Bought it from different site"*
-- *"Got notification from Flipkart that prices gone down. Bought it cheaper from somewhere else."*
+- **42% bought something similar elsewhere**
+- **35% of high-intent users** leaked
+- Explicit examples: bought same product from another site, found cheaper alternative, got Flipkart notification
 
-### 13.6 Behavioural Segments (from Survey)
+### 13.7 Live Interview Findings (12 Respondents)
 
-| Segment | % of Sample | Blocker | Actionable? |
+**Method:** Live phone calls, 3–10 minutes each, rapid-fire + probing.
+**Respondents:** Rishika, Stuti, Aziz, Aastha, Umesh, Steve, Nandini, Himanshi, Tanej, Sia, Prakhar, Yaakrati + 1 screened out.
+
+**The Headline — Confidence > Price (11/12 = 92%):**
+
+| # | Name | Paid more for confidence? | Example |
 |---|---|---|---|
-| **Value-unproven evaluators** | ~35% | Confidence gap | ✅ **Primary target** |
-| **Fit/style-doubtful researchers** | ~25% | Information gap | ✅ Secondary target |
-| **Stock-out-blocked** | ~15% | Inventory | ⚠️ Logistics |
-| **Cash-timing-blocked** | ~10% | External life | ❌ |
-| **Price-waiters** | ~10% | Monetary | ❌ Constrained |
-| **Passive decayers** | ~5% | Attention | ⚠️ Nudge only |
+| 1 | Rishika | ✅ | Same shorts, bought expensive seller with reviews |
+| 2 | Stuti | ✅ | Chose reviewed product over unreviewed |
+| 3 | Aziz | ❌ | Only counter-example — price is primary |
+| 4 | Aastha | ✅ | Same top — bought Amazon at higher price for reviews |
+| 5 | Umesh | ✅ | Snitch/Bewakoof over cheaper identical items |
+| 6 | Steve | ✅ | Chose reviewed over unreviewed |
+| 7 | Nandini | ✅ | Dress — 20–30% more for reviews + photos |
+| 8 | Himanshi | ✅ | Chooses expensive Urbanic for quality |
+| 9 | Tanej | ✅ | Zara at premium over identical cheaper brand |
+| 10 | Sia | ✅ | Party dress ~₹2000, better-reviewed |
+| 11 | Prakhar | ✅ | Chooses reviewed seller for same product |
+| 12 | Yaakrati | ✅ | Suspects cheap = fake; chooses pricier |
 
-**Target: Value-unproven evaluators + Fit/style researchers (combined ~60%).** They have high intent, strong pain, and the blocker is solvable without monetary incentives.
+**Cross-interview tallies:**
+- 11/12 (92%) paid more for confidence
+- 11/12 prefer buyer photos over model pics
+- 9/12 won't buy without reviews
+- 11/12 compare cross-platform
+- 7/12 check return policy as trust signal
 
-### 13.7 Updated Root Cause Chain (Post-Survey)
+**Cross-Seller Review Bridge validation:** 3/6 validated, 2/6 partial, 1/6 rejected (Himanshi: "1% भी doubt नहीं रखना चाहेंगे").
+
+### 13.8 Behavioural Segments (Post-Interview, Refined)
+
+| Segment | Evidence | Actionable? |
+|---|---|---|
+| **Confidence-arbitrage buyers** | Pay more for trust signals (Rishika, Aastha, Nandini, Sia) | ✅ **Primary target** |
+| **Platform-loyal self-regulators** | Deliberate cooling-off, not inability (Stuti) | ⚠️ Partial — wishlist is working as intended |
+| **Price-led cross-platform comparers** | Pure price comparison (Aziz) | ❌ Constrained |
+| **Brand-trust-substituters** | Brand replaces reviews (Umesh, Yaakrati) | ⚠️ Solution less relevant for branded items |
+| **Styling/versatility doubters** | "Will it go with my wardrobe?" (Prakhar) | ✅ Addressable |
+| **Offline-preferring verifiers** | Physical retail as competing channel (Steve) | ❌ Not solvable digitally |
+
+### 13.9 Updated Root Cause Chain (Post-Survey + Post-Interview)
 
 ```
-SYMPTOM: Wishlisted items sit unconverted for weeks.
+SYMPTOM
+  Wishlisted items sit unconverted for weeks.
     ↓
-BEHAVIOUR: User wants the item but delays purchase.
+BEHAVIOUR (Survey)
+  56% still want the item; 33% are actively evaluating.
+  Most non-conversion is unresolved intent, not forgetting.
     ↓
-IMMEDIATE REASON: "I'm not sure if it's worth it" / "not sure how it fits"
+FRICTION BUNDLE (Survey)
+  Price (44%) + Comparison (36%) + Confidence (28%) + Availability (11%)
     ↓
-WORKAROUND: User leaves app → researches on YouTube, Instagram, competitor apps (4–6 actions)
+THE PARADOX (Interviews)
+  Price is the stated #1 barrier — but 11/12 users PAY MORE
+  when confidence signals are present.
     ↓
-CONSEQUENCE: During off-platform research, user finds alternative → buys from competitor
+WORKAROUND (Survey + Interviews)
+  89% leave the app. 11/12 compare cross-platform.
     ↓
-ROOT CAUSE: Myntra's product page lacks real-world evidence (verified buyer photos,
-  honest fit consensus, quality proof) → user can't decide without leaving the platform.
+CONSEQUENCE (Survey + Interviews)
+  42% bought something similar elsewhere. 35% of high-intent leaked.
+    ↓
+ROOT CAUSE
+  Myntra's product page does not provide sufficient evidence
+  (verified buyer photos, fit consensus, quality proof, return clarity)
+  to let users resolve their decision without leaving the platform —
+  and once they leave, competitor leakage occurs.
 ```
 
 
@@ -464,23 +512,25 @@ ROOT CAUSE: Myntra's product page lacks real-world evidence (verified buyer phot
 
 ## 14. Recommended MVP
 
-### "Wishlist Confidence Assistant"
+### "Wishlist Confidence Layer"
 
-An AI-powered feature that adds a **Confidence Score** to each wishlisted item:
+An overlay on each wishlisted item that provides real-world evidence to resolve purchase uncertainty:
 
 | Component | What It Shows | Addresses |
 |---|---|---|
-| ✅ Verified buyer photos | Real customer photos, not marketing | Quality uncertainty (P1) |
-| 📏 Size accuracy indicator | Based on review sentiment about fit | Fit/Size (P4) |
-| 🔄 Return policy badge | Returnable vs. non-returnable, prominently displayed | Return anxiety (P2) |
-| ⭐ AI review summary | "What buyers say about quality" — 3-line digest | Review gap (P3) |
+| 📸 Verified Buyer Photos | Real customer photos, not marketing | Quality uncertainty (14.1%) |
+| 📏 Fit Consensus | "85% of buyers say true to size" — aggregated from reviews | Fit/Size (4.5%) |
+| 🔄 Return Clarity Badge | "✅ Returnable 15 days" or "⚠️ Non-returnable" | Return anxiety (9.9%) |
+| ⭐ AI Review Digest | "Buyers love fabric but say it runs small" — 3-line summary | Review gap (6.1%) |
+| 🔗 Cross-Seller Review Bridge | When product has zero reviews: show reviews of same category from same seller | Zero-review "invisible friction" |
 
 **Why this MVP:**
-- Addresses the #1 opportunity (Quality Confidence: 14.1%)
-- Also touches #2 (Return Transparency), #3 (Review Enrichment), and #4 (Fit/Size)
+- Addresses the root cause validated across AI engine (1,367 reviews), survey (N=36), and interviews (12 respondents)
+- 11/12 interview respondents confirmed they pay MORE for confidence signals
+- 11/12 prefer buyer photos over model pics
+- Cross-Seller Review Bridge validated by 3/6 users when pitched directly
 - Does NOT require monetary incentives
-- Can be deployed as a standalone web experience connected to the shopping journey
-- Directly resolves the root cause: information asymmetry
+- Directly resolves information asymmetry — the root cause
 
 ---
 

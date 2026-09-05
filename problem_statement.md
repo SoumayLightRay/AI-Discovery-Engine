@@ -4,11 +4,15 @@
 
 Millions of users browse fashion products on platforms like Myntra, AJIO, and Nykaa Fashion, saving items they like to their wishlists. A wishlist represents explicit user interest, yet users can accumulate dozens—or even hundreds—of products while only a small proportion eventually translate into purchases. 
 
-One of the company’s strategic goals is to **increase the percentage of users who purchase at least one item from their wishlist within 30 days of adding it.** Improving this conversion could increase purchase frequency, improve monetization, and extract greater value from high-intent demand already present on the platform.
+**The User Problem (Discovered):**
+Wishlist users who still want their saved items (56% of wishlisters) cannot confidently decide whether to buy because the product page lacks real-world evidence — verified buyer photos, honest fit consensus, and quality proof. This forces them off-platform to research on Amazon, Instagram, YouTube, and brand websites (89% of users do this), where **42% end up buying from competitors**. Price is the #1 stated barrier (44%), but 11/12 interview respondents have paid MORE for products with stronger confidence signals — revealing that information asymmetry, not price sensitivity, is the root cause for the solvable segment.
 
-However, the underlying user problem is unknown. The task is to discover this problem and eventually build an MVP solution with one strict constraint: **NO monetary incentives can be offered to the users.**
+**The Business Metric:**
+**Increase the percentage of users who purchase at least one item from their wishlist within 30 days of adding it.** Improving this conversion could increase purchase frequency, improve monetization, and extract greater value from high-intent demand already present on the platform.
 
-Before proposing a solution, we must build an **AI-Powered Discovery Engine** that analyzes public user feedback at scale to understand user behavior, friction points, and unmet needs regarding wishlists.
+However, the underlying user problem was unknown at the start. The task was to discover this problem and build an MVP solution with one strict constraint: **NO monetary incentives can be offered to the users.**
+
+Before proposing a solution, we built an **AI-Powered Discovery Engine** that analyzes public user feedback at scale to understand user behavior, friction points, and unmet needs regarding wishlists.
 
 ## End-to-end flow (what “done” looks like):
 

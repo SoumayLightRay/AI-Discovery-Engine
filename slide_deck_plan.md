@@ -19,7 +19,10 @@ Millions of Myntra users browse fashion products, save items they like, and add 
 
 Yet only a small fraction of wishlisted items convert into purchases within 30 days. Over time, users accumulate dozens of wishlisted products while only a handful are ever bought.
 
-**Strategic Goal**
+**The User Problem**
+Wishlist users who still want their saved items cannot confidently decide whether to buy because the product page lacks real-world evidence — forcing them off-platform to research, where 42% end up buying from competitors.
+
+**The Business Metric**
 Increase the percentage of users who purchase at least one item from their wishlist within 30 days of adding it.
 
 **Why This Matters**
@@ -137,49 +140,88 @@ High volume ≠ High severity. Returns (93.5% negative) is emotionally devastati
 
 ## SLIDE 5
 
-### Title: Primary Research Confirmed the Core Hypothesis — Confidence Beats Price. A User Paid MORE Because Reviews Gave Her "Surety."
+### Title: Price is the #1 Stated Barrier — But 11/12 Users Pay MORE When Confidence Signals Are Present
 
 **How Our Thinking Evolved:**
-Before research, we hypothesised Quality (14.1%) and Price (10.5%) were the dominant standalone blockers. Primary research changed this:
+Before research, we hypothesised Quality (14.1%) and Price (10.5%) were the dominant standalone blockers. Three rounds of primary research changed this:
 
-**Survey (N ≈ 29) Confirmed:**
-- ✅ Quality/Confidence gap is the primary friction — *"Will it be worth it!"*, *"no reviews with pictures"*
-- ✅ Fit/Size uncertainty is among the top 2 most-ticked reasons
-- ✅ Users leave the app to compare the SAME product across competing platforms (Amazon, AJIO, Flipkart)
+**Survey (N = 36 wishlist users, from 39 responses) revealed five competing mechanisms:**
 
-**Survey Refined:**
-- ⚠️ "Price" decomposes into three sub-problems: (a) sale-waiting (unsolvable), (b) cash-flow timing (external), (c) value-unproven (solvable!). Price is rarely a standalone blocker — it co-occurs with fit/comparison.
-- 🔄 Comparison = #1 most-ticked reason in survey, but AI scored it at only 1.6%. Detection gap: reviews don't discuss competitor behaviour.
+| Mechanism | Frequency | Implication |
+|---|---|---|
+| **Price / deals** | 44% | Strongest explicit barrier — but a **solution constraint**, not solution space |
+| **Comparison / alternatives** | 36% | Wishlist = shortlist, not commitment. AI scored this at only 1.6% (major detection gap) |
+| **Decision confidence** (fit/quality/style) | 28% explicit; 69% historical | **Strongest non-monetary signal** — the actionable opportunity |
+| **External research** | 89% leave the app | Users are resolving decisions off-platform → competitor leakage |
+| **Availability** | 11% | Low frequency but very high intent |
 
-**Interview 1 — The Blue Cobalt Shorts Story:**
-Two sellers on Myntra selling the same blue cobalt shorts:
-- Seller A: Cheaper, no reviews
-- Seller B: More expensive, good reviews with photos
+**The honest framing:** Price IS the biggest barrier. We don't pretend otherwise. But under the no-incentives constraint, decision confidence is the largest *solvable* friction. 42% of users bought something similar elsewhere — Myntra captures intent but loses control of the decision journey.
 
-> **She bought Seller B — the MORE EXPENSIVE one — because reviews gave her "surety."**
+**25/36 wishlist users report having experienced visual/fit uncertainty as a reason for abandoning a fashion purchase at some point** (Q15, lifetime question).
 
-When faced with price vs. confidence, this user chose confidence and paid more. This single data point validates the entire root cause: **information asymmetry, not price, is the real blocker.**
+**Live Interviews (12 respondents) — The "Confidence > Price" Pattern:**
+11 out of 12 respondents described paying MORE for an item because the confidence signals were stronger:
 
-**The disconfirmation IS the credibility:** We didn't find what we expected. Price is not the standalone villain — it's confidence.
+| User | What Happened | Key Quote |
+|---|---|---|
+| Rishika (F23) | Two sellers, same shorts — bought the expensive one with reviews | *"Surety that it had to be the same"* |
+| Aastha (F) | Same top — bought from Amazon at higher price because better reviews | *"It did have good reviews, so I got it from Amazon"* |
+| Nandini (F) | Dress — paid 20–30% more for good reviews + buyer photos | *"Yes, absolutely"* |
+| Umesh (M) | Pays more for Snitch over cheaper identical items on Amazon | *"I'm willing to pay more"* |
+| Sia (F) | Party dress ~₹2000, chose better-reviewed option over cheaper | *"It was better reviewed, so I bought that"* |
+| Tanej (M) | Zara sweatshirt at premium over identical cheaper brand | *"I purchased from Zara because of Zara"* |
+
+**The 1 counter-example (Aziz, M):** Price is primary — has never paid more for reviews. He is a price-led cross-platform comparer. This is honest counter-evidence, not a flaw.
+
+**Cross-interview tallies (all 12):**
+- 11/12 (92%) paid more for confidence | 11/12 prefer buyer photos over model pics | 9/12 won't buy without reviews | 11/12 compare cross-platform
+
+**The disconfirmation IS the credibility:** We expected Price to be the villain — and it IS the largest barrier. But 11/12 interview users literally pay MORE for trust. The root cause for the *solvable* segment is information asymmetry, not price sensitivity.
 
 ---
 
 ## SLIDE 6
 
-### Title: 60% of Stalled Users Are "Confidence-Starved Evaluators" Who Leave the App to Compare Reviews Cross-Platform
+### Title: 56% of Wishlisted Intent Is Unresolved — and 89% of Users Leave the App to Try to Resolve It
 
-**Behavioural Segments (derived from behaviour, not demographics)**
+**The Wishlist Is a Decision Workspace, Not a Purchase Queue**
 
-| Segment | % | Blocker | Actionable? |
+Among 36 wishlist users, current intent toward their most recent wishlisted item:
+
+| Intent | Count | % |
+|---|---|---|
+| Still want it, expect to buy | 11 | 31% |
+| Still want it, don't know when | 9 | 25% |
+| Still considering / uncertain | 12 | 33% |
+| No longer want it | 3 | 8% |
+
+**56% are still interested. 33% are actively evaluating.** Most non-conversion is unresolved intent, not forgetting.
+
+**Behavioural Segments (derived from behaviour, not demographics — refined by 12 live interviews)**
+
+| Segment | Survey % | Interview Refinement | Actionable? |
 |---|---|---|---|
-| **Value-unproven evaluators** | ~35% | Need evidence, not a lower price | ✅ **Primary target** |
-| **Fit/style researchers** | ~25% | Comparing same item on Amazon/AJIO | ✅ Secondary target |
-| Stock-out-blocked | ~15% | Inventory problem | ⚠️ Logistics |
-| Cash-timing-blocked | ~10% | External life event | ❌ |
-| Price-waiters | ~10% | Waiting for discount | ❌ Constrained |
-| Passive decayers | ~5% | Attention fades | ⚠️ Nudge only |
+| **Confidence-arbitrage buyers** | ~28% explicit | 11/12 pay MORE for trust signals (Rishika, Aastha, Nandini, Sia, Umesh, Tanej) | ✅ **Primary target** |
+| **Price-blocked** | ~44% | Stuti: self-regulation, not inability. But still overridden by confidence | ❌ **Constrained** (no-incentives rule) |
+| **Comparison-stalled** | ~36% | 11/12 compare cross-platform — for price AND reviews, not just price | ✅ Partially addressable |
+| **Brand-trust-substituters** | — | Aziz, Umesh, Yaakrati: brand replaces reviews | ⚠️ Solution less relevant |
+| **Styling/versatility doubters** | — | Prakhar: "Will it go with my wardrobe?" — distinct mechanism | ✅ Addressable |
+| Stock-out-blocked | ~11% | Yaakrati: boots went unavailable while comparing | ⚠️ Logistics |
+| Passive decayers | Small | Prakhar: procrastination loop (20–30 day revisits) | ⚠️ Nudge only |
 
-**Segment Selection:** Meaningful population (~60%) × Strong pain (stated in own words) × High intent × Metric leverage × Solvable without monetary incentives.
+**Segment Selection:** Decision confidence is the **strongest non-monetary signal** (28% explicit, 69% historical). Price is honestly the largest barrier — but 11/12 interview respondents pay MORE when confidence signals are present. Price is a constraint, not solution space.
+
+**89% of Users Leave the App — Here's Why:**
+
+| What they're resolving | Where they go | Responses |
+|---|---|---|
+| "Is this actually good?" | Reviews elsewhere | 15/36 |
+| "Is there something better?" | Similar products elsewhere | 13/36 |
+| "Is this worth the price?" | Price comparison | 13/36 |
+| "Will this look good?" | Instagram / social media | 13/36 |
+| "Can I see it in real life?" | YouTube | 11/36 |
+| "What does the brand say?" | Brand website | 11/36 |
+| "Can I return it?" | Return policy | 8/36 |
 
 **Root Cause — 5 Whys**
 
@@ -193,16 +235,34 @@ Why 3: Why is the evidence insufficient?
 → Model photos are heavily edited, size charts are inconsistent, and no verified buyer photos exist. Some products have ZERO reviews.
 
 Why 4: Why don't they just order and return if wrong?
-→ Return process is stressful and unreliable (93.5% negativity).
+→ Return process is stressful and unreliable (93.5% negativity in AI data).
 
 Why 5: So what do they do?
 → Leave the app to compare the same product's reviews on Amazon/AJIO/Flipkart. During that cross-platform comparison, they find better deals or more trusted listings and buy from the competitor.
 
-**Root Cause:** The information asymmetry on Myntra's product page forces users to comparison-shop on competing platforms, creating competitor leakage.
+**Root Cause:** Myntra captures purchase intent at the wishlist stage but loses control of the decision-making journey afterward. The information asymmetry on the product page forces users to comparison-shop on competing platforms, creating competitor leakage.
 
-**Competitor Leakage Evidence:**
-- Interview 1: "You compare the same app on Amazon"
-- Survey: *"Bought from different site"*, *"Flipkart notification — bought cheaper from somewhere else"*
+**Emergent Insights from Live Interviews (12 respondents):**
+
+1. **"Confidence Arbitrage"** — Users compare CONFIDENCE LEVELS across platforms, not just prices. Rishika (Int 1): bought MORE expensive shorts because that seller had reviews. Aastha (Int 4): bought same top from Amazon at higher price for better reviews.
+
+2. **Return policy ≠ confidence solution** — Prakhar (Int 11): "That's like lots of hassle, like time." Users want confidence BEFORE buying, not the safety net of returns after.
+
+3. **Brand trust can substitute for reviews** — Aziz (Int 3), Umesh (Int 5), Yaakrati (Int 12): If they trust the brand, reviews become optional. Solution must differentiate branded vs. unbranded.
+
+4. **Styling/versatility is a distinct confidence type** — Prakhar (Int 11): "Will this go with my wardrobe?" Not fit, not quality — compatibility with existing clothes.
+
+5. **Cross-Seller Review Bridge — validated but not universal** — Stuti, Nandini, Sia validated; Himanshi rejected: "1% भी doubt नहीं रखना चाहेंगे."
+
+6. **Model pics are NOT trusted** — Aastha (Int 4): "Model pics से बिल्कुल ही अलग आता है." Steve (Int 6): "They never look exactly the way shown in the picture."
+
+**Competitor Leakage Evidence (Survey + Interviews):**
+- Survey: **42% bought something similar elsewhere**; **35% of high-intent users** leaked
+- Rishika (Int 1): compares same product on Amazon
+- Aastha (Int 4): bought same top from Amazon at higher price for reviews
+- Nandini (Int 7): checks if product images are real or copied across platforms
+- Yaakrati (Int 12): boots went out of stock while she was comparing — direct lost sale
+- 11/12 interview respondents compare cross-platform
 
 ---
 ---
@@ -340,11 +400,11 @@ GUARDRAILS (must NOT worsen — kill feature if they do)
 
 | Risk | Why It Could Fail | Mitigation |
 |---|---|---|
-| **Wrong root cause** | Confidence may not be the real blocker at scale (survey N ≈ 29) | A/B test with kill switch at Day 14; measure behaviour, not self-report |
+| **Wrong root cause** | Confidence may not be the real blocker at scale (survey N = 36 wishlist users). Price is the strongest barrier at 44% — confidence is 28% explicit | A/B test with kill switch at Day 14; measure behaviour, not self-report. Price is acknowledged as constraint, not ignored |
 | **AI summary errors** | Review digests could be misleading | Deterministic rules > LLM guesses; confidence thresholds; human review queue |
 | **Data sparsity** | New/niche products have zero buyer photos | Cross-Seller Review Bridge as fallback (show seller's other product reviews) |
 | **Cannibalisation** | May shift purchases to wishlist flow without net new sales | Track total purchase volume as guardrail |
-| **Info reduces intent** | Survey found 1 case where more reviews killed a purchase | Monitor Confidence Layer views → cart removal correlation |
+| **Info reduces intent** | Survey found cases where more reviews killed a purchase | Monitor Confidence Layer views → cart removal correlation |
 
 **60-Day Experiment Plan**
 
@@ -383,6 +443,6 @@ GUARDRAILS (must NOT worsen — kill feature if they do)
 | No Fellow name | project.md | ✅ All slides |
 | Title = key takeaway | project.md deck guidelines | ✅ All slides |
 | Real AI data (1,367 reviews) | report.md | ✅ Slides 2–4 |
-| Real survey data (N ≈ 29) | primary_research.md | ✅ Slide 5 |
-| Real interview data | docs/interview_1.md | ✅ Slide 5 |
+| Real survey data (N = 36 wishlist users) | primary_research.md | ✅ Slides 5, 6 |
+| Real interview data (12 live calls) | docs/interview_1–12.md + interview_consolidated.md | ✅ All 12 interviews processed with real quotes |
 | Links to live deliverables | project.md | ✅ Slides 1, 3, 8 |

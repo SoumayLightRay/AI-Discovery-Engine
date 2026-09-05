@@ -45,6 +45,38 @@ Increase the percentage of users who purchase at least one item from their wishl
 
 ### Title: The Wishlist-to-Purchase Journey Breaks at Stage 2 — Where Users Try to Build Confidence but Can't
 
+**Business Metric Decomposition — KPI Tree:**
+
+```
+NORTH STAR: 30-Day Wishlist → Purchase Conversion %
+    │
+    ├── [INPUT] Wishlist Addition Rate
+    │     └── Healthy — users ARE wishlisting (high-intent signal)
+    │
+    ├── [STAGE 1] Intent Survival Rate
+    │     ├── 56% still want the item (Survey)
+    │     ├── 33% actively evaluating
+    │     └── Only 8% abandoned intent entirely
+    │
+    ├── [STAGE 2] Decision Confidence Rate  ← 30.1% FRICTION HERE
+    │     ├── Quality/Material doubt — 14.1%
+    │     ├── Reviews/Info gap — 6.1%
+    │     ├── Fit/Size uncertainty — 4.5%
+    │     ├── Styling doubt — 3.5%
+    │     └── Social validation — 1.9%
+    │
+    ├── [STAGE 3] Commitment Rate ← 27.1% friction
+    │     ├── Price expectations — 10.5% (CONSTRAINED: no incentives)
+    │     ├── Return anxiety — 9.9% (93.5% negativity)
+    │     ├── Availability — 5.4%
+    │     └── Platform comparison — 1.3% (AI underdetected: actual 36% from survey)
+    │
+    └── [STAGE 4] Conversion / Drop-off ← 3.2%
+          └── Forgetting, distraction, permanent abandonment
+```
+
+**Where the journey breaks (behavioural stages):**
+
 We decomposed the wishlist-to-purchase journey into the behavioural stages where conversion is won or lost:
 
 **Stage 1 — Discovery & Wishlisting**

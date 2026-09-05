@@ -1,8 +1,8 @@
-# 10-Slide Deck — Full Text Content (v3 — Approved)
+# 10-Slide Deck — Full Text Content (v4 — Final)
 
 > **File:** `NL Myntra` · 10 slides max · No Fellow name · Title = key takeaway
 > **Constraints:** Min font 14 (Slides) / 22 (Canva) · < 40 MB · Color-blind-friendly
-> **Changes from v2:** Cross-platform comparison narrative (not YouTube exodus), Blue Cobalt Shorts story, Cross-Seller Review Bridge bundled into Confidence Layer, competitive analysis in RICE rejections
+> **Changes from v3:** Myntra Verified Badge (Level 2), Post-Purchase Confidence Flywheel (Level 3), 3-layer × 8-component architecture, KPI tree decomposition, interview-refined segments, Confidence Gap Paradox framing
 
 ---
 ---
@@ -53,10 +53,10 @@ NORTH STAR: 30-Day Wishlist → Purchase Conversion %
     ├── [INPUT] Wishlist Addition Rate
     │     └── Healthy — users ARE wishlisting (high-intent signal)
     │
-    ├── [STAGE 1] Intent Survival Rate
-    │     ├── 56% still want the item (Survey)
-    │     ├── 33% actively evaluating
-    │     └── Only 8% abandoned intent entirely
+    ├── [STAGE 1] Intent Quality at Wishlisting
+    │     ├── Genuine purchase intent — 4.2%
+    │     ├── Price-drop waiting — 10.5%
+    │     └── Aspirational / social saving — 1.9%
     │
     ├── [STAGE 2] Decision Confidence Rate  ← 30.1% FRICTION HERE
     │     ├── Quality/Material doubt — 14.1%
@@ -69,11 +69,13 @@ NORTH STAR: 30-Day Wishlist → Purchase Conversion %
     │     ├── Price expectations — 10.5% (CONSTRAINED: no incentives)
     │     ├── Return anxiety — 9.9% (93.5% negativity)
     │     ├── Availability — 5.4%
-    │     └── Platform comparison — 1.3% (AI underdetected: actual 36% from survey)
+    │     └── Platform comparison — 1.6% + 1.3% = 2.9% (AI underdetected: actual 36% from survey)
     │
     └── [STAGE 4] Conversion / Drop-off ← 3.2%
           └── Forgetting, distraction, permanent abandonment
 ```
+
+**Current intent status (Survey, N=36):** 56% still want the item, 33% actively evaluating, only 8% abandoned entirely. Most non-conversion is unresolved intent, not lost interest.
 
 **Where the journey breaks (behavioural stages):**
 
@@ -118,18 +120,19 @@ Forgetting, distraction, or permanent abandonment.
 INGEST → ANALYSE → RETRIEVE → DELIVER
 Apify Cloud   Groq LLaMA 3.3 70B   BM25 + TF-IDF   Vercel Dashboard
 4 channels     13-theme classify    Semantic Search   + RAG Chatbot
-1,367 reviews  5-dimension tags     1,367 vectors     Interactive UI
+1,367 ingested 5-dimension tags     313 vectors       Interactive UI
 ```
 
 **Data Sources (Balanced Sampling — no channel bias)**
 
 | Channel | N | % | Primary Signal |
-|---|---|---|---|
+|---|---|---|
 | Google Play | 78 | 24.9% | Delivery, returns, quality |
 | App Store | 77 | 24.6% | Returns, wrong products |
 | YouTube | 79 | 25.2% | Aspirational, styling |
 | Reddit | 79 | 25.2% | Price, fit, honest reviews |
 | **Total Analysed** | **313** | | **70 friction-tagged (22.4%)** |
+| Full Corpus (ingested) | 1,367 | | Including unsampled reviews |
 
 **Critical framing:** These 12 friction themes are hypotheses that require human validation. The engine assists research — it does not replace the PM's thinking.
 
@@ -183,7 +186,7 @@ Before research, we hypothesised Quality (14.1%) and Price (10.5%) were the domi
 | Mechanism | Frequency | Implication |
 |---|---|---|
 | **Price / deals** | 44% | Strongest explicit barrier — but a **solution constraint**, not solution space |
-| **Comparison / alternatives** | 36% | Wishlist = shortlist, not commitment. AI scored this at only 1.6% (major detection gap) |
+| **Comparison / alternatives** | 36% | Wishlist = shortlist, not commitment. AI scored this at only 2.9% combined (Comparison 1.6% + Alternatives 1.3%) — a major detection gap |
 | **Decision confidence** (fit/quality/style) | 28% explicit; 69% historical | **Strongest non-monetary signal** — the actionable opportunity |
 | **External research** | 89% leave the app | Users are resolving decisions off-platform → competitor leakage |
 | **Availability** | 11% | Low frequency but very high intent |
@@ -256,24 +259,29 @@ Among 36 wishlist users, current intent toward their most recent wishlisted item
 | "What does the brand say?" | Brand website | 11/36 |
 | "Can I return it?" | Return policy | 8/36 |
 
-**Root Cause — 5 Whys**
+**Root Cause — 5 Whys (with interview evidence)**
 
 Why 1: Users hesitate to move wishlisted items to cart.
 → Because they feel uncertain about the purchase outcome.
+*Evidence: 56% still want the item; Prakhar (Int 11) revisits every 20–30 days without resolving.*
 
 Why 2: Why uncertain?
 → The product page doesn't give them enough real evidence to decide.
+*Evidence: Aastha (Int 4): "Model pics से बिल्कुल ही अलग आता है." Steve (Int 6): "They never look exactly the way shown in the picture."*
 
 Why 3: Why is the evidence insufficient?
 → Model photos are heavily edited, size charts are inconsistent, and no verified buyer photos exist. Some products have ZERO reviews.
+*Evidence: 9/12 won't buy without reviews. Himanshi (Int 8): "ये तो देखना ही पड़ता है." Tanej (Int 9): "बिना reviews को confirm नहीं होता."*
 
 Why 4: Why don't they just order and return if wrong?
 → Return process is stressful and unreliable (93.5% negativity in AI data).
+*Evidence: Prakhar (Int 11): "That's like lots of hassle, like time." Counter: Yaakrati (Int 12) uses return as safety net.*
 
 Why 5: So what do they do?
 → Leave the app to compare the same product's reviews on Amazon/AJIO/Flipkart. During that cross-platform comparison, they find better deals or more trusted listings and buy from the competitor.
+*Evidence: 11/12 compare cross-platform. Aastha: bought same top from Amazon at HIGHER price for reviews.*
 
-**Root Cause:** Myntra captures purchase intent at the wishlist stage but loses control of the decision-making journey afterward. The information asymmetry on the product page forces users to comparison-shop on competing platforms, creating competitor leakage.
+**Root Cause (The Confidence Gap Paradox):** Myntra captures purchase intent at the wishlist stage but loses control of the decision-making journey. Users compare CONFIDENCE LEVELS across platforms, not just prices — 11/12 pay MORE for trust. The information asymmetry on the product page forces comparison-shopping, creating competitor leakage. Price is the stated barrier; confidence is the actual lever.
 
 **Emergent Insights from Live Interviews (12 respondents):**
 

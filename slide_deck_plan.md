@@ -45,7 +45,9 @@ Increase the percentage of users who purchase at least one item from their wishl
 
 ### Title: The Wishlist-to-Purchase Journey Breaks at Stage 2 — Where Users Try to Build Confidence but Can't
 
-**Business Metric Decomposition — KPI Tree:**
+**Business Metric Decomposition:**
+
+The North Star metric (30-day wishlist → purchase %) improves only if we change the right user behaviours through the right product outcomes. We decomposed the conversion journey to find exactly where intervention has the highest leverage.
 
 ```
 NORTH STAR: 30-Day Wishlist → Purchase Conversion %
@@ -75,33 +77,31 @@ NORTH STAR: 30-Day Wishlist → Purchase Conversion %
           └── Forgetting, distraction, permanent abandonment
 ```
 
+**What needs to change — User Behaviours × Product Outcomes:**
+
+For the metric to improve, specific user behaviours need to shift. Each requires a corresponding product outcome (Myntra-controlled lever):
+
+| User Behaviour That Needs to Change | Product Outcome (Myntra Lever) | Stage | AI Engine Evidence |
+|---|---|---|---|
+| Users leave the app to check reviews elsewhere | Bring trusted review signals onto the wishlist page | Stage 2 | Reviews/Info = 6.1%, 0.0% negativity (invisible friction) |
+| Users don't trust model photos | Surface real buyer photos at point of decision | Stage 2 | Quality = 14.1%, 6.8% negativity (diffuse doubt) |
+| Users can't determine fit without ordering | Provide brand-level sizing intelligence | Stage 2 | Fit/Size = 4.5%, 42.9% negativity, Reddit-only |
+| Users compare across Amazon/AJIO for confidence | Make Myntra the most trusted information source | Stage 2+3 | Comparison = 2.9% AI, but 36% survey (detection gap) |
+| Users fear returns if product doesn't match | Make return policy visible and clear upfront | Stage 3 | Returns = 9.9%, **93.5% negativity** (toxic) |
+| Users abandon zero-review products entirely | Provide alternative trust signals for new products | Stage 2 | Zero-review = undetectable in AI data (no reviews = no complaints) |
+
 **Current intent status (Survey, N=36):** 56% still want the item, 33% actively evaluating, only 8% abandoned entirely. Most non-conversion is unresolved intent, not lost interest.
 
-**Where the journey breaks (behavioural stages):**
+**Metric Decomposition × AI Engine — Where Is the Highest-Potential Opportunity?**
 
-We decomposed the wishlist-to-purchase journey into the behavioural stages where conversion is won or lost:
+| Stage | Total Friction | Solvable Under Constraint? | AI Engine Signal | Opportunity |
+|---|---|---|---|---|
+| Stage 1 (Intent) | — | N/A (input quality) | 4.2% genuine intent | Low — can't change WHY users wishlist |
+| **Stage 2 (Confidence)** | **30.1%** | **✅ YES — no monetary incentives needed** | Quality 14.1%, Reviews 6.1%, Fit 4.5% | **🎯 HIGHEST — largest friction, most solvable** |
+| Stage 3 (Commitment) | 27.1% | ❌ Partially — price (10.5%) is constrained | Returns 9.9% partially solvable | Medium — limited by no-incentives rule |
+| Stage 4 (Drop-off) | 3.2% | ⚠️ Minimal | Forgetting 1.6% | Low — small volume |
 
-**Stage 1 — Discovery & Wishlisting**
-User finds a product and saves it. Motivations: genuine purchase intent (4.2%), aspirational bookmarking, waiting for a price drop (10.5%), social/trend-driven saving (1.9%).
-
-**Stage 2 — Evaluation & Confidence Building → 30.1% OF ALL FRICTION**
-The user returns to evaluate the item. This is where the journey breaks most often:
-- Quality/Material doubt — 14.1%
-- Reviews/Information gap — 6.1%
-- Fit/Size uncertainty — 4.5%
-- Styling/Occasion doubt — 3.5%
-- Social validation seeking — 1.9%
-
-**Stage 3 — Decision & Commitment → 27.1%**
-- Price & discount expectations — 10.5%
-- Return/Exchange policy fear — 9.9%
-- Availability/Delivery — 5.4%
-- Alternative platform comparison — 1.3%
-
-**Stage 4 — Conversion or Drop-off → 3.2%**
-Forgetting, distraction, or permanent abandonment.
-
-**Strategic Focus:** Stage 2 has the highest friction (30.1%) AND is the most solvable without monetary incentives. Stage 3 (27.1%) includes price and returns — harder to address under the no-incentives constraint.
+**Conclusion:** Stage 2 (Decision Confidence) has the highest friction (30.1%), is entirely solvable without monetary incentives, and maps directly to the AI engine's top themes (Quality + Reviews + Fit = 24.7% of all friction). This is where the product intervention should focus.
 
 ---
 ---
@@ -212,6 +212,35 @@ Before research, we hypothesised Quality (14.1%) and Price (10.5%) were the domi
 **Cross-interview tallies (all 12):**
 - 11/12 (92%) paid more for confidence | 11/12 prefer buyer photos over model pics | 9/12 won't buy without reviews | 11/12 compare cross-platform
 
+**Why users saved items to their wishlist (from 12 interviews):**
+- "I liked it but I wasn't sure about the quality" — Rishika (Int 1)
+- "Waiting for a price drop" — Stuti (Int 2), Aziz (Int 3)
+- "I was comparing with similar items" — Aastha (Int 4), Nandini (Int 7)
+- "I liked the style but wasn't sure it would suit me" — Prakhar (Int 11)
+- "I save everything I like, then decide later" — Sia (Int 10), Himanshi (Int 8)
+
+**What would make them purchase (unprompted answers from interviews):**
+- Real buyer photos showing actual product — 11/12
+- Enough reviews with detail about fit/quality — 9/12
+- Confidence that product matches the listing — 11/12 ("Surety" — Rishika)
+- Clear return policy upfront — 7/12
+- Myntra quality check / verification — Tanej (Int 9): "quality check को pass कर रहे हैं, उसको label लगा दे"
+
+**What information they still need before buying:**
+- Real photos (not model shots) — 11/12
+- Size/fit accuracy for specific brand — 9/12
+- Other buyers' honest opinions — 9/12
+- Return policy clarity — 7/12
+- Whether the product is genuine — Nandini: checks if images are copied across platforms
+
+**How users currently overcome uncertainty (existing workarounds):**
+- Leave the app to check Amazon/AJIO/Flipkart reviews — 11/12
+- Check YouTube videos for real product footage — 11/36 (survey)
+- Check Instagram for styling inspiration — 13/36 (survey)
+- Visit brand website directly — 11/36
+- Order and return if wrong (costly fallback) — Yaakrati: "order kar leti hu, return kr dungi"
+- Rely on brand trust as a proxy (Aziz, Umesh) — avoids research entirely
+
 **The Confidence Gap Paradox:** We expected price to be the villain — and it IS the largest stated barrier (44%). But 11/12 interview users literally pay MORE for trust. Price is the socially acceptable excuse; confidence is the actual decision lever. Solving the confidence gap requires NO monetary incentives — which is exactly our constraint. The root cause for the solvable segment is information asymmetry, not price sensitivity.
 
 ---
@@ -282,6 +311,39 @@ Why 5: So what do they do?
 *Evidence: 11/12 compare cross-platform. Aastha: bought same top from Amazon at HIGHER price for reviews.*
 
 **Root Cause (The Confidence Gap Paradox):** Myntra captures purchase intent at the wishlist stage but loses control of the decision-making journey. Users compare CONFIDENCE LEVELS across platforms, not just prices — 11/12 pay MORE for trust. The information asymmetry on the product page forces comparison-shopping, creating competitor leakage. Price is the stated barrier; confidence is the actual lever.
+
+**Target Segment:** Confidence-arbitrage buyers — users who have genuine purchase intent but cannot resolve uncertainty on-platform. ~28% explicit (survey), but 11/12 interview respondents exhibit this behaviour.
+
+**Product Outcome We Intend to Influence:** Increase the rate at which wishlisted items move to cart by providing sufficient confidence signals on the wishlist page, eliminating the need for cross-platform research.
+
+**Existing User Workarounds (and why they fail):**
+- Leave Myntra to check reviews on Amazon/AJIO → 42% buy from competitor during this process (leakage)
+- Check YouTube for real footage → time-consuming, not product-specific
+- Rely on brand trust as proxy → only works for known brands (Aziz, Umesh); fails for unbranded/new sellers
+- Order and return if wrong → stressful (93.5% negativity), Prakhar: "lots of hassle, like time"
+
+**Why Solving This Creates User Value:** Users WANT to buy from Myntra — 56% still want the item. They're not leaving because they don't want the product. They're leaving because they can't TRUST the product information. Giving them verified confidence signals saves time (no cross-platform research), reduces return hassle, and helps them make better purchase decisions.
+
+**Why Solving This Makes Business Sense:** Every user who leaves to compare on Amazon is a potential lost sale (42% leakage rate). Converting even a fraction of the 30.1% Stage 2 friction into purchases = material revenue uplift from existing traffic, with zero acquisition cost.
+
+**How Our Thinking Evolved (the full chain):**
+```
+BUSINESS METRIC: 30-day wishlist → purchase conversion
+    ↓
+PRODUCT OUTCOMES: Decomposed into 4 conversion stages — Stage 2 = 30.1% friction
+    ↓
+AI DISCOVERY: Engine identified Quality (14.1%), Reviews (6.1%), Fit (4.5%) as top themes
+    → BUT: Price appeared largest. Were we wrong about confidence?
+    ↓
+PRIMARY RESEARCH (Survey N=36): Price IS #1 (44%). But confidence = 28% explicit, 69% historical.
+    → AI underdetected comparison (2.9% vs. actual 36%). 89% leave the app.
+    ↓
+PRIMARY RESEARCH (12 Interviews): The Confidence Gap Paradox discovered.
+    → 11/12 pay MORE for confidence. Price is the excuse; trust is the lever.
+    ↓
+PROBLEM DEFINITION: Information asymmetry on the product page forces comparison-shopping,
+    creating competitor leakage. Solvable WITHOUT monetary incentives.
+```
 
 **Emergent Insights from Live Interviews (12 respondents):**
 
@@ -463,6 +525,32 @@ GUARDRAILS (must NOT worsen — kill feature if they do)
   • Wishlist addition rate (don't discourage wishlisting)
   • Return rate (better info should reduce returns, not increase them)
 ```
+
+**Metric Definitions & Rationale:**
+
+| Metric | Definition | Why We Chose It |
+|---|---|---|
+| **North Star: 30-day WL→Purchase %** | % of users who purchase ≥1 wishlisted item within 30 days of adding | Directly measures the business goal. 30-day window captures realistic decision cycles from our survey data. |
+| **Solution Metric: CL view → cart %** | % of users who view the Confidence Layer on a wishlisted item and add it to cart | Isolates the causal mechanism — did the confidence signals actually drive the cart action? |
+| **CL View Rate** | % of wishlist page visits where ≥1 Confidence Layer is expanded/viewed | If users don't see the confidence signals, they can't be influenced. Minimum adoption threshold. |
+| **Buyer Photo CTR** | % of CL views that result in clicking a buyer photo | Buyer photos are the #1 requested signal (11/12). Click = engagement with the core trust signal. |
+| **Myntra Verified influence** | Conversion rate on Verified items vs. non-Verified items (same category) | Tests whether platform-level verification (Layer 2) has incremental impact over user-generated signals. |
+| **Cross-Seller Bridge engagement** | % of zero-review products where Bridge is viewed AND user proceeds to cart | Measures whether the Bridge solves the zero-review problem specifically. Limited validation (3/6). |
+| **Smart Compare usage** | % of users with ≥2 wishlisted items who use the compare feature | Tests whether comparison friction (36% survey) is resolved on-platform. |
+| **Flywheel response rate** | % of post-delivery users who complete the micro-survey | Determines whether the data flywheel is sustainable. Target ≥20%. |
+| **Time: WL-add → cart-add** | Median hours between wishlisting and adding to cart | If confidence signals work, decision time should decrease. |
+| **Cross-platform exit rate** | % of wishlist sessions where user leaves Myntra within 5 min | Measures whether the root behaviour ("leave to compare") is reduced. |
+| **7-day repeat conversion** | % of users who convert a 2nd wishlisted item within 7 days of the 1st | Tests whether confidence-driven purchasing becomes habitual. |
+| **Brand Trust Index coverage** | % of top-1000 wishlisted products with confidence data from flywheel | Measures data moat growth over time. |
+
+**Guardrail Definitions:**
+
+| Guardrail | Definition | Why It Matters |
+|---|---|---|
+| **Core purchase conversion** | Overall purchase conversion rate (not just wishlist) | Ensure we don't break the main funnel while optimising a sub-funnel |
+| **Average order value** | Mean ₹ per order | Confidence signals shouldn't push users toward cheaper items |
+| **Wishlist addition rate** | # of items wishlisted per user per week | More info upfront might discourage "save for later" — this must NOT drop |
+| **Return rate** | % of orders returned within 15 days | Better info should REDUCE returns. If it increases them, the signals are misleading |
 
 **Kill Criteria:** If leading indicators don't move within 14 days of A/B test launch, we stop the experiment and investigate.
 

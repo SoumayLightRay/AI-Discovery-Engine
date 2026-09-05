@@ -180,5 +180,5 @@ Design and build a functional MVP addressing the identified problem.
 | **AI Discovery Engine** | [https://ai-discovery-engine-rose.vercel.app/](https://ai-discovery-engine-rose.vercel.app/) | ✅ Live |
 | **Source Code** | [https://github.com/SoumayLightRay/AI-Discovery-Engine](https://github.com/SoumayLightRay/AI-Discovery-Engine) | ✅ Live |
 | **Backend API** | [https://discovery-engine-api-mk0d.onrender.com](https://discovery-engine-api-mk0d.onrender.com) | ✅ Live |
-| **10-Slide Deck** | _To be created_ | ⬜ Pending |
-| **Deployed MVP** | _To be created_ | ⬜ Pending |
+| **Deployed MVP** | [https://ai-discovery-engine-rose.vercel.app/wishlist_mvp.html](https://ai-discovery-engine-rose.vercel.app/wishlist_mvp.html) | ✅ Live |
+| **10-Slide Deck** | _To be created in Canva_ | ⬜ Pending |

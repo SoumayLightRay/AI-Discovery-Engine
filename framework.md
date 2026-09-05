@@ -192,26 +192,45 @@ Quality doubt could mean:
 
 **The interviews must discover WHICH specific sub-problem is driving the friction.**
 
-### Interview Framework (5–6 Respondents for Contrast)
+### Interview Framework (12 Respondents Completed)
 
-| Case | Why This Case | What We Learn |
+| Case | Respondents | What We Learned |
 |---|---|---|
-| High-intent stalled user | Core target candidate | What specific blocker stops purchase? |
-| Price-led delayer | Understand constraint | Is this solvable without incentives? |
-| Fit/uncertainty-led hesitator | Understand confidence gap | What information would resolve it? |
-| Availability-frustrated user | Test product constraint | Is this a PM problem or logistics? |
-| Heavy external researcher | Understand workaround | What does Myntra lack that YouTube/Reddit provides? |
-| Successful converter | Learn what actually worked | What tipped them from wishlist → purchase? |
+| High-intent stalled users | Rishika, Aastha, Nandini, Sia | Confidence is the blocker — they pay MORE for trust |
+| Price-led delayers | Aziz, Stuti | Aziz: pure price. Stuti: self-regulation, not inability |
+| Fit/uncertainty-led hesitators | Tanej, Prakhar | Tanej: XL vs XXL. Prakhar: styling/versatility doubt |
+| Availability-frustrated users | Yaakrati | Boots went out of stock during comparison — lost sale |
+| Heavy external researchers | Nandini, Himanshi | Nandini: checks if images are real. Himanshi: zero tolerance for unreviewed |
+| Brand-trust substituters | Umesh, Yaakrati, Aziz | Brand replaces reviews entirely for this segment |
+| Platform-loyal users | Stuti | Myntra-loyal — doesn't compare cross-platform |
+| Offline-preferring | Steve | Physical retail competes with e-commerce |
 
-### Interview Protocol
+### Interview Protocol (Actual — Rapid-Fire Format)
 
-For each respondent:
-1. "Show me your Myntra wishlist right now. Pick 3 items."
-2. For each: "Why did you save this? Do you still want it? What's stopping you?"
-3. "Walk me through the last time you moved something from wishlist to cart. What changed?"
-4. "Have you ever decided NOT to buy something specifically because of the return policy?"
-5. "When you research a Myntra product on YouTube or Reddit, what are you looking for that isn't on the product page?"
-6. "How do you decide between Myntra vs. AJIO vs. Amazon for the same type of product?"
+1. "Think about the last fashion item you saved or wishlisted but didn't buy immediately. Why?"
+2. "Have you ever bought something more expensive just because it had better reviews or buyer photos?"
+3. "If a product has zero reviews, would you still buy it? What if the seller’s other products have great reviews?"
+4. "Do you check anywhere else before deciding — another app, website, social media?"
+5. "What information, if any, would make you more confident about buying?"
+6. "Any feature you’d want added to the wishlist page?"
+
+### The Confidence Gap Paradox (Key Interview Discovery)
+
+The critical transition from AI → Survey → Interviews:
+
+```
+AI ENGINE:     Quality is the #1 theme (14.1%). Price is #2 (10.5%).
+                → Hypothesis: Quality doubt is the root cause.
+
+SURVEY:        Price is actually #1 (44%). Comparison is #2 (36%).
+                → Hypothesis refined: Price is the biggest barrier.
+
+INTERVIEWS:    11/12 users PAY MORE for confidence signals.
+                → Discovery: Price is the STATED barrier;
+                   confidence is the ACTUAL decision lever.
+```
+
+This is the anti-assumption story Arindam’s framework demands.
 
 ---
 
@@ -219,56 +238,67 @@ For each respondent:
 
 **Per Arindam's feedback:** Do NOT create "Priya, 24, Bengaluru" personas. Derive segments behaviourally.
 
-**Per our data, candidate segments:**
+**Updated segments (post-interview, behaviour-derived):**
 
-| Segment | Observable Behaviour | Data Signal |
-|---|---|---|
-| **A. Genuine high-intent stalled** | Wishlisted recently, revisited, haven't purchased, specific unresolved blocker | Quality + Returns + Fit themes |
-| **B. Passive bookmarkers** | Large wishlist, rarely revisit, no real purchase intent | Intent/Bookmarking (4.2%, 0% negativity) |
-| **C. Deal-timers** | Wishlisted to wait for price drop, explicitly monitoring | Price theme (10.5%) — "none of my wishlist items got discounts" |
-| **D. Comparison shoppers** | Wishlist as cross-platform comparison tool | Comparison + Alternatives themes |
-| **E. Availability-constrained** | Want item, can't purchase because size/stock unavailable | Availability (5.4%, 88.2% negative) |
+| Segment | Observable Behaviour | Interview Evidence | Size |
+|---|---|---|---|
+| **A. Confidence-arbitrage buyers** | Compare confidence levels across platforms; pay more for trust | Rishika, Aastha, Nandini, Sia, Umesh, Tanej, Steve, Himanshi, Prakhar, Stuti, Yaakrati | 11/12 |
+| **B. Brand-trust-substituters** | Brand replaces reviews as confidence signal | Aziz, Umesh, Yaakrati | 3/12 |
+| **C. Styling/versatility doubters** | "Will this go with my wardrobe?" — distinct from fit/quality | Prakhar | 1/12 |
+| **D. Wishlist self-regulators** | Deliberately delay as financial cooling-off | Stuti | 1/12 |
+| **E. Availability-blocked** | Item went out of stock during comparison delay | Yaakrati, Aastha | 2/12 |
+| **F. Price-led cross-platform** | Pure price comparison drives decisions | Aziz | 1/12 |
 
-Choose ONE based on:
+**Note:** These segments overlap — most users exhibit multiple behaviours. The dominant pattern (Confidence-arbitrage, 11/12) is the target.
 
-> **Meaningful population × Strong pain × High intent × Metric leverage × Solvability (without monetary incentives)**
+Chosen segment based on:
+
+> **Meaningful population (11/12) × Strong pain (can't decide) × High intent (still want item) × Metric leverage (42% leak) × Solvability (no monetary incentives needed)**
 
 ---
 
-## Phase 5 — Root Cause (The 5 Whys)
+## Phase 5 — Root Cause (The 5 Whys — Updated with Interview Evidence)
 
-### The Chain (from our data)
+### The Chain (validated across AI Engine + Survey + 12 Interviews)
 
 ```
-SYMPTOM
-  Wishlist items aren't being purchased within 30 days.
-    ↓
-BEHAVIOUR
-  User saves product but delays or abandons purchase.
-    ↓
-IMMEDIATE REASON (Why 1)
-  "I'm not sure whether the quality/fit/return will be acceptable."
-    ↓
-DEEPER REASON (Why 2)
-  "The product page doesn't give me enough real evidence to decide."
-    ↓
-ROOT CAUSE (Why 3)
-  "Model photos are heavily edited, size charts are inconsistent across brands,
-   and I can't see what real buyers received."
-    ↓
-COMPOUNDING FACTOR (Why 4)
-  "Even if I order and it's wrong, the return process is stressful and unreliable."
-    ↓
-CONSEQUENCE (Why 5)
-  "So I keep it in my wishlist as a safety net, procrastinate, and eventually
-   forget or find it on another platform."
+WHY 1: Why do wishlisted items sit unconverted?
+  → Users feel uncertain about the purchase outcome.
+  EVIDENCE: 56% still want the item; 33% actively evaluating (Survey)
+  EVIDENCE: Prakhar — revisits every 20-30 days, same uncertainty each time
+
+WHY 2: Why are they uncertain?
+  → The product page doesn't give them enough real-world evidence to decide.
+  EVIDENCE: Aastha — "Model pics से बिल्कुल ही अलग आता है"
+  EVIDENCE: Steve — "They never look exactly the way shown in the picture"
+  EVIDENCE: 11/12 prefer buyer photos over model pics
+
+WHY 3: Why is the evidence insufficient?
+  → Model photos are edited, reviews are sparse or absent, no verified
+    buyer photos exist. Some products have ZERO reviews.
+  EVIDENCE: 9/12 won't buy without reviews
+  EVIDENCE: Himanshi — "ये तो देखना ही पड़ता है" (no exceptions)
+  EVIDENCE: Tanej — "बिना reviews को confirm नहीं होता"
+
+WHY 4: Why don't they just order and return if wrong?
+  → Return process is seen as hassle, not solution.
+  EVIDENCE: Prakhar — "That's like lots of hassle, like time"
+  EVIDENCE: Aastha — "I find it very suspicious if they don't offer return option"
+  COUNTER: Yaakrati uses return as safety net for unknown products
+
+WHY 5: So what do they actually do?
+  → Leave the app to compare on Amazon, AJIO, Instagram, YouTube, brand websites.
+    During this journey, 42% buy from competitors.
+  EVIDENCE: 11/12 compare cross-platform
+  EVIDENCE: Aastha — bought same top from Amazon at HIGHER price for reviews
+  EVIDENCE: Nandini — checks if product images are real or copied
 ```
 
-**Root Cause Statement:**
+**Root Cause Statement (Post-Interview):**
 
-> Low upfront certainty creates high downstream perceived risk. The information asymmetry between what the product page shows and what the user actually receives is the fundamental driver of wishlist stagnation.
+> Myntra captures purchase intent at the wishlist stage but provides insufficient real-world evidence (verified buyer photos, fit consensus, quality proof) on the product page. This forces users to comparison-shop on competing platforms — where they compare CONFIDENCE LEVELS, not just prices — creating competitor leakage. 11/12 users have paid MORE for products with better confidence signals, proving that the solvable barrier is information asymmetry, not price sensitivity.
 
-This aligns directly with Arindam's feedback: *"Why aren't they confident? Because model photos are heavily edited and size charts are inconsistent across brands."*
+This aligns with Arindam's feedback AND extends it: the root cause is not just quality doubt — it's the broader **Confidence Gap Paradox** where price is the stated barrier but confidence is the actual lever.
 
 ---
 
@@ -278,9 +308,15 @@ Format from Arindam's rules — **friction-based, not persona-based:**
 
 > Among **[behavioural segment]** who add items to their Myntra wishlist, users who **[specific behaviour]** delay purchasing because **[validated root cause]**. They currently **[workaround]**, which **[consequence for user and for Myntra]**.
 
-### Our Draft (to be refined after interviews):
+### Final Problem Definition (Post-Interview):
 
-> Among **high-intent users who add items to their wishlist and revisit them**, users who **lack sufficient evidence of real product quality** delay purchasing because **heavily edited product imagery and inconsistent size charts create uncertainty about what they will actually receive**. They currently **search YouTube hauls and Reddit threads for honest reviews**, which **delays their decision and increases the chance of finding alternatives on competing platforms**.
+> Among **confidence-arbitrage buyers** (11/12 interview respondents) who save fashion items to their wishlist and still want them (56% of wishlisters), users who **cannot verify product quality, fit, or styling compatibility from the product page** delay purchasing because **model photos don't match reality, reviews are sparse or absent, and there is no verified buyer evidence**. They currently **compare the same product's reviews, photos, and trust signals across 2–3 competing platforms** (11/12 do this), which **delays their decision by days or weeks and causes 42% to buy from competitors**. Even users who cite price as their primary barrier will **pay 20–30% more when confidence signals are present** (11/12 confirmed), revealing that the solvable root cause is **information asymmetry, not price sensitivity**.
+
+### What Changed from the Draft:
+- "High-intent users" → **"Confidence-arbitrage buyers"** (behaviour-derived from interviews)
+- "Lack sufficient evidence of quality" → **"Cannot verify quality, fit, or styling compatibility"** (Prakhar added styling; Tanej added fit)
+- "Search YouTube/Reddit" → **"Compare across 2–3 competing platforms"** (interviews showed cross-platform comparison is more common than YouTube)
+- Added the paradox: **"Even price-sensitive users pay more for confidence"** — this is the key discovery
 
 ---
 

@@ -176,7 +176,7 @@ Before research, we hypothesised Quality (14.1%) and Price (10.5%) were the domi
 **Cross-interview tallies (all 12):**
 - 11/12 (92%) paid more for confidence | 11/12 prefer buyer photos over model pics | 9/12 won't buy without reviews | 11/12 compare cross-platform
 
-**The disconfirmation IS the credibility:** We expected Price to be the villain — and it IS the largest barrier. But 11/12 interview users literally pay MORE for trust. The root cause for the *solvable* segment is information asymmetry, not price sensitivity.
+**The Confidence Gap Paradox:** We expected price to be the villain — and it IS the largest stated barrier (44%). But 11/12 interview users literally pay MORE for trust. Price is the socially acceptable excuse; confidence is the actual decision lever. Solving the confidence gap requires NO monetary incentives — which is exactly our constraint. The root cause for the solvable segment is information asymmetry, not price sensitivity.
 
 ---
 
@@ -328,13 +328,17 @@ Why 5: So what do they do?
 | ⭐ AI Review Digest | 3-line summary: "Buyers love fabric but say it runs small" | Information gap (6.1%) |
 | 🔗 Cross-Seller Review Bridge | When product has zero reviews: show reviews of same material/fabric from same seller, seller's overall rating | Zero-review "invisible friction" |
 
-**The Cross-Seller Review Bridge (Novel Component):**
-The interview revealed a key dilemma: two sellers, same product, different trust signals. When a product has NO reviews, instead of showing nothing (which sends users to Amazon), we show:
+**The Cross-Seller Review Bridge (Novel Component — with honest limitations):**
+When a product has NO reviews, instead of showing nothing (which sends users to Amazon), we show:
 - Reviews of the same material/fabric from the same seller
 - The seller's aggregate rating across all products
 - "Similar products by this seller rated 4.3★ with 200+ reviews"
 
-This is **genuinely novel** — no competitor does this. And it creates a proprietary seller-review graph that compounds over time.
+**Interview validation:** 3/6 users validated this concept (Stuti, Nandini, Sia — who already does this naturally). 2/6 gave tepid acceptance (Tanej, Umesh). **1/6 explicitly rejected it** (Himanshi: "1% भी doubt नहीं रखना चाहेंगे"). Tanej also noted: seller self-reviews aren't trusted ("he wants to sell his item").
+
+**Implication:** The Bridge works as a **fallback for zero-review products from newer sellers** — it is not a universal solution. For branded products, brand trust already substitutes (Aziz, Umesh, Yaakrati). For zero-tolerance users, only product-level reviews suffice. We present this counter-evidence honestly because it strengthens credibility.
+
+This component is **genuinely novel** — no competitor surfaces seller-level trust signals. And it creates a proprietary seller-review graph that compounds over time.
 
 **User Flow (3 steps)**
 1. User opens wishlist → sees Confidence Layer on each item

@@ -226,26 +226,23 @@
         .wishlist-btn.removed-heart::after { content: '🤍'; position: absolute; }
 
         /* Confidence Score Badge */
-        .confidence-score {
-            position: absolute; bottom: 12px; left: 12px;
-            background: rgba(255,255,255,0.97); backdrop-filter: blur(10px);
-            border-radius: var(--radius-sm); padding: 7px 14px;
-            display: flex; align-items: center; gap: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+        .info-badges {
+            position: absolute; bottom: 10px; left: 10px; right: 10px;
+            display: flex; flex-wrap: wrap; gap: 6px;
+        }
+        .info-badge {
+            background: rgba(255,255,255,0.96); backdrop-filter: blur(10px);
+            border-radius: 6px; padding: 5px 10px;
+            display: flex; align-items: center; gap: 5px;
+            font-size: 11px; font-weight: 600;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.1);
             cursor: pointer; transition: var(--transition);
         }
-        .confidence-score:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.18); transform: scale(1.02); }
-        .score-circle {
-            width: 34px; height: 34px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 13px; font-weight: 800; color: white;
-        }
-        .score-high { background: linear-gradient(135deg, #14b866, #0a9e55); }
-        .score-medium { background: linear-gradient(135deg, #f5a623, #e8941c); }
-        .score-low { background: linear-gradient(135deg, #ee5a24, #d4481a); }
-        .score-info { line-height: 1.3; }
-        .score-label { font-weight: 700; font-size: 12px; }
-        .score-sub { font-size: 10px; color: var(--text-muted); }
+        .info-badge:hover { transform: scale(1.05); box-shadow: 0 3px 12px rgba(0,0,0,0.15); }
+        .info-badge-green { color: var(--green-dark); }
+        .info-badge-amber { color: var(--amber-dark); }
+        .info-badge-blue { color: var(--blue); }
+        .info-badge-neutral { color: var(--text-secondary); }
 
         /* Product Info */
         .product-info { padding: 14px 16px 6px; }
@@ -594,8 +591,8 @@
         <h1 class="page-title">My Wishlist <span id="wishlist-count">(6 items)</span></h1>
         <div class="toolbar">
             <button class="toolbar-btn active" onclick="setSort(this, 'all')">All Items</button>
-            <button class="toolbar-btn" onclick="setSort(this, 'high')">🟢 High Confidence</button>
-            <button class="toolbar-btn" onclick="setSort(this, 'low')">🔴 Needs Review</button>
+            <button class="toolbar-btn" onclick="setSort(this, 'photos')">📸 Has Buyer Photos</button>
+            <button class="toolbar-btn" onclick="setSort(this, 'returnable')">🔄 Returnable</button>
         </div>
     </div>
 
@@ -762,8 +759,9 @@
         const grid = document.getElementById('wishlist-grid');
         grid.innerHTML = '';
         const filtered = filter === 'all' ? products :
-            filter === 'high' ? products.filter(p => p.confidence >= 70) :
-            products.filter(p => p.confidence < 70);
+            filter === 'photos' ? products.filter(p => p.totalBuyerPhotos > 0) :
+            filter === 'returnable' ? products.filter(p => p.returnInfo.returnable) :
+            products;
 
         filtered.forEach(p => {
             grid.innerHTML += buildCard(p);
@@ -771,15 +769,29 @@
     }
 
     function buildCard(p) {
-        const scoreClass = p.level === 'high' ? 'score-high' : p.level === 'medium' ? 'score-medium' : 'score-low';
-        const levelLabel = p.level === 'high' ? 'High Confidence' : p.level === 'medium' ? 'Medium Confidence' : 'Low Confidence';
-        const levelColor = p.level === 'high' ? 'var(--green-dark)' : p.level === 'medium' ? 'var(--amber-dark)' : 'var(--red-dark)';
+        // Build helpful info badges — NO score, NO judgment
+        let badgesHtml = '';
+        if (p.totalBuyerPhotos > 0) {
+            badgesHtml += `<div class="info-badge info-badge-green" onclick="event.stopPropagation(); toggleConfidence(${p.id})">📸 ${p.totalBuyerPhotos} buyer photos</div>`;
+        }
+        if (p.fitConsensus) {
+            const fitClass = p.fitConsensus.class === 'green' ? 'info-badge-green' : 'info-badge-amber';
+            badgesHtml += `<div class="info-badge ${fitClass}" onclick="event.stopPropagation(); toggleConfidence(${p.id})">${p.fitConsensus.pct}% ${p.fitConsensus.label}</div>`;
+        }
+        if (p.returnInfo.returnable) {
+            badgesHtml += `<div class="info-badge info-badge-green" onclick="event.stopPropagation(); toggleConfidence(${p.id})">✅ ${p.returnInfo.days}-day returns</div>`;
+        } else {
+            badgesHtml += `<div class="info-badge info-badge-amber" onclick="event.stopPropagation(); toggleConfidence(${p.id})">⚠️ Non-returnable</div>`;
+        }
+        if (p.crossSeller) {
+            badgesHtml += `<div class="info-badge info-badge-blue" onclick="event.stopPropagation(); toggleConfidence(${p.id})">🔗 Trusted seller · ${p.crossSeller.ratings[0].score}</div>`;
+        }
 
         let ratingHtml = p.rating > 0 ? `
             <div class="rating-row">
                 <span class="rating-stars">${p.rating} ★</span>
                 <span>${p.ratingCount.toLocaleString()} ratings</span>
-            </div>` : '<div class="rating-row"><span style="color:var(--text-muted)">No ratings yet</span></div>';
+            </div>` : '<div class="rating-row"><span style="color:var(--text-muted)">New on Myntra</span></div>';
 
         // Build confidence details
         let signalsHtml = '';
@@ -800,9 +812,9 @@
                 <div class="buyer-photos">${photosHtml}</div>`;
         } else {
             signalsHtml += `
-                <div class="signal signal-red">
+                <div class="signal signal-amber">
                     <div class="signal-icon">📸</div>
-                    <div><span class="signal-label">0 Buyer Photos</span> <span class="signal-value">— No verified purchases yet</span></div>
+                    <div><span class="signal-label">No buyer photos yet</span> <span class="signal-value">— Be the first to share! Seller has photos from other products.</span></div>
                 </div>`;
         }
 
@@ -816,9 +828,9 @@
                 </div>`;
         } else {
             signalsHtml += `
-                <div class="signal signal-red">
+                <div class="signal signal-amber">
                     <div class="signal-icon">📏</div>
-                    <div><span class="signal-label">No fit data</span> <span class="signal-value">— Check size chart carefully</span></div>
+                    <div><span class="signal-label">No fit data yet</span> <span class="signal-value">— We recommend checking the size chart. See seller's other products for sizing patterns.</span></div>
                 </div>`;
         }
 
@@ -873,13 +885,7 @@
             <div class="product-image" onclick="openProductModal(${p.id})">
                 <img src="${p.image}" alt="${p.brand} ${p.name}" loading="lazy">
                 <div class="wishlist-btn" onclick="event.stopPropagation(); removeFromWishlist(${p.id}, this)">❤️</div>
-                <div class="confidence-score" onclick="event.stopPropagation(); toggleConfidence(${p.id})">
-                    <div class="score-circle ${scoreClass}">${p.confidence}</div>
-                    <div class="score-info">
-                        <div class="score-label" style="color:${levelColor}">${levelLabel}</div>
-                        <div class="score-sub">${p.totalBuyerPhotos > 0 ? p.ratingCount.toLocaleString() + ' reviews' : 'No reviews'}</div>
-                    </div>
-                </div>
+                <div class="info-badges">${badgesHtml}</div>
             </div>
             <div class="product-info" onclick="openProductModal(${p.id})">
                 <div class="brand-name">${p.brand}</div>

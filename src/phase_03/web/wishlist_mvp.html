@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra Wishlist — Confidence Layer MVP</title>
+    <meta name="description" content="Wishlist Confidence Layer MVP — bringing real-world evidence onto the wishlist page to reduce information asymmetry and increase purchase conversion.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --myntra-pink: #ff3f6c;
+            --myntra-pink-light: #fff0f3;
+            --myntra-orange: #ff5722;
+            --green: #14b866;
+            --green-bg: #e8f8ef;
+            --amber: #f5a623;
+            --amber-bg: #fef7e8;
+            --red: #ee5a24;
+            --red-bg: #fdeaea;
+            --blue: #526cd0;
+            --blue-bg: #eef1fb;
+            --bg: #f4f4f5;
+            --card: #ffffff;
+            --text: #1a1a2e;
+            --text-secondary: #535766;
+            --border: #e8e8e8;
+            --shadow: 0 2px 12px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 30px rgba(0,0,0,0.12);
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-left { display: flex; align-items: center; gap: 24px; }
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--myntra-pink), var(--myntra-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--myntra-pink);
+            border-bottom-color: var(--myntra-pink);
+        }
+        .header-right { display: flex; align-items: center; gap: 18px; }
+        .header-icon {
+            font-size: 20px;
+            cursor: pointer;
+            position: relative;
+        }
+        .badge-count {
+            position: absolute;
+            top: -6px; right: -8px;
+            background: var(--myntra-pink);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            width: 18px; height: 18px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        /* Page Title */
+        .page-header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 24px 8px;
+        }
+        .page-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .page-title span { color: var(--text-secondary); font-weight: 400; }
+
+        /* Confidence Layer Banner */
+        .confidence-banner {
+            max-width: 1200px;
+            margin: 12px auto;
+            padding: 14px 20px;
+            background: linear-gradient(135deg, #fef3ff, #f0e6ff);
+            border: 1px solid #e8d5f5;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            color: #6b21a8;
+        }
+        .confidence-banner .icon { font-size: 24px; }
+        .confidence-banner strong { font-weight: 600; }
+
+        /* Product Grid */
+        .wishlist-grid {
+            max-width: 1200px;
+            margin: 16px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        .product-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Product Image */
+        .product-image {
+            position: relative;
+            width: 100%;
+            height: 340px;
+            overflow: hidden;
+            background: #f5f5f5;
+        }
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .wishlist-btn {
+            position: absolute;
+            top: 12px; right: 12px;
+            width: 36px; height: 36px;
+            background: white;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            font-size: 18px;
+            color: var(--myntra-pink);
+        }
+
+        /* Confidence Score Badge */
+        .confidence-score {
+            position: absolute;
+            bottom: 12px; left: 12px;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(8px);
+            border-radius: 8px;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .confidence-score .score-circle {
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13px; font-weight: 700; color: white;
+        }
+        .score-high { background: var(--green); }
+        .score-medium { background: var(--amber); }
+        .score-low { background: var(--red); }
+
+        /* Product Info */
+        .product-info {
+            padding: 14px 16px 8px;
+        }
+        .brand-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+        .product-name {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .price-current {
+            font-size: 15px;
+            font-weight: 700;
+        }
+        .price-original {
+            font-size: 13px;
+            color: #999;
+            text-decoration: line-through;
+        }
+        .price-discount {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--myntra-orange);
+        }
+
+        /* Confidence Layer — The MVP Feature */
+        .confidence-layer {
+            border-top: 1px solid var(--border);
+            padding: 12px 16px;
+            background: #fafbfc;
+        }
+        .confidence-layer-title {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--blue);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Confidence Signals */
+        .confidence-signals {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .signal {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .signal:hover { background: #f0f0f4; }
+        .signal-icon {
+            width: 28px; height: 28px;
+            border-radius: 6px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        .signal-green .signal-icon { background: var(--green-bg); }
+        .signal-amber .signal-icon { background: var(--amber-bg); }
+        .signal-red .signal-icon { background: var(--red-bg); }
+        .signal-blue .signal-icon { background: var(--blue-bg); }
+        .signal-label {
+            font-weight: 500;
+            color: var(--text);
+        }
+        .signal-value {
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        /* Buyer Photos Strip */
+        .buyer-photos {
+            display: flex;
+            gap: 6px;
+            margin-top: 4px;
+            overflow-x: auto;
+        }
+        .buyer-photo {
+            width: 48px; height: 48px;
+            border-radius: 6px;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid var(--border);
+            position: relative;
+        }
+        .buyer-photo img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+        .buyer-photo-more {
+            background: #f0f0f4;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 11px; font-weight: 600; color: var(--text-secondary);
+        }
+        .buyer-photo-badge {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            font-size: 8px;
+            text-align: center;
+            padding: 1px;
+            font-weight: 600;
+        }
+
+        /* Return Badge */
+        .return-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .return-ok { background: var(--green-bg); color: #0a7a3e; }
+        .return-no { background: var(--red-bg); color: #c0392b; }
+
+        /* AI Digest */
+        .ai-digest {
+            background: #f8f8ff;
+            border: 1px solid #e8e8f4;
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-top: 8px;
+            font-size: 12px;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+        .ai-digest-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--blue);
+            margin-bottom: 4px;
+        }
+
+        /* Cross-Seller Bridge */
+        .cross-seller {
+            background: var(--amber-bg);
+            border: 1px solid #f0ddb8;
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-top: 8px;
+            font-size: 12px;
+        }
+        .cross-seller-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #92640a;
+            margin-bottom: 4px;
+        }
+
+        /* CTA Buttons */
+        .card-actions {
+            padding: 8px 16px 14px;
+            display: flex;
+            gap: 8px;
+        }
+        .btn-cart {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: var(--myntra-pink);
+            color: white;
+        }
+        .btn-primary:hover { background: #e8365f; }
+        .btn-secondary {
+            background: white;
+            color: var(--myntra-pink);
+            border: 1.5px solid var(--myntra-pink);
+        }
+        .btn-secondary:hover { background: var(--myntra-pink-light); }
+
+        /* Expand/Collapse */
+        .confidence-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            padding: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--blue);
+            cursor: pointer;
+            transition: all 0.2s;
+            border-top: 1px solid var(--border);
+            background: white;
+        }
+        .confidence-toggle:hover { background: var(--blue-bg); }
+        .confidence-toggle .arrow { transition: transform 0.3s; }
+        .confidence-toggle.expanded .arrow { transform: rotate(180deg); }
+
+        .confidence-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .confidence-details.open {
+            max-height: 600px;
+        }
+
+        /* Footer */
+        .mvp-footer {
+            max-width: 1200px;
+            margin: 40px auto 20px;
+            padding: 24px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        .mvp-footer a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        /* Move to Cart Animation */
+        @keyframes cartPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .cart-success {
+            animation: cartPulse 0.3s ease;
+            background: var(--green) !important;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .wishlist-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 12px; }
+            .product-image { height: 220px; }
+            .confidence-banner { margin: 12px; }
+            .page-header { padding: 16px 12px 4px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">MYNTRA</div>
+            <nav class="nav-links">
+                <a href="#">Men</a>
+                <a href="#">Women</a>
+                <a href="#">Kids</a>
+                <a href="#">Beauty</a>
+                <a href="#" class="active">Wishlist</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <span class="header-icon">🔍</span>
+            <span class="header-icon">
+                ❤️
+                <span class="badge-count">6</span>
+            </span>
+            <span class="header-icon">
+                🛒
+                <span class="badge-count">2</span>
+            </span>
+            <span class="header-icon">👤</span>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <div class="page-header">
+        <h1 class="page-title">My Wishlist <span>(6 items)</span></h1>
+    </div>
+
+    <!-- Confidence Layer Banner -->
+    <div class="confidence-banner">
+        <span class="icon">🛡️</span>
+        <div>
+            <strong>Confidence Layer Active</strong> — Each wishlisted item now shows verified buyer photos, fit consensus, return clarity, and AI review summaries to help you decide without leaving the app.
+        </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="wishlist-grid">
+
+        <!-- Product 1: High Confidence -->
+        <div class="product-card" id="product-1">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=500&fit=crop" alt="Blue Linen Shirt">
+                <div class="wishlist-btn">❤️</div>
+                <div class="confidence-score">
+                    <div class="score-circle score-high">92</div>
+                    <div>
+                        <div style="font-weight:700;color:#0a7a3e">High Confidence</div>
+                        <div style="font-size:10px;color:#666">180 buyer reviews</div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-info">
+                <div class="brand-name">Roadster</div>
+                <div class="product-name">Men Blue Slim Fit Pure Linen Casual Shirt</div>
+                <div class="price-row">
+                    <span class="price-current">₹1,149</span>
+                    <span class="price-original">₹1,999</span>
+                    <span class="price-discount">(42% OFF)</span>
+                </div>
+            </div>
+            <div class="confidence-toggle" onclick="toggleConfidence('product-1')">
+                <span>View Confidence Details</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="confidence-details" id="details-product-1">
+                <div class="confidence-layer">
+                    <div class="confidence-layer-title">🛡️ Confidence Layer</div>
+                    <div class="confidence-signals">
+                        <div class="signal signal-green">
+                            <div class="signal-icon">📸</div>
+                            <div>
+                                <span class="signal-label">23 Buyer Photos</span>
+                                <span class="signal-value">— Verified purchases</span>
+                            </div>
+                        </div>
+                        <div class="buyer-photos">
+                            <div class="buyer-photo"><img src="https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?w=100&h=100&fit=crop" alt="Buyer 1"><div class="buyer-photo-badge">BUYER</div></div>
+                            <div class="buyer-photo"><img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=100&h=100&fit=crop" alt="Buyer 2"><div class="buyer-photo-badge">BUYER</div></div>
+                            <div class="buyer-photo"><img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?w=100&h=100&fit=crop" alt="Buyer 3"><div class="buyer-photo-badge">BUYER</div></div>
+                            <div class="buyer-photo buyer-photo-more">+20</div>
+                        </div>
+                        <div class="signal signal-green">
+                            <div class="signal-icon">📏</div>
+                            <div>
+                                <span class="signal-label">88% say "True to Size"</span>
+                                <span class="signal-value">— Based on 142 fit reviews</span>
+                            </div>
+                        </div>
+                        <div class="signal signal-green">
+                            <div class="signal-icon">🔄</div>
+                            <div>
+                                <span class="return-badge return-ok">✅ Returnable — 15 days</span>
+                                <span class="signal-value" style="margin-left:4px">96% returns approved</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ai-digest">
+                        <div class="ai-digest-label">⭐ AI Review Summary</div>
+                        Buyers love the linen fabric quality and breathability. Colour is accurate to photos. Runs slightly slim — consider ordering one size up if you prefer a relaxed fit. Collar stays crisp after 5+ washes.
+                    </div>
+                </div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-cart btn-primary" onclick="moveToCart(this)">MOVE TO CART</button>
+            </div>
+        </div>
+
+        <!-- Product 2: Medium Confidence (Fit Warning) -->
+        <div class="product-card" id="product-2">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=500&fit=crop" alt="Floral Dress">
+                <div class="wishlist-btn">❤️</div>
+                <div class="confidence-score">
+                    <div class="score-circle score-medium">68</div>
+                    <div>
+                        <div style="font-weight:700;color:#92640a">Medium Confidence</div>
+                        <div style="font-size:10px;color:#666">45 buyer reviews</div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-info">
+                <div class="brand-name">SASSAFRAS</div>
+                <div class="product-name">Women Floral Print Fit & Flare Midi Dress</div>
+                <div class="price-row">
+                    <span class="price-current">₹1,679</span>
+                    <span class="price-original">₹2,799</span>
+                    <span class="price-discount">(40% OFF)</span>
+                </div>
+            </div>
+            <div class="confidence-toggle" onclick="toggleConfidence('product-2')">
+                <span>View Confidence Details</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="confidence-details" id="details-product-2">
+                <div class="confidence-layer">
+                    <div class="confidence-layer-title">🛡️ Confidence Layer</div>
+                    <div class="confidence-signals">
+                        <div class="signal signal-green">
+                            <div class="signal-icon">📸</div>
+                            <div>
+                                <span class="signal-label">8 Buyer Photos</span>
+                                <span class="signal-value">— Verified purchases</span>
+                            </div>
+                        </div>
+                        <div class="buyer-photos">
+                            <div class="buyer-photo"><img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=100&h=100&fit=crop" alt="Buyer 1"><div class="buyer-photo-badge">BUYER</div></div>
+                            <div class="buyer-photo"><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=100&h=100&fit=crop" alt="Buyer 2"><div class="buyer-photo-badge">BUYER</div></div>
+                            <div class="buyer-photo buyer-photo-more">+6</div>
+                        </div>
+                        <div class="signal signal-amber">
+                            <div class="signal-icon">📏</div>
+                            <div>
+                                <span class="signal-label">62% say "Runs Small"</span>
+                                <span class="signal-value">— ⚠️ Order one size up</span>
+                            </div>
+                        </div>
+                        <div class="signal signal-green">
+                            <div class="signal-icon">🔄</div>
+                            <div>
+                                <span class="return-badge return-ok">✅ Returnable — 15 days</span>
+                                <span class="signal-value" style="margin-left:4px">91% returns approved</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ai-digest">
+                        <div class="ai-digest-label">⭐ AI Review Summary</div>
+                        Beautiful floral print — colours are vibrant and accurate. Fabric feels premium for the price. <strong>⚠️ Sizing issue:</strong> most buyers recommend ordering one size up. The waist runs tight. Length is perfect for 5'4"–5'6".
+                    </div>
+                </div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-cart btn-primary" onclick="moveToCart(this)">MOVE TO CART</button>
+            </div>
+        </div>
+
+        <!-- Product 3: Low Confidence — Zero Reviews, Cross-Seller Bridge -->
+        <div class="product-card" id="product-3">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=500&fit=crop" alt="Denim Jacket">
+                <div class="wishlist-btn">❤️</div>
+                <div class="confidence-score">
+                    <div class="score-circle score-low">31</div>
+                    <div>
+                        <div style="font-weight:700;color:#c0392b">Low Confidence</div>
+                        <div style="font-size:10px;color:#666">0 reviews</div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-info">
+                <div class="brand-name">HERE&NOW</div>
+                <div class="product-name">Men Washed Denim Trucker Jacket</div>
+                <div class="price-row">
+                    <span class="price-current">₹1,799</span>
+                    <span class="price-original">₹3,599</span>
+                    <span class="price-discount">(50% OFF)</span>
+                </div>
+            </div>
+            <div class="confidence-toggle" onclick="toggleConfidence('product-3')">
+                <span>View Confidence Details</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="confidence-details" id="details-product-3">
+                <div class="confidence-layer">
+                    <div class="confidence-layer-title">🛡️ Confidence Layer</div>
+                    <div class="confidence-signals">
+                        <div class="signal signal-red">
+                            <div class="signal-icon">📸</div>
+                            <div>
+                                <span class="signal-label">0 Buyer Photos</span>
+                                <span class="signal-value">— No verified purchases yet</span>
+                            </div>
+                        </div>
+                        <div class="signal signal-red">
+                            <div class="signal-icon">📏</div>
+                            <div>
+                                <span class="signal-label">No fit data available</span>
+                                <span class="signal-value">— Check size chart carefully</span>
+                            </div>
+                        </div>
+                        <div class="signal signal-green">
+                            <div class="signal-icon">🔄</div>
+                            <div>
+                                <span class="return-badge return-ok">✅ Returnable — 15 days</span>
+                                <span class="signal-value" style="margin-left:4px">Seller avg: 89% returns approved</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cross-Seller Review Bridge — THE NOVEL COMPONENT -->
+                    <div class="cross-seller">
+                        <div class="cross-seller-label">🔗 Cross-Seller Review Bridge</div>
+                        <p style="margin-bottom:6px"><strong>This product has no reviews yet.</strong> But HERE&NOW's other denim products are rated:</p>
+                        <div style="display:flex;gap:12px;margin-top:6px">
+                            <div style="text-align:center">
+                                <div style="font-size:20px;font-weight:700;color:#1a1a2e">4.1★</div>
+                                <div style="font-size:10px;color:#666">Denim Shirts<br>340 reviews</div>
+                            </div>
+                            <div style="text-align:center">
+                                <div style="font-size:20px;font-weight:700;color:#1a1a2e">3.9★</div>
+                                <div style="font-size:10px;color:#666">Denim Jeans<br>520 reviews</div>
+                            </div>
+                            <div style="text-align:center">
+                                <div style="font-size:20px;font-weight:700;color:#1a1a2e">4.3★</div>
+                                <div style="font-size:10px;color:#666">Denim Jackets<br>89 reviews</div>
+                            </div>
+                        </div>
+                        <p style="margin-top:8px;font-size:11px;color:#666">Buyers of HERE&NOW denim say: "Good quality for the price, slightly stiff initially but softens after 2–3 washes."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-cart btn-primary" onclick="moveToCart(this)">MOVE TO CART</button>
+            </div>
+        </div>
+
+        <!-- Product 4: Non-Returnable Warning -->
+        <div class="product-card" id="product-4">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=400&h=500&fit=crop" alt="Sports Bra">
+                <div class="wishlist-btn">❤️</div>
+                <div class="confidence-score">
+                    <div class="score-circle score-medium">55</div>
+                    <div>
+                        <div style="font-weight:700;color:#92640a">Medium Confidence</div>
+                        <div style="font-size:10px;color:#666">67 buyer reviews</div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-info">
+                <div class="brand-name">Zivame</div>
+                <div class="product-name">Women Padded Non-Wired Sports Bra</div>
+                <div class="price-row">
+                    <span class="price-current">₹746</span>
+                    <span class="price-original">₹1,195</span>
+                    <span class="price-discount">(37% OFF)</span>
+                </div>
+            </div>
+            <div class="confidence-toggle" onclick="toggleConfidence('product-4')">
+                <span>View Confidence Details</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="confidence-details" id="details-product-4">
+                <div class="confidence-layer">
+                    <div class="confidence-layer-title">🛡️ Confidence Layer</div>
+                    <div class="confidence-signals">
+                        <div class="signal signal-green">
+                            <div class="signal-icon">📸</div>
+                            <div>
+                                <span class="signal-label">12 Buyer Photos</span>
+                                <span class="signal-value">— Verified purchases</span>
+                            </div>
+                        </div>
+                        <div class="signal signal-green">
+                            <div class="signal-icon">📏</div>
+                            <div>
+                                <span class="signal-label">79% say "True to Size"</span>
+                                <span class="signal-value">— Based on 52 fit reviews</span>
+                            </div>
+                        </div>
+                        <div class="signal signal-red">
+                            <div class="signal-icon">🔄</div>
+                            <div>
+                                <span class="return-badge return-no">⚠️ Non-Returnable — Intimate Wear</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ai-digest">
+                        <div class="ai-digest-label">⭐ AI Review Summary</div>
+                        Great support for low-to-medium impact workouts. Fabric is breathable and doesn't ride up. <strong>⚠️ Non-returnable:</strong> check size chart carefully. Most buyers between 32B–34C say the fit is accurate. Elastic band may feel tight initially but stretches after 2–3 uses.
+                    </div>
+                </div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-cart btn-primary" onclick="moveToCart(this)">MOVE TO CART</button>
+            </div>
+        </div>
+
+        <!-- Product 5: High Confidence, Premium Item -->
+        <div class="product-card" id="product-5">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=500&fit=crop" alt="Sneakers">
+                <div class="wishlist-btn">❤️</div>
+                <div class="confidence-score">
+                    <div class="score-circle score-high">87</div>
+                    <div>
+                        <div style="font-weight:700;color:#0a7a3e">High Confidence</div>
+                        <div style="font-size:10px;color:#666">312 buyer reviews</div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-info">
+                <div class="brand-name">Nike</div>
+                <div class="product-name">Men Air Max 90 Running Shoes</div>
+                <div class="price-row">
+                    <span class="price-current">₹8,695</span>
+                    <span class="price-original">₹10,795</span>
+                    <span class="price-discount">(19% OFF)</span>
+                </div>
+            </div>
+            <div class="confidence-toggle" onclick="toggleConfidence('product-5')">
+                <span>View Confidence Details</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="confidence-details" id="details-product-5">
+                <div class="confidence-layer">
+                    <div class="confidence-layer-title">🛡️ Confidence Layer</div>
+                    <div class="confidence-signals">
+                        <div class="signal signal-green">
+                            <div class="signal-icon">📸</div>
+                            <div>
+                                <span class="signal-label">56 Buyer Photos</span>
+                                <span class="signal-value">— Verified purchases</span>
+                            </div>
+                        </div>
+                        <div class="buyer-photos">
+                            <div class="buyer-photo"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=100&h=100&fit=crop" alt="Buyer 1"><div class="buyer-photo-badge">BUYER</div></div>
+                            <div class="buyer-photo"><img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=100&h=100&fit=crop" alt="Buyer 2"><div class="buyer-photo-badge">BUYER</div></div>
+                            <div class="buyer-photo"><img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=100&h=100&fit=crop" alt="Buyer 3"><div class="buyer-photo-badge">BUYER</div></div>
+                            <div class="buyer-photo buyer-photo-more">+53</div>
+                        </div>
+                        <div class="signal signal-amber">
+                            <div class="signal-icon">📏</div>
+                            <div>
+                                <span class="signal-label">71% say "Runs Half Size Large"</span>
+                                <span class="signal-value">— ⚠️ Order half size down (UK)</span>
+                            </div>
+                        </div>
+                        <div class="signal signal-green">
+                            <div class="signal-icon">🔄</div>
+                            <div>
+                                <span class="return-badge return-ok">✅ Returnable — 30 days</span>
+                                <span class="signal-value" style="margin-left:4px">98% returns approved</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ai-digest">
+                        <div class="ai-digest-label">⭐ AI Review Summary</div>
+                        Authentic Nike quality. Cushioning is excellent for daily wear and light running. Colour matches product photos accurately. <strong>⚠️ Sizing tip:</strong> runs half size large — if you're UK 8, order UK 7.5. Box and packaging are original.
+                    </div>
+                </div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-cart btn-primary" onclick="moveToCart(this)">MOVE TO CART</button>
+            </div>
+        </div>
+
+        <!-- Product 6: Medium, Cross-Seller -->
+        <div class="product-card" id="product-6">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=400&h=500&fit=crop" alt="Graphic Tee">
+                <div class="wishlist-btn">❤️</div>
+                <div class="confidence-score">
+                    <div class="score-circle score-medium">52</div>
+                    <div>
+                        <div style="font-weight:700;color:#92640a">Medium Confidence</div>
+                        <div style="font-size:10px;color:#666">6 buyer reviews</div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-info">
+                <div class="brand-name">Bewakoof</div>
+                <div class="product-name">Men Oversized Graphic Printed T-Shirt</div>
+                <div class="price-row">
+                    <span class="price-current">₹449</span>
+                    <span class="price-original">₹999</span>
+                    <span class="price-discount">(55% OFF)</span>
+                </div>
+            </div>
+            <div class="confidence-toggle" onclick="toggleConfidence('product-6')">
+                <span>View Confidence Details</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="confidence-details" id="details-product-6">
+                <div class="confidence-layer">
+                    <div class="confidence-layer-title">🛡️ Confidence Layer</div>
+                    <div class="confidence-signals">
+                        <div class="signal signal-amber">
+                            <div class="signal-icon">📸</div>
+                            <div>
+                                <span class="signal-label">2 Buyer Photos</span>
+                                <span class="signal-value">— Limited visual evidence</span>
+                            </div>
+                        </div>
+                        <div class="signal signal-green">
+                            <div class="signal-icon">📏</div>
+                            <div>
+                                <span class="signal-label">Oversized Fit</span>
+                                <span class="signal-value">— "True to oversized sizing" (4/6 reviews)</span>
+                            </div>
+                        </div>
+                        <div class="signal signal-green">
+                            <div class="signal-icon">🔄</div>
+                            <div>
+                                <span class="return-badge return-ok">✅ Returnable — 15 days</span>
+                                <span class="signal-value" style="margin-left:4px">93% returns approved</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cross-seller">
+                        <div class="cross-seller-label">🔗 Cross-Seller Review Bridge</div>
+                        <p style="margin-bottom:6px">Only 6 reviews for this design. But Bewakoof's other oversized tees are rated:</p>
+                        <div style="display:flex;gap:12px;margin-top:6px">
+                            <div style="text-align:center">
+                                <div style="font-size:20px;font-weight:700;color:#1a1a2e">4.2★</div>
+                                <div style="font-size:10px;color:#666">Cotton Tees<br>2,840 reviews</div>
+                            </div>
+                            <div style="text-align:center">
+                                <div style="font-size:20px;font-weight:700;color:#1a1a2e">4.0★</div>
+                                <div style="font-size:10px;color:#666">Oversized Tees<br>1,120 reviews</div>
+                            </div>
+                        </div>
+                        <p style="margin-top:8px;font-size:11px;color:#666">Buyers of Bewakoof tees say: "Print quality fades slightly after 10+ washes. Fabric is soft cotton, good for daily wear. True oversized fit."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-cart btn-primary" onclick="moveToCart(this)">MOVE TO CART</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="mvp-footer">
+        <p><strong>Wishlist Confidence Layer MVP</strong> — AI Discovery Engine</p>
+        <p style="margin-top:4px">Resolving information asymmetry to increase wishlist-to-purchase conversion within 30 days</p>
+        <p style="margin-top:8px">
+            <a href="/">← Back to Dashboard</a> · 
+            <a href="/discovery_research_report.html">Full Report</a> · 
+            <a href="https://github.com/SoumayLightRay/AI-Discovery-Engine">GitHub</a>
+        </p>
+    </div>
+
+    <script>
+        function toggleConfidence(productId) {
+            const details = document.getElementById('details-' + productId);
+            const toggle = details.previousElementSibling;
+            details.classList.toggle('open');
+            toggle.classList.toggle('expanded');
+            if (details.classList.contains('open')) {
+                toggle.querySelector('span:first-child').textContent = 'Hide Confidence Details';
+            } else {
+                toggle.querySelector('span:first-child').textContent = 'View Confidence Details';
+            }
+        }
+
+        function moveToCart(btn) {
+            btn.classList.add('cart-success');
+            btn.textContent = '✓ MOVED TO CART';
+            btn.disabled = true;
+            // Update cart count
+            const cartBadge = document.querySelectorAll('.badge-count')[1];
+            cartBadge.textContent = parseInt(cartBadge.textContent) + 1;
+            // Update wishlist count
+            const wishBadge = document.querySelectorAll('.badge-count')[0];
+            wishBadge.textContent = parseInt(wishBadge.textContent) - 1;
+            const pageTitle = document.querySelector('.page-title span');
+            pageTitle.textContent = '(' + wishBadge.textContent + ' items)';
+        }
+
+        // Auto-open first product to demonstrate
+        setTimeout(() => toggleConfidence('product-1'), 800);
+    </script>
+
+</body>
+</html>

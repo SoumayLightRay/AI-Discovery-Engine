@@ -35,6 +35,7 @@ Increase the percentage of users who purchase at least one item from their wishl
 
 **Deliverable links:**
 - 🌐 [AI Discovery Engine Dashboard](https://ai-discovery-engine-rose.vercel.app/)
+- 📱 [Wishlist Confidence Layer MVP](https://ai-discovery-engine-rose.vercel.app/wishlist_mvp.html)
 - 📄 [Full Research Report](https://ai-discovery-engine-rose.vercel.app/discovery_research_report.html)
 - 💻 [Source Code (GitHub)](https://github.com/SoumayLightRay/AI-Discovery-Engine)
 
@@ -459,27 +460,53 @@ GUARDRAILS (must NOT worsen — kill feature if they do)
 ---
 ---
 
-# AUDIT CHECKLIST (v3)
+# AUDIT CHECKLIST (v4 — Final)
+
+**project.md Part Mapping (all 8 required sections covered):**
+
+| project.md Requirement | Slide | Status |
+|---|---|---|
+| 1. Business metric decomposition | Slide 2 | ✅ |
+| 2. Discovery engine findings | Slides 3–4 | ✅ |
+| 3. Primary research | Slides 5–6 | ✅ |
+| 4. Problem definition | Slide 6 (root cause chain) | ✅ |
+| 5. Solution rationale | Slide 7 (RICE + 3-Level Test) | ✅ |
+| 6. MVP | Slide 8 (3-layer Confidence Layer) | ✅ |
+| 7. Success metrics | Slide 9 | ✅ |
+| 8. Risks and mitigation | Slide 10 | ✅ |
+
+**Arindam Feedback Compliance:**
 
 | Requirement | Source | Status |
 |---|---|---|
 | RICE framework | framework.md Phase 7 | ✅ Slide 7 — with competitive rejections |
-| 3-Level Creativity Test | framework.md / arindam_feedback | ✅ Slide 7 |
+| 3-Level Creativity Test (L1+L2+L3) | arindam_feedback | ✅ Slide 7 — Myntra Verified = L2, Flywheel = L3 |
 | "How Might We" statement | framework.md Phase 7 | ✅ Slide 7 |
-| 5 Whys root cause | framework.md Phase 5 | ✅ Slide 6 |
-| Behavioural segments (not demographics) | arindam_feedback Rule 1 | ✅ Slide 6 |
-| AI findings as hypotheses, not conclusions | arindam_feedback Rule 3 | ✅ Slide 3 |
-| Disconfirmation / evidence changed thinking | framework.md core philosophy | ✅ Slide 5 — Blue Cobalt Shorts |
-| "How thinking evolved" narrative | project.md Part 4 | ✅ Slide 5 |
-| Competitive analysis in rejections | 3-Level Test Level 2 | ✅ Slide 7 — Myntra/Amazon/AJIO features cited |
-| Cross-platform comparison narrative | Interview 1 + Survey | ✅ Slides 5, 6, 8 |
-| North Star → solution → leading → guardrails | framework.md Phase 9 | ✅ Slide 9 |
-| Risks & mitigation | project.md Part 7 | ✅ Slide 10 |
-| Cross-Seller Review Bridge (novel component) | Interview 1 suggestion | ✅ Slides 7, 8 |
-| Blue Cobalt Shorts story | Interview 1 | ✅ Slide 5 |
-| No Fellow name | project.md | ✅ All slides |
-| Title = key takeaway | project.md deck guidelines | ✅ All slides |
-| Real AI data (1,367 reviews) | report.md | ✅ Slides 2–4 |
-| Real survey data (N = 36 wishlist users) | primary_research.md | ✅ Slides 5, 6 |
-| Real interview data (12 live calls) | docs/interview_1–12.md + interview_consolidated.md | ✅ All 12 interviews processed with real quotes |
-| Links to live deliverables | project.md | ✅ Slides 1, 3, 8 |
+| 5 Whys root cause with evidence | framework.md Phase 5 | ✅ Slide 6 — real quotes at every level |
+| Behavioural segments (not demographics) | arindam_feedback Rule 1 | ✅ Slide 6 — interview-refined |
+| AI findings as hypotheses, not conclusions | arindam_feedback | ✅ Slide 3 |
+| Disconfirmation / evidence changed thinking | framework.md core philosophy | ✅ Slide 5 — Confidence Gap Paradox |
+| "How thinking evolved" narrative | project.md Part 4 | ✅ Slide 5 — AI→Survey→Interview arc |
+| Competitive analysis in rejections | 3-Level Test Level 2 | ✅ Slide 7 — Myntra/Amazon/AJIO/Flipkart/Meesho |
+| Counter-evidence presented honestly | Anti-assumption mandate | ✅ Slide 5 (Aziz), Slide 8 (Himanshi) |
+
+**Deliverable Links:**
+
+| Link | Where Referenced | Status |
+|---|---|---|
+| AI Discovery Engine | Slides 1, 3 | ✅ |
+| Deployed MVP | Slides 1, 8 | ✅ |
+| Research Report | Slide 1 | ✅ |
+| GitHub Source Code | Slide 1 | ✅ |
+
+**Deck Constraints:**
+
+| Constraint | Status |
+|---|---|
+| No Fellow name | ✅ |
+| 10 slides max | ✅ (exactly 10) |
+| Title = key takeaway | ✅ All slides |
+| Min font 14 (Slides) / 22 (Canva) | ⬜ To verify in final deck |
+| < 40 MB | ⬜ To verify |
+| Color-blind-friendly | ⬜ To verify |
+| File name: NL Myntra | ⬜ To set |

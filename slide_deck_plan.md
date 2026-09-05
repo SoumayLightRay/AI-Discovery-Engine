@@ -264,17 +264,24 @@ Among 36 wishlist users, current intent toward their most recent wishlisted item
 
 **Behavioural Segments (derived from behaviour, not demographics — refined by 12 live interviews)**
 
-| Segment | Survey % | Interview Refinement | Actionable? |
-|---|---|---|---|
-| **Confidence-arbitrage buyers** | ~28% explicit | 11/12 pay MORE for trust signals (Rishika, Aastha, Nandini, Sia, Umesh, Tanej) | ✅ **Primary target** |
-| **Price-blocked** | ~44% | Stuti: self-regulation, not inability. But still overridden by confidence | ❌ **Constrained** (no-incentives rule) |
-| **Comparison-stalled** | ~36% | 11/12 compare cross-platform — for price AND reviews, not just price | ✅ Partially addressable |
-| **Brand-trust-substituters** | — | Aziz, Umesh, Yaakrati: brand replaces reviews | ⚠️ Solution less relevant |
-| **Styling/versatility doubters** | — | Prakhar: "Will it go with my wardrobe?" — distinct mechanism | ✅ Addressable |
-| Stock-out-blocked | ~11% | Yaakrati: boots went unavailable while comparing | ⚠️ Logistics |
-| Passive decayers | Small | Prakhar: procrastination loop (20–30 day revisits) | ⚠️ Nudge only |
+| Segment | Survey % | Estimated Size (of wishlist users) | Interview Evidence | Probability of Behaviour Change | Actionable? |
+|---|---|---|---|---|---|
+| **Confidence-arbitrage buyers** | ~28% explicit; 69% historical | ~28–69% of wishlist users | 11/12 pay MORE for trust signals | **High** — behaviour already exists (they pay more elsewhere); we just need to bring signals on-platform | ✅ **Primary target** |
+| **Price-blocked** | ~44% | ~44% | Stuti: self-regulation, not inability | **Low** — constrained by no-incentives rule | ❌ **Constrained** |
+| **Comparison-stalled** | ~36% | ~36% (heavy overlap with confidence segment) | 11/12 compare cross-platform | **Medium** — partially addressed by on-platform signals | ✅ Partially addressable |
+| **Brand-trust-substituters** | — | Small (est. 10–15%) | Aziz, Umesh, Yaakrati | **Low** — already convert when brand is known | ⚠️ Solution less relevant |
+| **Styling/versatility doubters** | — | Est. ~10% | Prakhar: wardrobe compatibility | **Medium** — addressable by comparison features | ✅ Addressable |
+| Stock-out-blocked | ~11% | ~11% | Yaakrati: boots unavailable | **Low** — logistics, not solvable via UI | ⚠️ Logistics |
+| Passive decayers | Small | Est. <5% | Prakhar: procrastination loop | **Low** — nudge only | ⚠️ Nudge only |
 
-**Segment Selection:** Decision confidence is the **strongest non-monetary signal** (28% explicit, 69% historical). Price is honestly the largest barrier — but 11/12 interview respondents pay MORE when confidence signals are present. Price is a constraint, not solution space.
+**Segment Selection Rationale:**
+
+→ **Why Confidence-arbitrage buyers?**
+- **Size:** ~28% explicit (survey) to ~69% historical. Even at conservative 28%, this is the largest actionable segment.
+- **Probability of behaviour change:** HIGH. These users already pay MORE for confidence on other platforms. The behaviour exists — it just happens on Amazon/AJIO, not Myntra. We don't need to create new behaviour, we need to redirect it.
+- **Why not Price-blocked (44%)?** Largest segment, but constrained by the no-incentives rule. Cannot be solved.
+- **Why not Comparison-stalled (36%)?** Heavy overlap with confidence segment. Addressing confidence automatically reduces comparison need.
+- **Scalability:** Solution applies to ALL wishlist users, not just the target segment. Confidence signals benefit price-blocked users too (11/12 pay more for trust even when price is their stated concern).
 
 **89% of Users Leave the App — Here's Why:**
 
@@ -553,6 +560,30 @@ GUARDRAILS (must NOT worsen — kill feature if they do)
 | **Return rate** | % of orders returned within 15 days | Better info should REDUCE returns. If it increases them, the signals are misleading |
 
 **Kill Criteria:** If leading indicators don't move within 14 days of A/B test launch, we stop the experiment and investigate.
+
+**Impact Sizing (conservative estimate):**
+
+```
+Target segment: Confidence-arbitrage buyers = ~28% of wishlist users (conservative)
+Probability of behaviour change: HIGH (11/12 already pay more for confidence elsewhere)
+
+Assumptions:
+  • If 28% of wishlist users are in this segment
+  • And we convert 15-25% of them who currently leak (42% leakage rate)
+  • That's 28% × 42% × 20% (mid-estimate) = ~2.4% absolute lift in wishlist-to-purchase conversion
+
+Why these numbers:
+  • 28% = survey-derived segment size (conservative; 69% historical may apply)
+  • 42% = actual measured leakage rate (survey: "bought similar elsewhere")
+  • 15-25% = estimated conversion of leaked intent (we bring signals on-platform,
+    but not all leaked users will convert — some still choose competitor for other reasons)
+  • Even 1-2% absolute lift on a high-volume metric = material revenue impact
+
+This does NOT account for:
+  • Spillover to Comparison-stalled segment (36% overlap)
+  • Reduced return rate from better pre-purchase info
+  • Brand Trust Index compounding effects over time
+```
 
 ---
 

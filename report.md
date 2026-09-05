@@ -512,25 +512,41 @@ ROOT CAUSE
 
 ## 14. Recommended MVP
 
-### "Wishlist Confidence Layer"
+### "Myntra Verified Confidence Layer"
 
-An overlay on each wishlisted item that provides real-world evidence to resolve purchase uncertainty:
+A three-layer trust system on each wishlisted item that provides platform-verified confidence signals to resolve purchase uncertainty:
+
+**Layer 1 — User-Generated Trust (Baseline):**
 
 | Component | What It Shows | Addresses |
 |---|---|---|
-| 📸 Verified Buyer Photos | Real customer photos, not marketing | Quality uncertainty (14.1%) |
-| 📏 Fit Consensus | "85% of buyers say true to size" — aggregated from reviews | Fit/Size (4.5%) |
-| 🔄 Return Clarity Badge | "✅ Returnable 15 days" or "⚠️ Non-returnable" | Return anxiety (9.9%) |
-| ⭐ AI Review Digest | "Buyers love fabric but say it runs small" — 3-line summary | Review gap (6.1%) |
-| 🔗 Cross-Seller Review Bridge | When product has zero reviews: show reviews of same category from same seller | Zero-review "invisible friction" |
+| 📸 Verified Buyer Photos | Real customer photos surfaced ON the wishlist card | Quality uncertainty (14.1%) |
+| ⭐ Top Reviews on Wishlist | Most helpful reviews pulled directly onto wishlist | Review gap (6.1%) |
+| 🔄 Return Clarity Badge | "✅ Easy Return 15 days" or "⚠️ Non-returnable" — prominent | Return anxiety (9.9%) |
+
+**Layer 2 — Platform-Verified Trust (Differentiated):**
+
+| Component | What It Shows | Addresses |
+|---|---|---|
+| 🏅 Myntra Verified Badge | Myntra independently verifies quality, fit, photos. Actual measurements, in-house photography, quality grade. | Zero-review products + quality trust for all products |
+| 🔗 Cross-Seller Review Bridge | Zero-review products → seller's other product reviews + seller trust score | Zero-review "invisible friction" |
+| 🔀 Smart Compare | Side-by-side comparison of wishlisted items with all confidence signals | Comparison friction (36% survey) |
+
+**Layer 3 — Data-Compounding Trust (Defensible moat):**
+
+| Component | What It Shows | Addresses |
+|---|---|---|
+| 📏 Brand-Level Size Intelligence | "Roadster runs 1 size small based on 2,300 Myntra buyers" | Fit/Size (4.5%) |
+| 🔁 Post-Purchase Confidence Flywheel | After delivery: "Match photos? Size accurate? Quality?" → feeds Brand Trust Index | Creates compounding proprietary data |
 
 **Why this MVP:**
-- Addresses the root cause validated across AI engine (1,367 reviews), survey (N=36), and interviews (12 respondents)
+- 3 layers × 8 components address every validated friction mechanism
 - 11/12 interview respondents confirmed they pay MORE for confidence signals
-- 11/12 prefer buyer photos over model pics
-- Cross-Seller Review Bridge validated by 3/6 users when pitched directly
+- Myntra Verified Badge = Level 2 differentiation (no competitor does platform-level quality/fit verification for fashion)
+- Post-Purchase Flywheel = Level 3 defensibility (proprietary data that compounds)
+- Cross-Seller Review Bridge = validated by 3/6 users, honestly limited (1/6 rejected)
 - Does NOT require monetary incentives
-- Directly resolves information asymmetry — the root cause
+- Directly resolves the Confidence Gap Paradox — the root cause
 
 ---
 

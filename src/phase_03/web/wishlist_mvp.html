@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Myntra Wishlist — Confidence Layer MVP</title>
-    <meta name="description" content="Wishlist Confidence Layer MVP — bringing real-world evidence onto the wishlist page to reduce information asymmetry and increase purchase conversion.">
+    <title>Myntra Wishlist — Myntra Verified Confidence Layer MVP</title>
+    <meta name="description" content="Myntra Verified Confidence Layer MVP — a 3-layer trust system bringing platform-verified evidence onto the wishlist page to solve the Confidence Gap Paradox and increase purchase conversion.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -600,7 +600,7 @@
     <div class="confidence-banner" id="confidence-banner">
         <span class="icon">🛡️</span>
         <div>
-            <strong>Confidence Layer Active</strong> — Each item shows verified buyer photos, fit consensus, return clarity & AI review summaries so you can decide without checking Amazon or AJIO.
+            <strong>Myntra Verified Confidence Layer</strong> — 3 layers of trust: verified buyer photos, Myntra Verified quality badges, and brand-level size intelligence — so you can decide without checking Amazon or AJIO.
         </div>
         <span class="banner-dismiss" onclick="document.getElementById('confidence-banner').style.display='none'">✕</span>
     </div>
@@ -610,8 +610,8 @@
 
     <!-- Footer -->
     <div class="mvp-footer">
-        <div class="footer-title">Wishlist Confidence Layer — MVP Demo</div>
-        <div class="footer-sub">Reducing information asymmetry to increase 30-day wishlist-to-purchase conversion</div>
+        <div class="footer-title">Myntra Verified Confidence Layer — MVP Demo</div>
+        <div class="footer-sub">3 layers of trust × 8 components — solving the Confidence Gap Paradox to increase 30-day wishlist-to-purchase conversion</div>
         <div class="footer-links">
             <a href="/">← AI Discovery Dashboard</a>
             <a href="/discovery_research_report.html">Full Research Report</a>
@@ -657,6 +657,8 @@
             fitConsensus: { pct: 88, label: 'True to Size', reviews: 142, class: 'green' },
             returnInfo: { returnable: true, days: 15, rate: 96 },
             aiDigest: 'Buyers love the linen fabric quality and breathability. Colour is accurate to photos. Runs slightly slim — consider ordering one size up for a relaxed fit. Collar stays crisp after 5+ washes.',
+            myntraVerified: null,
+            brandSizeIntel: { brand: 'Roadster', fit: 'Runs slightly slim', based: '2,300 Myntra buyers', photoMatch: 94 },
             crossSeller: null
         },
         {
@@ -673,6 +675,8 @@
             fitConsensus: { pct: 62, label: 'Runs Small', reviews: 38, class: 'amber', tip: '⚠️ Order one size up' },
             returnInfo: { returnable: true, days: 15, rate: 91 },
             aiDigest: 'Beautiful floral print — colours are vibrant and accurate. Fabric feels premium for the price. <strong>⚠️ Sizing issue:</strong> most buyers recommend ordering one size up. The waist runs tight. Length is perfect for 5\'4"–5\'6".',
+            myntraVerified: null,
+            brandSizeIntel: { brand: 'SASSAFRAS', fit: 'Runs 1 size small', based: '890 Myntra buyers', photoMatch: 87 },
             crossSeller: null
         },
         {
@@ -686,6 +690,8 @@
             fitConsensus: null,
             returnInfo: { returnable: true, days: 15, rate: 89, note: "Seller avg" },
             aiDigest: null,
+            myntraVerified: { quality: 'A-Grade', photoVerified: true, measurements: 'Chest 42", Length 26", Sleeve 25"' },
+            brandSizeIntel: null,
             crossSeller: {
                 sellerName: 'HERE&NOW',
                 message: 'This product has no reviews yet. But HERE&NOW\'s other denim products are rated:',
@@ -710,6 +716,8 @@
             fitConsensus: { pct: 79, label: 'True to Size', reviews: 52, class: 'green' },
             returnInfo: { returnable: false, category: 'Intimate Wear' },
             aiDigest: 'Great support for low-to-medium impact workouts. Fabric is breathable. <strong>⚠️ Non-returnable:</strong> check size chart carefully. Buyers between 32B–34C say the fit is accurate. Elastic band may feel tight initially but stretches after 2–3 uses.',
+            myntraVerified: null,
+            brandSizeIntel: { brand: 'Zivame', fit: 'True to size', based: '1,400 Myntra buyers', photoMatch: 91 },
             crossSeller: null
         },
         {
@@ -727,6 +735,8 @@
             fitConsensus: { pct: 71, label: 'Runs Half Size Large', reviews: 198, class: 'amber', tip: '⚠️ Order half size down (UK)' },
             returnInfo: { returnable: true, days: 30, rate: 98 },
             aiDigest: 'Authentic Nike quality. Cushioning is excellent for daily wear and light running. Colour matches product photos accurately. <strong>⚠️ Sizing tip:</strong> runs half size large — if you\'re UK 8, order UK 7.5. Box and packaging are original.',
+            myntraVerified: null,
+            brandSizeIntel: { brand: 'Nike', fit: 'Runs half size large (UK)', based: '4,100 Myntra buyers', photoMatch: 97 },
             crossSeller: null
         },
         {
@@ -742,6 +752,8 @@
             fitConsensus: { pct: 83, label: 'True to Oversized', reviews: 6, class: 'green' },
             returnInfo: { returnable: true, days: 15, rate: 93 },
             aiDigest: null,
+            myntraVerified: null,
+            brandSizeIntel: { brand: 'Bewakoof', fit: 'True oversized', based: '3,200 Myntra buyers', photoMatch: 82 },
             crossSeller: {
                 sellerName: 'Bewakoof',
                 message: 'Only 6 reviews for this design. But Bewakoof\'s other oversized tees are rated:',
@@ -782,6 +794,12 @@
             badgesHtml += `<div class="info-badge info-badge-green" onclick="event.stopPropagation(); toggleConfidence(${p.id})">✅ ${p.returnInfo.days}-day returns</div>`;
         } else {
             badgesHtml += `<div class="info-badge info-badge-amber" onclick="event.stopPropagation(); toggleConfidence(${p.id})">⚠️ Non-returnable</div>`;
+        }
+        if (p.myntraVerified) {
+            badgesHtml += `<div class="info-badge info-badge-blue" onclick="event.stopPropagation(); toggleConfidence(${p.id})">🏅 Myntra Verified — ${p.myntraVerified.quality}</div>`;
+        }
+        if (p.brandSizeIntel) {
+            badgesHtml += `<div class="info-badge info-badge-green" onclick="event.stopPropagation(); toggleConfidence(${p.id})">📏 ${p.brandSizeIntel.photoMatch}% photo match</div>`;
         }
         if (p.crossSeller) {
             badgesHtml += `<div class="info-badge info-badge-blue" onclick="event.stopPropagation(); toggleConfidence(${p.id})">🔗 Trusted seller · ${p.crossSeller.ratings[0].score}</div>`;
@@ -850,6 +868,37 @@
                 <div class="signal signal-red">
                     <div class="signal-icon">🔄</div>
                     <div><span class="return-badge return-no">⚠️ Non-Returnable — ${p.returnInfo.category}</span></div>
+                </div>`;
+        }
+
+        // Myntra Verified Badge (Layer 2 — Platform-Verified Trust)
+        if (p.myntraVerified) {
+            signalsHtml += `
+                <div class="signal signal-green" style="background:linear-gradient(135deg,#eef1fb,#f3f0ff);border-left:3px solid var(--blue)">
+                    <div class="signal-icon">🏅</div>
+                    <div>
+                        <span class="signal-label" style="color:var(--blue);font-weight:700">Myntra Verified — ${p.myntraVerified.quality}</span>
+                        <span class="signal-value"> — Quality independently checked by Myntra</span>
+                        <div style="margin-top:6px;font-size:12px;color:var(--text-secondary)">
+                            ${p.myntraVerified.photoVerified ? '✅ Photos verified by Myntra' : ''} 
+                            ${p.myntraVerified.measurements ? '<br>📐 Actual measurements: ' + p.myntraVerified.measurements : ''}
+                        </div>
+                    </div>
+                </div>`;
+        }
+
+        // Brand Size Intelligence (Layer 3 — Data-Compounding Trust)
+        if (p.brandSizeIntel) {
+            signalsHtml += `
+                <div class="signal signal-green" style="background:linear-gradient(135deg,#e8f8ef,#eef1fb)">
+                    <div class="signal-icon">📏</div>
+                    <div>
+                        <span class="signal-label">${p.brandSizeIntel.brand} Size Intelligence</span>
+                        <span class="signal-value"> — Based on ${p.brandSizeIntel.based}</span>
+                        <div style="margin-top:4px;font-size:12px;color:var(--text-secondary)">
+                            Fit: ${p.brandSizeIntel.fit} · 📷 ${p.brandSizeIntel.photoMatch}% of buyers say photos match
+                        </div>
+                    </div>
                 </div>`;
         }
 

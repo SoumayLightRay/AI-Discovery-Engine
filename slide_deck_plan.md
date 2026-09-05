@@ -273,20 +273,22 @@ Why 5: So what do they do?
 
 ## SLIDE 7
 
-### Title: We Evaluated 6 Mechanisms — the Wishlist Confidence Layer Wins on RICE and All 3 Creativity Levels
+### Title: We Evaluated 6 Mechanisms — "Myntra Verified Confidence Layer" Wins on RICE and All 3 Creativity Levels
 
-**How Might We** reduce the information asymmetry on the wishlist page so that users can build purchase confidence without leaving the app to check competing platforms?
+**How Might We** reduce the confidence gap on the wishlist page so that users can resolve their purchase decision without leaving to compare on Amazon, AJIO, or Instagram?
 
 **Competitive Landscape (what already exists):**
 - Myntra: MyFashionGPT, My Stylist, Mix & Match, Myntra Studio (influencer content)
-- Amazon: AR Virtual Try-On (footwear, apparel), AI Shopping Guides
+- Amazon: AR Virtual Try-On (footwear, apparel), AI Shopping Guides, "customers say true to size"
 - AJIO: Style Quiz, curated collections
+- Flipkart: Flipkart Assured (delivery reliability, not quality verification)
+- Meesho: Seller ratings (generic star rating, not quality-specific)
 
 **6 Genuinely Different Mechanisms Evaluated:**
 
 | # | Mechanism | Type |
 |---|---|---|
-| 1 | Wishlist Confidence Layer (buyer photos + fit consensus + return badge + AI digest + cross-seller review bridge) | Decision-support |
+| 1 | **Myntra Verified Confidence Layer** (buyer photos + Myntra Verified Badge + cross-seller review bridge + brand size intelligence + smart compare + post-purchase flywheel) | Platform-verified trust system |
 | 2 | Moodboard / Pinterest-style Fashion Board | Inspiration tool |
 | 3 | Virtual Try-On (AR superimpose) | Fit resolution |
 | 4 | Smart Price Alert | Timing/nudge |
@@ -297,7 +299,7 @@ Why 5: So what do they do?
 
 | # | Mechanism | Reach | Impact | Confidence | Effort | RICE | Verdict |
 |---|---|---|---|---|---|---|---|
-| 1 | **Confidence Layer** | 60% (target segment) | High — directly resolves root cause | High — validated by AI + survey + interview | Medium | **90** | ✅ **WINNER** |
+| 1 | **Confidence Layer** | 60% (target segment) | High — directly resolves root cause | High — validated by AI + survey + 12 interviews | Medium | **90** | ✅ **WINNER** |
 | 2 | Moodboard | 35% | Medium | Low | High | 25 | ❌ Myntra already has MyFashionGPT + Mix & Match |
 | 3 | Virtual Try-On | 25% | High | Medium | Very High | 20 | ❌ Amazon already has AR try-on natively |
 | 4 | Price Alert | 10% | Low | Medium | Low | 15 | ❌ Violates no-incentives constraint |
@@ -306,53 +308,78 @@ Why 5: So what do they do?
 
 **Three-Level Creativity Test**
 
-| Level | Test | Wishlist Confidence Layer |
+| Level | Test | Myntra Verified Confidence Layer |
 |---|---|---|
-| **1. Problem Fit** | Does it solve the validated root cause? | ✅ Provides the exact evidence users currently leave the app to compare on Amazon/AJIO |
-| **2. Differentiation** | Is it different from what exists? | ✅ No fashion platform surfaces confidence evidence on the WISHLIST page. Myntra's existing features (My Stylist, Mix & Match) address discovery, not evaluation confidence. |
-| **3. Defensibility** | Why is it hard to copy? | ✅ The Cross-Seller Review Bridge creates a proprietary seller graph. The more sellers and buyers contribute, the richer the confidence data — a compounding data moat. |
+| **1. Problem Fit** | Does it solve the validated root cause? | ✅ Provides the exact confidence signals users currently leave the app to find. 8 components addressing every friction mechanism from interviews. |
+| **2. Differentiation** | Is it different from what exists? | ✅ **Myntra Verified Badge** — no fashion platform physically verifies product quality/fit and publishes results as a buyer-facing confidence signal. Amazon's Choice is delivery reliability. Flipkart Assured is authenticity. Neither is quality/fit verification. |
+| **3. Defensibility** | Why is it hard to copy? | ✅ **Three moats:** (a) Post-Purchase Confidence Flywheel builds proprietary Brand Trust Index (photo accuracy rates, size intelligence) that compounds with every purchase. (b) Myntra Verified requires physical operations infrastructure. (c) Cross-Seller Review Bridge creates seller-product-review graph. Competitor needs Myntra's purchase data + warehouse operations + time to replicate. |
 
 ---
 
 ## SLIDE 8
 
-### Title: The Wishlist Confidence Layer — Keeping Users on Myntra Instead of Sending Them to Amazon to Check Reviews
+### Title: Myntra Verified Confidence Layer — A Three-Layer Trust System That Gets Smarter With Every Purchase
 
-**What the user sees on each wishlisted item:**
+**The Confidence Stack: 3 Layers, 8 Components**
 
-| Component | What It Shows | Friction Addressed |
+**Layer 1 — User-Generated Trust (Baseline):**
+
+| Component | What It Shows | Evidence |
 |---|---|---|
-| 📸 Verified Buyer Photos | Real photos from customers who bought this item | Quality uncertainty (14.1%) |
-| 📏 Fit Consensus | "85% of buyers say true to size" — aggregated from reviews | Fit/Size doubt (4.5%) |
-| 🔄 Return Clarity Badge | "✅ Returnable 15 days" or "⚠️ Non-returnable (intimates)" | Return anxiety (9.9%) |
-| ⭐ AI Review Digest | 3-line summary: "Buyers love fabric but say it runs small" | Information gap (6.1%) |
-| 🔗 Cross-Seller Review Bridge | When product has zero reviews: show reviews of same material/fabric from same seller, seller's overall rating | Zero-review "invisible friction" |
+| 📸 **Verified Buyer Photos** | Real customer photos surfaced ON the wishlist card | 11/12 prefer buyer photos; Aastha: "model pics से बिल्कुल ही अलग" |
+| ⭐ **Top Reviews on Wishlist** | Most helpful reviews pulled directly onto wishlist — no need to navigate to product page | 9/12 won't buy without reviews; Tanej: "बिना reviews को confirm नहीं होता" |
+| 🔄 **Return Clarity Badge** | "✅ Easy Return 15 days" or "⚠️ Non-returnable" — prominent, not buried | 7/12 check return policy; Aastha: no-return = "suspicious" |
 
-**The Cross-Seller Review Bridge (Novel Component — with honest limitations):**
-When a product has NO reviews, instead of showing nothing (which sends users to Amazon), we show:
-- Reviews of the same material/fabric from the same seller
-- The seller's aggregate rating across all products
-- "Similar products by this seller rated 4.3★ with 200+ reviews"
+**Layer 2 — Platform-Verified Trust (Differentiated — no competitor does this):**
 
-**Interview validation:** 3/6 users validated this concept (Stuti, Nandini, Sia — who already does this naturally). 2/6 gave tepid acceptance (Tanej, Umesh). **1/6 explicitly rejected it** (Himanshi: "1% भी doubt नहीं रखना चाहेंगे"). Tanej also noted: seller self-reviews aren't trusted ("he wants to sell his item").
+| Component | What It Shows | Evidence |
+|---|---|---|
+| 🏅 **Myntra Verified Badge** | Myntra independently verifies quality, fit, photos — for zero-review AND reviewed products. Actual measurements, in-house photography, quality grade. | Tanej: "quality check को pass कर रहे हैं, उसको label लगा दे." Solves Himanshi's zero-tolerance too. |
+| 🔗 **Cross-Seller Review Bridge** | Zero-review products → seller's other product reviews + seller trust score. Fallback for newer sellers. | 3/6 validated (Stuti, Nandini, Sia). 1/6 rejected (Himanshi). Honest limitation acknowledged. |
+| 🔀 **Smart Compare** | Side-by-side comparison of 2-3 wishlisted items with all confidence signals | 3 users asked unprompted; Himanshi: "सब कुछ वहीं आ जाए" |
 
-**Implication:** The Bridge works as a **fallback for zero-review products from newer sellers** — it is not a universal solution. For branded products, brand trust already substitutes (Aziz, Umesh, Yaakrati). For zero-tolerance users, only product-level reviews suffice. We present this counter-evidence honestly because it strengthens credibility.
+**Layer 3 — Data-Compounding Trust (Defensible moat — gets better over time):**
 
-This component is **genuinely novel** — no competitor surfaces seller-level trust signals. And it creates a proprietary seller-review graph that compounds over time.
+| Component | What It Shows | Evidence |
+|---|---|---|
+| 📏 **Brand-Level Size Intelligence** | "Roadster runs 1 size small based on 2,300 Myntra buyers" — not generic size chart, Myntra-specific | Tanej: XL vs XXL confusion. Post-purchase data creates proprietary asset. |
+| 🔁 **Post-Purchase Confidence Flywheel** | After delivery: "Match photos? Size accurate? Quality?" → feeds Brand Trust Index per brand/seller | Creates: Photo Accuracy Rate ("92% match"), Size Intelligence, Seller Trust Score. Compounds with every purchase. |
+
+**How They Work Together:**
+
+```
+PRODUCT HAS REVIEWS:
+  → Buyer Photos + Top Reviews + Brand Size Intelligence
+    + Return Badge + Brand Trust Index (from flywheel)
+  → "Real photos look good, runs true to size, easy return. Buying."
+
+PRODUCT HAS ZERO REVIEWS:
+  → Myntra Verified Badge + Cross-Seller Review Bridge
+    + Return Badge + Seller Trust Score
+  → "Myntra verified this AND seller's other products rated 4.3★. Buying."
+
+USER COMPARING ITEMS:
+  → Smart Compare with all confidence signals side-by-side
+  → "Item A: 94% photo match. Item B: unverified. Going with A."
+```
 
 **User Flow (3 steps)**
-1. User opens wishlist → sees Confidence Layer on each item
-2. Taps for detail → buyer photos, fit consensus %, return badge, AI digest, cross-seller reviews
-3. Confidence resolved on-platform → moves to cart WITHOUT opening Amazon or AJIO to compare
+1. Open wishlist → see Confidence Layer on each item (buyer photos, reviews, badges, brand trust)
+2. Tap compare → side-by-side view with all confidence data
+3. Decision resolved on-platform → move to cart WITHOUT opening Amazon or AJIO
 
 **Architecture**
 ```
-Myntra Reviews DB + Seller Graph → AI Summariser → Confidence Score API → Wishlist UI Overlay
+Myntra Reviews DB + Seller Graph + Purchase/Return Data
+    → AI Summariser + Quality Verification Pipeline
+    → Brand Trust Index API + Myntra Verified Certification
+    → Wishlist Confidence Layer UI
+    → Post-Purchase Survey → feeds back into Brand Trust Index (FLYWHEEL)
 ```
 
-**MVP proves the mechanism:** Can providing real-world evidence at the point of decision change user behaviour from "leave app to compare" to "buy here now"?
+**MVP proves the mechanism:** Can surfacing platform-verified confidence signals at the point of decision change user behaviour from "leave app to compare" to "buy here now"?
 
-**Live MVP →** [ai-discovery-engine-rose.vercel.app](https://ai-discovery-engine-rose.vercel.app/)
+**Live MVP →** [ai-discovery-engine-rose.vercel.app/wishlist_mvp.html](https://ai-discovery-engine-rose.vercel.app/wishlist_mvp.html)
 
 ---
 ---
@@ -377,12 +404,16 @@ SOLUTION METRIC
 LEADING INDICATORS (does the mechanism fire?)
   • Confidence Layer view rate (target: ≥15%)
   • Buyer photo click-through rate
+  • Myntra Verified Badge influence (conversion on verified vs. unverified items)
   • Cross-Seller Review Bridge engagement (for zero-review products)
+  • Smart Compare usage rate
+  • Post-Purchase Flywheel response rate (% answering micro-survey)
   • Reduced time: wishlist-add → cart-add
-  • Decreased cross-platform exits (fewer users leaving to check Amazon/AJIO)
+  • Decreased cross-platform exits
     ↓
 LAGGING INDICATORS (does behaviour persist?)
   • 7-day repeat conversion rate
+  • Brand Trust Index coverage (% of products with confidence data)
   • Wishlist-to-cart velocity trend over 30 days
     ↓
 GUARDRAILS (must NOT worsen — kill feature if they do)
@@ -404,11 +435,13 @@ GUARDRAILS (must NOT worsen — kill feature if they do)
 
 | Risk | Why It Could Fail | Mitigation |
 |---|---|---|
-| **Wrong root cause** | Confidence may not be the real blocker at scale (survey N = 36 wishlist users). Price is the strongest barrier at 44% — confidence is 28% explicit | A/B test with kill switch at Day 14; measure behaviour, not self-report. Price is acknowledged as constraint, not ignored |
+| **Wrong root cause** | Confidence may not be the real blocker at scale (survey N = 36). Price is 44% — confidence is 28% explicit | A/B test with kill switch at Day 14; measure behaviour, not self-report. Counter-evidence (Aziz = price-led) acknowledged |
+| **Myntra Verified operational cost** | Physical quality verification doesn't scale to all products | Start with top-wishlisted zero-review products only (highest ROI). Expand based on conversion lift |
+| **Post-Purchase Flywheel low adoption** | Users may not answer micro-survey after delivery | 10-second survey, in-app nudge, gamify ("help future buyers"). Target ≥20% response rate |
+| **Cross-Seller Bridge rejection** | Himanshi rejected it; Tanej: seller self-reviews not trusted | Position as FALLBACK for zero-review only, not primary signal. Myntra Verified Badge is the primary trust for zero-review products |
 | **AI summary errors** | Review digests could be misleading | Deterministic rules > LLM guesses; confidence thresholds; human review queue |
-| **Data sparsity** | New/niche products have zero buyer photos | Cross-Seller Review Bridge as fallback (show seller's other product reviews) |
+| **Info reduces intent** | More information sometimes kills a purchase (survey evidence) | Monitor Confidence Layer views → cart removal correlation |
 | **Cannibalisation** | May shift purchases to wishlist flow without net new sales | Track total purchase volume as guardrail |
-| **Info reduces intent** | Survey found cases where more reviews killed a purchase | Monitor Confidence Layer views → cart removal correlation |
 
 **60-Day Experiment Plan**
 
@@ -419,9 +452,9 @@ GUARDRAILS (must NOT worsen — kill feature if they do)
 | Scale | 31–60 | 100% if gates pass | No guardrail violations |
 
 **Beyond MVP**
-- **Phase 2:** Expand Confidence Layer to cart page (pre-checkout confidence)
-- **Phase 3:** Personalised confidence — learn which evidence type matters most per user (some care about fit, others about quality)
-- **Long-term:** Proprietary "Trust Graph" across all sellers × products × materials — a compounding data moat that grows with every purchase
+- **Phase 2:** Expand Myntra Verified to top 1,000 wishlisted products; scale Post-Purchase Flywheel to all categories
+- **Phase 3:** Personalised confidence — learn which trust layer matters most per user (some need photos, others need size data)
+- **Long-term:** Proprietary Brand Trust Index across all sellers × products × categories — a compounding data moat that makes Myntra the most trusted fashion platform
 
 ---
 ---

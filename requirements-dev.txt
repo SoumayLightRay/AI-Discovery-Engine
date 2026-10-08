@@ -1,0 +1,5 @@
+# Tests and linting.
+-r requirements.txt
+pytest
+httpx
+ruff

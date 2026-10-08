@@ -5,19 +5,20 @@ on:
     # Run every Monday at 00:00 UTC
     - cron: '0 0 * * 1'
   workflow_dispatch: # Manual trigger from GitHub UI
-  push:
-    branches: [master]
-    paths:
-      - 'src/phase_03/web/**'
-      - 'src/phase_01/**'
-      - 'src/phase_02/**'
+
+# The jobs commit refreshed data back to the repo.
+permissions:
+  contents: write
+
+# Never let two pipeline runs race each other on the data files.
+concurrency:
+  group: weekly-pipeline
+  cancel-in-progress: false
 
 jobs:
   # ─── Phase 1: Ingest New Reviews ───
   ingest:
     runs-on: ubuntu-latest
-    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
-    
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -30,11 +31,12 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install -r requirements-pipeline.txt
         
     - name: Run Phase 1 Ingestion
       env:
         APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
+        YOUTUBE_VIDEO_IDS: ${{ vars.YOUTUBE_VIDEO_IDS }}
       run: python src/phase_01/ingestion.py
       
     - name: Commit updated data
@@ -49,7 +51,7 @@ jobs:
   analyze:
     runs-on: ubuntu-latest
     needs: ingest
-    if: always() && (needs.ingest.result == 'success' || github.event_name == 'workflow_dispatch')
+    if: needs.ingest.result == 'success'
     
     steps:
     - name: Checkout repository
@@ -65,7 +67,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install -r requirements-pipeline.txt
         
     - name: Run Phase 2 Analysis
       env:
@@ -84,6 +86,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add -A
+        git add docs/phases/phase-02 docs/phases/phase-03 src/phase_03/web/data
         git diff --cached --quiet || git commit -m "chore(auto): weekly friction analysis update"
+        git pull --rebase origin master
         git push

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Discovery Engine — Product Intelligence Dashboard</title>
     <meta name="description" content="AI-powered product intelligence dashboard for Myntra wishlist conversion analysis">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%92%8E%3C/text%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -282,9 +283,10 @@
             color: var(--text-primary);
         }
         .bar-label .count {
+            display: block;
             color: var(--text-muted);
             font-size: 0.7rem;
-            margin-left: 4px;
+            margin-top: 1px;
         }
         .bar-track {
             height: 8px;
@@ -546,6 +548,11 @@
             margin: 2px 2px;
             font-weight: 600;
         }
+        .chat-msg .chat-meta {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+        }
+        .chat-msg .citation[title] { cursor: help; }
         .chat-msg .timestamp {
             display: block;
             font-size: 0.6rem;
@@ -954,10 +961,10 @@
 <!-- PAGE HEADER -->
 <div class="page-header">
     <div class="breadcrumb">
-        PRODUCT INTELLIGENCE / Q3 CUSTOMER SYNTHESIS / <span class="live-badge">● Live Ingestion</span>
+        PRODUCT INTELLIGENCE / Q3 CUSTOMER SYNTHESIS / <span class="live-badge">● Weekly Ingestion</span>
     </div>
     <h1 class="page-title">E-Commerce Friction & Opportunity Matrix</h1>
-    <div class="page-subtitle">↻ Synced 2s ago (RAG Pipeline #8491) · Cohort: Apparel & Intimates</div>
+    <div class="page-subtitle" id="page-sub">Cohort: Apparel & Intimates</div>
 </div>
 
 <!-- TAB CONTENT: Overview (tab 0) -->
@@ -970,17 +977,17 @@
             <div class="metric-card">
                 <div class="metric-label">📊 Total Touches Analyzed</div>
                 <div class="metric-value" id="metric-total">1,367</div>
-                <div class="metric-sub"><span class="up">↑ 18.4%</span> vs. baseline</div>
+                <div class="metric-sub" id="metric-total-sub">Google Play · App Store · YouTube · Reddit</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">🔥 Dominant Friction Theme</div>
                 <div class="metric-value purple" id="metric-theme">Quality / Material</div>
-                <div class="metric-sub">6.6% friction density · 482 direct mentions</div>
+                <div class="metric-sub" id="metric-theme-sub">Most frequent friction theme in the analyzed sample</div>
             </div>
             <div class="metric-card">
-                <div class="metric-label">⚡ Time Saved via AI</div>
-                <div class="metric-value">34.5 <span style="font-size:1rem;color:var(--text-muted)">hrs</span></div>
-                <div class="metric-sub">Synthesized in 4.2s vs. 14d Manual</div>
+                <div class="metric-label">🧪 Reviews Tagged by LLM</div>
+                <div class="metric-value" id="metric-sample">313</div>
+                <div class="metric-sub" id="metric-sample-sub">Stratified sample, balanced across sources</div>
             </div>
         </div>
 
@@ -1001,7 +1008,6 @@
                 <div class="root-synthesis-text">
                     <strong>🔮 Root Synthesis (Platform Trust Deficit):</strong> Generic reviews reveal the exact platform friction that causes wishlist drop-offs. High-consideration items go to the wishlist, but these underlying trust issues (quality, returns) prevent the final checkout.
                 </div>
-                <span class="confidence-badge">Confidence 94%</span>
             </div>
         </div>
 
@@ -1025,14 +1031,14 @@
                 <div class="chat-avatar">🤖</div>
                 <div>
                     <div class="chat-name">Discovery AI <span class="chat-rag-badge">RAG v2.2</span></div>
-                    <div class="chat-status">Active Index: 1,367 Touchpoints</div>
+                    <div class="chat-status">Active Index: <span class="index-count">1,367</span> Touchpoints</div>
                 </div>
             </div>
         </div>
 
         <div class="chat-messages" id="chat-messages">
             <div class="chat-msg bot">
-                Welcome to the Discovery AI! I can query <strong>1,367 real user reviews</strong> across Google Play, App Store, YouTube, and Reddit. Ask me anything about wishlist conversion friction.
+                Welcome to the Discovery AI! I can query <strong><span class="index-count">1,367</span> real user reviews</strong> across Google Play, App Store, YouTube, and Reddit. Ask me anything about wishlist conversion friction.
                 <span class="timestamp">Ready</span>
             </div>
         </div>
@@ -1044,11 +1050,11 @@
         </div>
 
         <div class="chat-input-area">
-            <input class="chat-input" id="chat-input" type="text" placeholder="Ask Discovery AI about reviews..." onkeydown="if(event.key==='Enter')sendMessage()">
-            <button class="chat-send-btn" onclick="sendMessage()">➤</button>
+            <input class="chat-input" id="chat-input" type="text" maxlength="500" aria-label="Ask Discovery AI about the reviews" placeholder="Ask Discovery AI about reviews..." onkeydown="if(event.key==='Enter')sendMessage()">
+            <button class="chat-send-btn" onclick="sendMessage()" aria-label="Send message">➤</button>
         </div>
         <div class="chat-footer">
-            Direct semantic retrieval across 1,367 fine-tuned embeddings
+            TF-IDF retrieval over <span class="index-count">1,367</span> reviews, with answers grounded in cited reviews
         </div>
     </div>
 </div>
@@ -1247,6 +1253,20 @@ function renderMetrics() {
     document.getElementById('stat-reviews').textContent = m.total_dataset_size.toLocaleString();
     document.getElementById('stat-friction').textContent = m.friction_rate_percentage + '%';
     document.getElementById('metric-total').textContent = m.total_dataset_size.toLocaleString();
+    const setText = (id, t) => { const el = document.getElementById(id); if (el) el.textContent = t; };
+    const sources = Object.entries(m.sources_in_sample || {});
+    setText('page-sub', `Dataset: ${fmtCount(m.total_dataset_size)} reviews · ${fmtCount(m.sample_analyzed_size)} tagged with ${m.analysis_model || 'an LLM'} · Cohort: Apparel & Intimates`);
+    setText('metric-total-sub', `${fmtCount(m.sample_analyzed_size)} tagged · ${m.friction_identified_count} show active purchase friction`);
+    setText('metric-sample', fmtCount(m.sample_analyzed_size));
+    if (sources.length) setText('metric-sample-sub', sources.map(([k, v]) => `${k} ${v}`).join(' · '));
+    // Dominant theme stats, computed from the tagged reviews rather than hard-coded.
+    const dist = Object.entries(m.theme_distribution || {}).filter(([k]) => !k.toLowerCase().includes('other')).sort((a, b) => b[1] - a[1]);
+    if (dist.length) {
+        const [top, n] = dist[0];
+        const frictionInTop = (analysisData.tagged_reviews || []).filter(r => r.primary_theme === top && r.friction_present).length;
+        setText('metric-theme-sub', `${n} of ${m.sample_analyzed_size} analyzed reviews (${((n / m.sample_analyzed_size) * 100).toFixed(1)}%) · ${frictionInTop} with active friction`);
+    }
+    if (indexCount === null) setIndexCount(m.total_dataset_size);  // /api/health overrides with the live index size
 }
 
 function renderChart() {
@@ -1265,14 +1285,22 @@ function renderChart() {
     const sevLabels = ['Critical', 'High', 'High', 'Moderate', 'Moderate', 'Watch', 'Watch', 'Watch', 'Low', 'Low', 'Low', 'Low'];
     const sevClasses = ['sev-critical', 'sev-high', 'sev-high', 'sev-moderate', 'sev-moderate', 'sev-watch', 'sev-watch', 'sev-watch', 'sev-watch', 'sev-watch', 'sev-watch', 'sev-watch'];
 
+    // Share of each theme's reviews that report active purchase friction (volume alone can mislead).
+    const frictionByTheme = {};
+    ((analysisData && analysisData.tagged_reviews) || []).forEach(r => {
+        if (r.friction_present) frictionByTheme[r.primary_theme] = (frictionByTheme[r.primary_theme] || 0) + 1;
+    });
+    const hasTagged = analysisData && (analysisData.tagged_reviews || []).length > 0;
+
     container.innerHTML = '';
     filtered.forEach(([theme, count], i) => {
         const pct = ((count / totalAnalyzed) * 100).toFixed(1);
+        const frictionNote = hasTagged ? ` · ${Math.round(((frictionByTheme[theme] || 0) / count) * 100)}% friction` : '';
         const barWidth = Math.max((count / maxCount) * 100, 5);
         container.innerHTML += `
             <div class="bar-row">
                 <div class="bar-rank ${rankClasses[i]}">P${i+1}</div>
-                <div class="bar-label">${theme} <span class="count">${count} reviews</span></div>
+                <div class="bar-label">${escapeHtml(theme)} <span class="count" title="Share of this theme's reviews that report active purchase friction">${count} reviews${frictionNote}</span></div>
                 <div class="bar-track"><div class="bar-fill ${fillClasses[i]}" style="width:${barWidth}%"></div></div>
                 <div class="bar-pct">${pct}%</div>
                 <div class="bar-severity ${sevClasses[i]}">▲ ${sevLabels[i]}</div>
@@ -1295,31 +1323,29 @@ function renderOpportunities() {
             <div class="opp-card ${cardStyles[i % 3]}">
                 <div class="opp-card-header">
                     <div>
-                        <div class="opp-card-title">${icons[i]} ${opp.theme}</div>
+                        <div class="opp-card-title">${icons[i % icons.length]} ${escapeHtml(opp.theme)}</div>
                         <div class="opp-card-sub">Theme #${i+1}</div>
                     </div>
-                    <span class="priority-tag ${priorityStyles[i % 3]}">${priorityLabels[i]}</span>
+                    <span class="priority-tag ${priorityStyles[i % 3]}">${priorityLabels[i % priorityLabels.length]}</span>
                 </div>
                 <div class="opp-card-label">PROBLEM FORMULATION</div>
-                <div class="opp-card-problem">${opp.rigorous_problem_statement}</div>
-                <div class="opp-card-quote">${opp.grounded_quote}</div>
+                <div class="opp-card-problem">${escapeHtml(opp.rigorous_problem_statement)}</div>
+                <div class="opp-card-quote">${escapeHtml(opp.grounded_quote)}</div>
             </div>
         `;
     });
 }
 
 function renderFallback() {
-    // Hardcoded fallback if JSON fails
+    // Bundled snapshot of data/analysis_results.json, used only if that file can't be fetched
+    // (e.g. the page is opened via file://). Refresh it when the analysis is re-run.
     analysisData = {
         metadata: {
             total_dataset_size: 1367,
-            sample_analyzed_size: 196,
-            friction_rate_percentage: 10.2,
+            sample_analyzed_size: 313,
+            friction_rate_percentage: 22.36,
             theme_distribution: {
-                "Quality/material": 15, "Price": 13, "Reviews/information": 10,
-                "Styling/occasion": 7, "Returns": 7, "Social validation": 4,
-                "Intent/bookmarking": 4, "Fit/size": 4, "Availability": 3,
-                "Alternatives": 2, "Comparison": 1
+                "Other emergent themes": 111, "Reviews/information": 19, "Quality/material": 44, "Price": 33, "Availability": 17, "Fit/size": 14, "Returns": 31, "Styling/occasion": 11, "Intent/bookmarking": 13, "Alternatives": 4, "Social validation": 6, "Comparison": 5, "Forgetting/distraction": 5
             }
         },
         synthesis: {
@@ -1336,10 +1362,36 @@ function renderFallback() {
 }
 
 // ─── API Configuration ───
-// Auto-detect: use localhost in dev, Render backend in production
-const API_BASE = window.location.hostname === 'localhost' 
-    ? '' 
+// Same-origin when served by the FastAPI app (localhost / Render); otherwise
+// the Vercel static site talks to the Render backend.
+const SAME_ORIGIN_HOSTS = ['localhost', '127.0.0.1', '[::1]'];
+const API_BASE = (SAME_ORIGIN_HOSTS.includes(window.location.hostname) || window.location.hostname.endsWith('.onrender.com'))
+    ? ''
     : (window.RENDER_API_URL || 'https://discovery-engine-api-mk0d.onrender.com');
+const CHAT_TIMEOUT_MS = 70000;      // Render free tier can take ~60s to wake from sleep
+const WAKE_NOTICE_AFTER_MS = 6000;
+
+// Number of reviews the chat index covers; refreshed from /api/health.
+let indexCount = null;
+
+function fmtCount(n) { return Number(n).toLocaleString(); }
+
+function setIndexCount(n) {
+    if (!n) return;
+    indexCount = n;
+    document.querySelectorAll('.index-count').forEach(el => el.textContent = fmtCount(n));
+}
+
+// Ping the backend on page load: wakes a sleeping free-tier instance and tells
+// us how many reviews the live index really covers.
+async function warmBackend() {
+    try {
+        const resp = await fetch(API_BASE + '/api/health');
+        if (!resp.ok) return;
+        const h = await resp.json();
+        setIndexCount(h.corpus_size);
+    } catch (e) { /* offline mode is handled when the user actually asks */ }
+}
 
 // ─── Chat Logic (Real RAG API) ───
 let chatLoading = false;
@@ -1347,6 +1399,88 @@ let chatLoading = false;
 function sendSuggestion(text) {
     document.getElementById('chat-input').value = text;
     sendMessage();
+}
+
+// Everything that comes back from the API (LLM text, review snippets) is
+// untrusted: escape first, then apply the small amount of formatting we support.
+function escapeHtml(text) {
+    return String(text)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+function formatAnswer(text) {
+    return escapeHtml(text)
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\n/g, '<br>')
+        .replace(/\[Review #(\d+)\]/g, '<span class="citation">[Review #$1]</span>');
+}
+
+function citationChips(citations) {
+    if (!citations || !citations.length) return '';
+    const chips = citations.slice(0, 5).map(c => {
+        const tip = `${c.source} · match ${c.score}\n${c.text}`;
+        return `<span class="citation" title="${escapeHtml(tip)}">[Review #${Number(c.review_id)}] ${escapeHtml(c.source)}</span>`;
+    }).join(' ');
+    return `<br><br><span class="chat-meta">SOURCES (hover for the review text):</span><br>${chips}`;
+}
+
+// Honest offline answer: built only from the pre-computed analysis that the
+// page already loaded. It is labelled as such and never invents statistics.
+const THEME_KEYWORDS = {
+    'Returns': ['return', 'exchange', 'refund'],
+    'Fit/size': ['size', 'fit', 'sizing'],
+    'Price': ['price', 'cost', 'discount', 'expensive', 'cheap', 'sale'],
+    'Quality/material': ['quality', 'material', 'fabric'],
+    'Availability': ['stock', 'available', 'availability'],
+    'Reviews/information': ['review', 'rating', 'information', 'photo'],
+    'Styling/occasion': ['style', 'styling', 'occasion', 'outfit'],
+    'Social validation': ['friend', 'social', 'opinion', 'influencer'],
+    'Comparison': ['compare', 'comparison'],
+    'Alternatives': ['alternative', 'ajio', 'amazon', 'flipkart'],
+    'Intent/bookmarking': ['wishlist', 'bookmark', 'save'],
+    'Forgetting/distraction': ['forget', 'distract']
+};
+
+function offlineAnswer(query) {
+    if (!analysisData) return 'The live engine is unreachable and the pre-computed analysis has not loaded.';
+    const meta = analysisData.metadata;
+    const dist = meta.theme_distribution || {};
+    const total = meta.sample_analyzed_size;
+    const q = query.toLowerCase();
+    let themes = Object.keys(THEME_KEYWORDS).filter(t => THEME_KEYWORDS[t].some(k => q.includes(k)) && dist[t]);
+    if (!themes.length) {
+        themes = Object.entries(dist).filter(([k]) => !k.toLowerCase().includes('other'))
+            .sort((a, b) => b[1] - a[1]).slice(0, 3).map(([k]) => k);
+    }
+    const lines = themes.slice(0, 3).map(t => {
+        const n = dist[t];
+        const pct = ((n / total) * 100).toFixed(1);
+        const quotes = ((analysisData.sample_grounded_quotes || {})[t] || []).slice(0, 2)
+            .map(x => `&nbsp;&nbsp;“${escapeHtml(x.quote)}” <span class="chat-meta">(${escapeHtml(x.source)})</span>`).join('<br>');
+        return `<strong>${escapeHtml(t)}</strong>: ${n} of ${total} analyzed reviews (${pct}%)` + (quotes ? '<br>' + quotes : '');
+    });
+    return lines.join('<br><br>');
+}
+
+async function askBackend(text, onWake) {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), CHAT_TIMEOUT_MS);
+    const wakeTimer = setTimeout(onWake, WAKE_NOTICE_AFTER_MS);
+    try {
+        const resp = await fetch(API_BASE + '/api/chat', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ query: text }),
+            signal: ctrl.signal
+        });
+        let data = null;
+        try { data = await resp.json(); } catch (e) { /* non-JSON error body */ }
+        return { ok: resp.ok, status: resp.status, data };
+    } finally {
+        clearTimeout(timer);
+        clearTimeout(wakeTimer);
+    }
 }
 
 async function sendMessage() {
@@ -1359,76 +1493,51 @@ async function sendMessage() {
     const msgs = document.getElementById('chat-messages');
     const now = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
 
-    // User message
     msgs.innerHTML += `<div class="chat-msg user">${escapeHtml(text)}<span class="timestamp">${now}</span></div>`;
-    msgs.scrollTop = msgs.scrollHeight;
 
-    // Loading indicator
     chatLoading = true;
     const loadingId = 'loading-' + Date.now();
-    msgs.innerHTML += `<div class="chat-msg bot" id="${loadingId}"><span style="color:var(--accent-purple)">⟳ Searching 1,367 reviews...</span></div>`;
+    const searching = indexCount ? `Searching ${fmtCount(indexCount)} reviews...` : 'Searching reviews...';
+    msgs.innerHTML += `<div class="chat-msg bot" id="${loadingId}"><span id="${loadingId}-s" style="color:var(--accent-purple)">⟳ ${searching}</span></div>`;
     msgs.scrollTop = msgs.scrollHeight;
+
+    const setLoading = html => {
+        const el = document.getElementById(loadingId + '-s');
+        if (el) el.innerHTML = html;
+    };
+    const finish = html => {
+        const el = document.getElementById(loadingId);
+        if (el) el.innerHTML = html + `<span class="timestamp">${now}</span>`;
+        msgs.scrollTop = msgs.scrollHeight;
+    };
 
     try {
-        const resp = await fetch(API_BASE + '/api/chat', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ query: text })
-        });
-        const data = await resp.json();
+        const { ok, status, data } = await askBackend(text, () =>
+            setLoading('⟳ Waking up the backend (free-tier hosting sleeps when idle, this can take up to a minute)...'));
 
-        // Build response HTML
-        let html = '';
-        if (data.answer) {
-            html += data.answer
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/\n/g, '<br>')
-                .replace(/\[Review #(\d+)\]/g, '<span class="citation">[Review #$1]</span>');
+        if (status === 429) {
+            finish('You’re asking a little fast — please wait a few seconds and try again.');
+        } else if (status === 422) {
+            finish('Please ask a question between 1 and 500 characters.');
+        } else if (!ok || !data || !data.answer) {
+            throw new Error('Backend returned ' + status);
+        } else {
+            let html = formatAnswer(data.answer) + citationChips(data.citations);
+            if (data.review_count) {
+                const corpus = data.total_corpus || indexCount;
+                const mode = data.mode === 'llm' ? 'LLM-synthesised' : 'extractive (no LLM key configured)';
+                const latency = Number.isFinite(data.latency_ms) ? ` · ${data.latency_ms} ms server time` : '';
+                html += `<br><span class="chat-meta">${data.review_count} reviews retrieved${corpus ? ' from ' + fmtCount(corpus) : ''} · ${mode}${latency}</span>`;
+            }
+            finish(html);
         }
-
-        if (data.citations && data.citations.length > 0) {
-            html += '<br><br><span style="font-size:0.7rem;color:var(--text-muted)">SEMANTIC CITATIONS:</span><br>';
-            data.citations.slice(0, 4).forEach(c => {
-                html += `<span class="citation">[Review #${c.review_id}]</span> `;
-            });
-        }
-
-        if (data.review_count) {
-            html += `<br><span style="font-size:0.65rem;color:var(--text-muted)">${data.review_count} reviews retrieved from ${data.total_corpus || 1367} corpus · Latency: ${(Math.random()*200+100).toFixed(0)}ms</span>`;
-        }
-
-        html += `<span class="timestamp">${now}</span>`;
-        const loadingEl = document.getElementById(loadingId);
-        if (loadingEl) loadingEl.innerHTML = html;
-
-    } catch(e) {
-        // MOCK FALLBACK IF RENDER BACKEND FAILS
-        setTimeout(() => {
-            let mockAnswer = "I couldn't find a specific match for that in the dataset.";
-            const q = text.toLowerCase();
-            if (q.includes('wishlist') || q.includes('buy')) mockAnswer = "Users add items to their wishlist but fail to buy them primarily because of a **Platform Trust Deficit**. The dataset shows they doubt the material quality (14.1%), fear strict return policies (9.9%), or are waiting for price drops (10.5%).";
-            else if (q.includes('return') || q.includes('exchange')) mockAnswer = "Returns are the most toxic friction point. **93.5%** of all return mentions are negative complaints. The strongest signal is 'no return policy on bras and panties' which appeared 7 times across Reddit threads.";
-            else if (q.includes('quality') || q.includes('material')) mockAnswer = "Quality is the highest-volume friction theme (14.1%). However, it has a low negativity rate (6.8%). This means users aren't always angry about quality—they are **uncertain**. They hesitate to buy because they don't trust the highly edited product photos.";
-            else mockAnswer = "Based on the 1,367 reviews analyzed, the overarching theme is a lack of confidence at the decision stage. You can explore the exact verbatims in the 'Customer Verbatims' tab.";
-            
-            let html = mockAnswer.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            html += '<br><br><span style="font-size:0.7rem;color:var(--text-muted)">SEMANTIC CITATIONS:</span><br><span class="citation">[Review #812]</span> <span class="citation">[Review #445]</span>';
-            html += `<br><span style="font-size:0.65rem;color:var(--text-muted)">15 reviews retrieved from 1367 corpus · Latency: 142ms (Fallback Engine)</span><span class="timestamp">${now}</span>`;
-            
-            const loadingEl = document.getElementById(loadingId);
-            if (loadingEl) loadingEl.innerHTML = html;
-            msgs.scrollTop = msgs.scrollHeight;
-        }, 800);
+    } catch (e) {
+        console.warn('Live RAG backend unavailable, using offline answer', e);
+        finish(offlineAnswer(text) +
+            '<br><br><span class="chat-meta">⚠ Offline mode: the live retrieval backend did not respond, so this is summarised from the pre-computed analysis (not a live search).</span>');
+    } finally {
+        chatLoading = false;
     }
-
-    chatLoading = false;
-    msgs.scrollTop = msgs.scrollHeight;
-}
-
-function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
 }
 
 // ─── Share & Gmail Logic ───
@@ -1565,12 +1674,12 @@ function renderVerbatims() {
     let html = '';
     sorted.forEach(([theme, rs]) => {
         html += `<div style="margin-bottom:20px">`;
-        html += `<h3 style="color:var(--accent-purple);font-size:0.9rem;margin-bottom:8px">${theme} <span style="font-size:0.72rem;color:var(--text-muted)">(${rs.length} verbatims)</span></h3>`;
+        html += `<h3 style="color:var(--accent-purple);font-size:0.9rem;margin-bottom:8px">${escapeHtml(theme)} <span style="font-size:0.72rem;color:var(--text-muted)">(${rs.length} verbatims)</span></h3>`;
         rs.forEach(r => {
             const color = sourceColors[r.source] || 'var(--text-muted)';
             html += `<div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-left:3px solid ${color};border-radius:0 8px 8px 0;padding:10px 14px;margin:6px 0;font-size:0.82rem">`;
             html += `<div style="color:var(--text-secondary);font-style:italic">"${escapeHtml(r.verbatim_quote)}"</div>`;
-            html += `<div style="font-size:0.68rem;color:var(--text-muted);margin-top:4px">📍 ${r.source} · ${r.sentiment} · ${r.date || ''}</div>`;
+            html += `<div style="font-size:0.68rem;color:var(--text-muted);margin-top:4px">📍 ${escapeHtml(r.source)} · ${escapeHtml(r.sentiment)} · ${escapeHtml(r.date || '')}</div>`;
             html += `</div>`;
         });
         html += `</div>`;
@@ -1591,7 +1700,7 @@ function renderTaxonomy() {
     grid.innerHTML = sorted.map(([t, c], i) => {
         const pct = ((c / total) * 100).toFixed(1);
         return `<div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:8px;padding:10px 12px">
-            <div style="font-size:0.78rem;font-weight:600;color:var(--text-primary)">${t}</div>
+            <div style="font-size:0.78rem;font-weight:600;color:var(--text-primary)">${escapeHtml(t)}</div>
             <div style="font-size:1.1rem;font-weight:700;color:${colors[i]}">${c} <span style="font-size:0.68rem;color:var(--text-muted)">(${pct}%)</span></div>
         </div>`;
     }).join('');
@@ -1600,14 +1709,15 @@ function renderTaxonomy() {
     const whys = analysisData ? analysisData.synthesis.root_cause_analysis : [];
     whysDiv.innerHTML = whys.map((w, i) => {
         return `<div style="display:flex;gap:10px;align-items:flex-start;margin:10px 0">
-            <div style="width:28px;height:28px;border-radius:50%;background:var(--accent-purple);color:white;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;flex-shrink:0">${w.level}</div>
-            <div style="font-size:0.85rem;padding-top:4px;color:var(--text-secondary)">${w.cause}</div>
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--accent-purple);color:white;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;flex-shrink:0">${escapeHtml(w.level)}</div>
+            <div style="font-size:0.85rem;padding-top:4px;color:var(--text-secondary)">${escapeHtml(w.cause)}</div>
         </div>`;
     }).join('');
 }
 
 // Initialize
 loadData();
+warmBackend();
 </script>
 
 <!-- Share Modal -->

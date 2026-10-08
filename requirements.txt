@@ -1,3 +1,5 @@
+# Runtime dependencies for the API server (what Render installs).
+# Data-collection and dev tooling live in requirements-pipeline.txt / requirements-dev.txt.
 fastapi==0.141.1
 uvicorn==0.52.4
 scikit-learn==1.9.0

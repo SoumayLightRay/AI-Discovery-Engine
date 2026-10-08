@@ -1,0 +1,6 @@
+# Weekly ingestion + analysis pipeline (GitHub Actions). Includes the runtime set.
+-r requirements.txt
+requests
+google-play-scraper
+youtube-comment-downloader
+apify-client

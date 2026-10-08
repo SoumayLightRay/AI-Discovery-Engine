@@ -1,0 +1,21 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 140
+# scratch/ = throwaway scraper probes; dashboard.py = legacy Streamlit prototype (not deployed)
+extend-exclude = ["scratch", "src/phase_03/dashboard.py"]
+
+[tool.ruff.lint]
+# Correctness-oriented rules only: pyflakes, pycodestyle errors/warnings, bugbear.
+select = ["E", "F", "W", "B"]
+ignore = [
+    "E501",  # long prompt strings / inline HTML are intentional
+    "B008",  # FastAPI-style defaults
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Two trailing spaces are intentional Markdown hard line breaks inside the generated summary.
+"src/phase_02/analysis.py" = ["W291"]

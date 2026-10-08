@@ -7,14 +7,14 @@ Usage:
     python src/phase_03/export_report.py          # Export as HTML
     python src/phase_03/export_report.py --gdocs   # Push to Google Docs (requires credentials)
 """
+import html as htmllib
 import json
 import os
-import sys
 from datetime import datetime
 
-ANALYSIS_PATH = "docs/phases/phase-02/analysis_results.json"
-SUMMARY_PATH = "docs/phases/phase-02/weekly_pulse_summary.md"
-OUTPUT_HTML = "docs/phases/phase-03/discovery_report.html"
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+ANALYSIS_PATH = os.path.join(REPO_ROOT, "docs/phases/phase-02/analysis_results.json")
+OUTPUT_HTML = os.path.join(REPO_ROOT, "docs/phases/phase-03/discovery_report.html")
 
 
 def load_analysis():
@@ -22,37 +22,41 @@ def load_analysis():
         return json.load(f)
 
 
+def esc(value):
+    """HTML-escape LLM-generated text before it is placed in the report."""
+    return htmllib.escape(str(value))
+
+
 def generate_html_report(data):
     """Generate a polished HTML report suitable for Google Docs import or standalone viewing."""
     meta = data.get("metadata", {})
     synthesis = data.get("synthesis", {})
-    quotes = data.get("sample_grounded_quotes", {})
 
     theme_rows = ""
     for theme, count in sorted(meta.get("theme_distribution", {}).items(), key=lambda x: -x[1]):
         if "other" in theme.lower():
             continue
         pct = round((count / meta.get("sample_analyzed_size", 1)) * 100, 1)
-        theme_rows += f"<tr><td><strong>{theme}</strong></td><td>{count}</td><td>{pct}%</td></tr>\n"
+        theme_rows += f"<tr><td><strong>{esc(theme)}</strong></td><td>{count}</td><td>{pct}%</td></tr>\n"
 
     opp_blocks = ""
     for i, opp in enumerate(synthesis.get("opportunities", []), 1):
         opp_blocks += f"""
         <div style="background:#f8f9fa;border-left:4px solid #7c3aed;padding:16px;margin:16px 0;border-radius:4px;">
-            <h3 style="color:#7c3aed;margin-top:0;">Opportunity {i}: {opp.get('theme', '')}</h3>
-            <p><strong>Problem Statement:</strong><br>{opp.get('rigorous_problem_statement', '')}</p>
+            <h3 style="color:#7c3aed;margin-top:0;">Opportunity {i}: {esc(opp.get('theme', ''))}</h3>
+            <p><strong>Problem Statement:</strong><br>{esc(opp.get('rigorous_problem_statement', ''))}</p>
             <blockquote style="border-left:3px solid #38bdf8;padding-left:12px;color:#475569;font-style:italic;">
-                "{opp.get('grounded_quote', '')}"
+                "{esc(opp.get('grounded_quote', ''))}"
             </blockquote>
         </div>"""
 
     root_cause_items = ""
     for why in synthesis.get("root_cause_analysis", []):
-        root_cause_items += f"<li><strong>{why.get('level')}:</strong> {why.get('cause')}</li>\n"
+        root_cause_items += f"<li><strong>{esc(why.get('level'))}:</strong> {esc(why.get('cause'))}</li>\n"
 
     interview_items = ""
     for q in synthesis.get("primary_research_interview_guide", []):
-        interview_items += f'<li>"{q}"</li>\n'
+        interview_items += f'<li>"{esc(q)}"</li>\n'
 
     report_date = datetime.now().strftime("%B %d, %Y")
 
@@ -77,7 +81,7 @@ def generate_html_report(data):
 </head>
 <body>
     <h1>🔮 AI Discovery Engine — Weekly Pulse Report</h1>
-    <p style="color:#64748b;">Generated: {report_date} | Model: {meta.get('analysis_model', 'N/A')} | Cohort: Apparel & Intimates</p>
+    <p style="color:#64748b;">Generated: {report_date} | Model: {esc(meta.get('analysis_model', 'N/A'))} | Cohort: Apparel & Intimates</p>
 
     <div>
         <div class="metric"><div class="value">{meta.get('total_dataset_size', 0):,}</div><div class="label">Total Reviews</div></div>
@@ -86,8 +90,8 @@ def generate_html_report(data):
     </div>
 
     <h2>Executive Summary</h2>
-    <p>{synthesis.get('executive_summary', 'N/A')}</p>
-    <p><strong>Dominant Friction Theme:</strong> {synthesis.get('dominant_friction_theme', 'N/A')}</p>
+    <p>{esc(synthesis.get('executive_summary', 'N/A'))}</p>
+    <p><strong>Dominant Friction Theme:</strong> {esc(synthesis.get('dominant_friction_theme', 'N/A'))}</p>
 
     <h2>Friction Theme Distribution</h2>
     <table>
@@ -124,8 +128,8 @@ def main():
     with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"[OK] Report exported to {OUTPUT_HTML}")
-    print(f"   You can open this in your browser or import directly into Google Docs.")
-    print(f"   Google Docs: File > Open > Upload the HTML file")
+    print("   You can open this in your browser or import directly into Google Docs.")
+    print("   Google Docs: File > Open > Upload the HTML file")
 
 
 if __name__ == "__main__":
